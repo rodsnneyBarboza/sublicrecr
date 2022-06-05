@@ -1,0 +1,2 @@
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio\obj\Debug\sublicreacr.Negocio.csproj.AssemblyReference.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio\obj\Debug\sublicreacr.Negocio.csproj.CoreCompileInputs.cache

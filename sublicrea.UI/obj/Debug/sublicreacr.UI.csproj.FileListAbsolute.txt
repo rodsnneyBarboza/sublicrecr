@@ -1,0 +1,15 @@
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Form1.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Properties.Resources.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicreacr.UI.csproj.GenerateResource.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicreacr.UI.csproj.CoreCompileInputs.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicreacr.UI.csproj.AssemblyReference.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicrea.UI.exe.config
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicrea.UI.exe
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicrea.UI.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicreacr.Datos2.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicreacr.Negocio2.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicreacr.Datos2.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicreacr.Negocio2.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicreacr.UI.csproj.CopyComplete
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.exe
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.pdb

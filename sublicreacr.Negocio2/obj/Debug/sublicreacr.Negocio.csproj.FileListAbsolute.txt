@@ -1,0 +1,9 @@
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio.csproj.AssemblyReference.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\bin\Debug\sublicreacr.Negocio2.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\bin\Debug\sublicreacr.Negocio2.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\bin\Debug\sublicreacr.Datos2.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\bin\Debug\sublicreacr.Datos2.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio.csproj.CopyComplete
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio2.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio2.pdb

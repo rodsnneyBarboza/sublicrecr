@@ -1,0 +1,5 @@
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.csproj.AssemblyReference.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Form1.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Properties.Resources.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.csproj.GenerateResource.cache
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.csproj.CoreCompileInputs.cache

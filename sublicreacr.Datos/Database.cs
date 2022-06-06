@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace sublicreacr.Datos
 {
-    class Database
+    public class Database
     {
         private static string strConnection = "Server=MYSQL5044.site4now.net;Database=db_a87eb5_sublicr;Uid=a87eb5_sublicr;Pwd=Admin123!!";
 
@@ -23,6 +23,24 @@ namespace sublicreacr.Datos
         public static void disconnect()
         {
             dbConnection.Close();
+        }
+        public static void exectuteNonQuery(string command, Parameter[] parameters)
+        {
+            try
+            {
+                connect();
+                IDbCommand cmd = dp.command(command);
+                cmd.Connection = dbConnection;
+                foreach (Parameter parameter in parameters)
+                {
+                    cmd.Parameters.Add(dp.parameter(parameter));
+                }
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                disconnect();
+            }
         }
 
         public static DataSet executeDataset(string command, Parameter[] parameters)

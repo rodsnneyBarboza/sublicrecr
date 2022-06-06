@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sublicreacr.Datos", "sublicreacr.Datos\sublicreacr.Datos.csproj", "{090E143E-6923-4508-A603-23318FA90C80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sublicreacr.UI", "sublicrea.UI\sublicreacr.UI.csproj", "{35BBB6B8-2AD5-4975-8076-298917A2FFF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sublicreacr.Negocio", "sublicreacr.Negocio\sublicreacr.Negocio.csproj", "{D550CFB9-DA44-4ECB-B741-C3B586616AF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sublicreacr.Datos", "sublicreacr.Datos2\sublicreacr.Datos.csproj", "{EBBF0D6E-B4DB-45E0-969F-0F4FABF8C6C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sublicreacr.Negocio", "sublicreacr.Negocio2\sublicreacr.Negocio.csproj", "{C7D1D1F4-4F12-48BC-B9C6-94D7B2ACBA4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{090E143E-6923-4508-A603-23318FA90C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{090E143E-6923-4508-A603-23318FA90C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{090E143E-6923-4508-A603-23318FA90C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{090E143E-6923-4508-A603-23318FA90C80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D550CFB9-DA44-4ECB-B741-C3B586616AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D550CFB9-DA44-4ECB-B741-C3B586616AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D550CFB9-DA44-4ECB-B741-C3B586616AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D550CFB9-DA44-4ECB-B741-C3B586616AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BBB6B8-2AD5-4975-8076-298917A2FFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BBB6B8-2AD5-4975-8076-298917A2FFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BBB6B8-2AD5-4975-8076-298917A2FFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BBB6B8-2AD5-4975-8076-298917A2FFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBBF0D6E-B4DB-45E0-969F-0F4FABF8C6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBF0D6E-B4DB-45E0-969F-0F4FABF8C6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBF0D6E-B4DB-45E0-969F-0F4FABF8C6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBF0D6E-B4DB-45E0-969F-0F4FABF8C6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D1D1F4-4F12-48BC-B9C6-94D7B2ACBA4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D1D1F4-4F12-48BC-B9C6-94D7B2ACBA4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D1D1F4-4F12-48BC-B9C6-94D7B2ACBA4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D1D1F4-4F12-48BC-B9C6-94D7B2ACBA4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,3 +13,6 @@ C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\sublicreacr.Negoc
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicreacr.UI.csproj.CopyComplete
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.exe
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\Guna.UI2.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.LogIn.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.b.resources

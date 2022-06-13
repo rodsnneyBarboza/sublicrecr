@@ -67,17 +67,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarActualizarArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarActualizarArticulos.Designer.cs">
+      <DependentUpon>AgregarActualizarArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarActualizarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarActualizarCategoria.Designer.cs">
+      <DependentUpon>AgregarActualizarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarActualizarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarActualizarEmpresa.Designer.cs">
+      <DependentUpon>AgregarActualizarEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarActualizarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarActualizarUsuario.Designer.cs">
+      <DependentUpon>AgregarActualizarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -85,32 +103,80 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="MostrarArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarArticulos.Designer.cs">
+      <DependentUpon>MostrarArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarCategorias.Designer.cs">
+      <DependentUpon>MostrarCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarEmpresas.Designer.cs">
+      <DependentUpon>MostrarEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarUsuarios.Designer.cs">
+      <DependentUpon>MostrarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarActualizarArticulos.resx">
+      <DependentUpon>AgregarActualizarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarActualizarCategoria.resx">
+      <DependentUpon>AgregarActualizarCategoria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarActualizarEmpresa.resx">
+      <DependentUpon>AgregarActualizarEmpresa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarActualizarUsuario.resx">
+      <DependentUpon>AgregarActualizarUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MostrarArticulos.resx">
+      <DependentUpon>MostrarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarCategorias.resx">
+      <DependentUpon>MostrarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarEmpresas.resx">
+      <DependentUpon>MostrarEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarUsuarios.resx">
+      <DependentUpon>MostrarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -145,6 +211,8 @@
   <ItemGroup>
     <Content Include="imagenes\iconos\campana_notificacion.png" />
     <Content Include="imagenes\iconos\campana_sin_notificacion.png" />
+    <Content Include="imagenes\iconos\fecha_menu_sin_hover.png" />
+    <Content Include="imagenes\iconos\flecha_menu_con_hover.png" />
     <None Include="Resources\campana_notificacion.png.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

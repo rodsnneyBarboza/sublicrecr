@@ -3,4 +3,3 @@ C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Datos2\bin\Debug\sublicreacr
 C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Datos2\obj\Debug\sublicreacr.Datos.csproj.CoreCompileInputs.cache
 C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Datos2\obj\Debug\sublicreacr.Datos2.dll
 C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Datos2\obj\Debug\sublicreacr.Datos2.pdb
-C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Datos2\obj\Debug\sublicreacr.Datos.csproj.AssemblyReference.cache

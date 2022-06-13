@@ -124,6 +124,12 @@
   <data name="campana_sin_notificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagenes\iconos\campana_sin_notificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fecha_menu_sin_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes\iconos\fecha_menu_sin_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flecha_menu_con_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes\iconos\flecha_menu_con_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="String1" xml:space="preserve">
     <value>imagenes</value>
   </data>

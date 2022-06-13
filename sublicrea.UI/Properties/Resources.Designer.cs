@@ -81,6 +81,26 @@ namespace sublicrea.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fecha_menu_sin_hover {
+            get {
+                object obj = ResourceManager.GetObject("fecha_menu_sin_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flecha_menu_con_hover {
+            get {
+                object obj = ResourceManager.GetObject("flecha_menu_con_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to imagenes.
         /// </summary>
         internal static string String1 {

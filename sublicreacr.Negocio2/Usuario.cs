@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sublicreacr.Negocio
 {
-    class Usuario
+    public class Usuario
     {
         private string email;
         private string contrasena;
@@ -18,6 +18,11 @@ namespace sublicreacr.Negocio
         private bool estado;
         private int fkTipoUsuario;
         private int fkEmpresa;
+
+        public Usuario()
+        {
+
+        }
 
         public Usuario(string _email, string _contrasena, string _verificarContrasena, string _nombre
             , string _apellidos, int _telefono, byte[] _fotoPerfil, bool _estado, int _fkTipoUsuario

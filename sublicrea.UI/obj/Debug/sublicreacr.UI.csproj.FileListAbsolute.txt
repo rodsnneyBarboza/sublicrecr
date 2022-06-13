@@ -15,4 +15,11 @@ C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.exe
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.pdb
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\Guna.UI2.dll
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.LogIn.resources
-C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.b.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.AgregarActualizarEmpresa.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.AgregarActualizarArticulos.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.AgregarActualizarCategoria.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.AgregarActualizarUsuario.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MostrarArticulos.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MostrarCategorias.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MostrarEmpresas.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MostrarUsuarios.resources

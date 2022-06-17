@@ -15,9 +15,18 @@ namespace sublicrea.UI
     public partial class AgregarActualizarEmpresa : Form
     {
         private Validaciones val = new Validaciones();
-        public AgregarActualizarEmpresa()
+        private Usuario usuSesion = new Usuario();
+
+        public AgregarActualizarEmpresa(Usuario _usu, int _cedulaJuridica=-1)
         {
             InitializeComponent();
+            this.usuSesion = _usu;
+
+            if(_cedulaJuridica!= -1)
+            {
+                txtCedulaJuridica.Enabled = false;
+            }
+
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -62,6 +71,83 @@ namespace sublicrea.UI
         {
             e.Handled = val.validarSoloNumerosOLetras(e, "n");
 
+        }
+
+        private void btnMantenimientos_Click(object sender, EventArgs e)
+        {
+            pSubMenu.Visible = !pSubMenu.Visible;
+
+        }
+
+        private void btnCatalogo_Click(object sender, EventArgs e)
+        {
+            Catalogo ventana = new Catalogo(usuSesion);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btnAgregarUsuarioRedirigir_Click(object sender, EventArgs e)
+        {
+            AgregarActualizarUsuario ventana = new AgregarActualizarUsuario(usuSesion);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btnAgregarArticuloRedirigir_Click(object sender, EventArgs e)
+        {
+            Form arti = new AgregarActualizarArticulos(usuSesion);
+
+            arti.Show();
+            this.Hide();
+        }
+
+        private void btnAgregarCategoriaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form cat = new AgregarActualizarCategoria(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void btnAgregarEmpresaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form emp = new AgregarActualizarEmpresa(usuSesion);
+
+            emp.Show();
+            this.Hide();
+        }
+
+        private void btnUsuarioRedirigir_Click(object sender, EventArgs e)
+        {
+            Form usu = new MostrarUsuarios(usuSesion);
+
+            usu.Show();
+            this.Hide();
+        }
+
+        private void btnCategoriasRedirigir_Click(object sender, EventArgs e)
+        {
+
+            Form cat = new MostrarCategorias(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void btnEmpresasRedirigir_Click(object sender, EventArgs e)
+        {
+            Form emp = new MostrarEmpresas(usuSesion);
+
+            emp.Show();
+            this.Hide();
+        }
+
+        private void AgregarActualizarEmpresa_Load(object sender, EventArgs e)
+        {
+            lbEmail.Text = usuSesion.Email;
+            Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
+            picPerfil.Image = img;
+            lbRol.Text = usuSesion.TipoUsuario;
         }
     }
 }

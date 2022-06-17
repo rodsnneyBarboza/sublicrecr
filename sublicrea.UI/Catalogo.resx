@@ -177,7 +177,7 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="picLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pbLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQwAAAENCAIAAAB1ssxhAAAABGdBTUEAALGPC/xhBQAAF6dJREFUeF7t
         nT9vJEd6h/kR+BH4ERg4MozDfgR+BIYOGRlwcnQkZ2JwsBIDIhzcJQoIw4EiaQMDB8iwxUiQLWE90Pnu

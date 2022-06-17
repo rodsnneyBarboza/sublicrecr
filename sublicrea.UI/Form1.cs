@@ -14,6 +14,7 @@ namespace sublicrea.UI
 {
     public partial class Form1 : Form
     {
+        //gestorBase ges = new 
         public Form1()
         {
             InitializeComponent();
@@ -21,18 +22,18 @@ namespace sublicrea.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Categoria cat = new Categoria("test");
+            //try
+            //{
+            //    Categoria cat = new Categoria("test");
 
-                Gestor.agregarCategoria(cat);
-                MessageBox.Show("Registro agregado con exito");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    ges.agregarCategoria(cat);
+            //    MessageBox.Show("Registro agregado con exito");
+            //    this.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }

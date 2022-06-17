@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing;
 namespace sublicreacr.Negocio
 {
     public class Validaciones
@@ -82,16 +83,40 @@ namespace sublicreacr.Negocio
         public bool validarSoloNumerosOLetras(KeyPressEventArgs e,string tipo)
         {
             bool bloqueado = false;
-            if(tipo == "l" && char.IsNumber(e.KeyChar))
-            {
+            if (tipo == "l" && char.IsNumber(e.KeyChar))
+             {
                 bloqueado = true;
-            }else if(tipo == "n" && !char.IsNumber(e.KeyChar))
-            {
-              bloqueado = true;
-            }
-            
+             }
+             else if (tipo == "n" && !char.IsNumber(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+             {
+                bloqueado = true;
+              }
+              
 
             return bloqueado;
+        }
+
+        public byte[] convertirImagenesABytes(string _ruta)
+        {
+            Image img = Image.FromFile(_ruta);
+
+            MemoryStream ms = new MemoryStream();
+            
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                byte[] bytes = ms.ToArray();
+            
+
+            return bytes;
+        }
+
+        public Image convertirBytesAImagenes(byte[] imagen)
+        {
+            MemoryStream ms = new MemoryStream(imagen);
+
+            Image img = Image.FromStream(ms);
+
+            return img;
         }
 
         

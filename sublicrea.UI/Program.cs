@@ -16,7 +16,7 @@ namespace sublicrea.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AgregarActualizarUsuario());
+            Application.Run(new LogIn());
         }
     }
 }

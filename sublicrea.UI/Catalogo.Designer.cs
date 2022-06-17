@@ -1,7 +1,7 @@
 ﻿
 namespace sublicrea.UI
 {
-    partial class MostrarCategorias
+    partial class Catalogo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,19 @@ namespace sublicrea.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MostrarCategorias));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogo));
+            this.pSubMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAgregarEmpresaRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAgregarCategoriaRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAgregarArticuloRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAgregarUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEmpresasRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategoriasRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUsuariosRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
@@ -54,26 +55,102 @@ namespace sublicrea.UI
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCerrarSesion = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dtgCategorias = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pSubMenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnAgregarEmpresaRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAgregarCategoriaRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAgregarArticuloRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAgregarUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.pSubMenu.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategorias)).BeginInit();
-            this.pSubMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pSubMenu
+            // 
+            this.pSubMenu.BackColor = System.Drawing.Color.Gainsboro;
+            this.pSubMenu.Controls.Add(this.btnAgregarEmpresaRedirigir);
+            this.pSubMenu.Controls.Add(this.btnAgregarCategoriaRedirigir);
+            this.pSubMenu.Controls.Add(this.btnAgregarArticuloRedirigir);
+            this.pSubMenu.Controls.Add(this.btnAgregarUsuarioRedirigir);
+            this.pSubMenu.Location = new System.Drawing.Point(232, 283);
+            this.pSubMenu.Name = "pSubMenu";
+            this.pSubMenu.Size = new System.Drawing.Size(226, 116);
+            this.pSubMenu.TabIndex = 41;
+            this.pSubMenu.Visible = false;
+            // 
+            // btnAgregarEmpresaRedirigir
+            // 
+            this.btnAgregarEmpresaRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarEmpresaRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarEmpresaRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAgregarEmpresaRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregarEmpresaRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarEmpresaRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnAgregarEmpresaRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAgregarEmpresaRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAgregarEmpresaRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarEmpresaRedirigir.Location = new System.Drawing.Point(0, 81);
+            this.btnAgregarEmpresaRedirigir.Name = "btnAgregarEmpresaRedirigir";
+            this.btnAgregarEmpresaRedirigir.Size = new System.Drawing.Size(226, 27);
+            this.btnAgregarEmpresaRedirigir.TabIndex = 3;
+            this.btnAgregarEmpresaRedirigir.Text = "Agregar Empresa";
+            this.btnAgregarEmpresaRedirigir.Click += new System.EventHandler(this.btnAgregarEmpresaRedirigir_Click);
+            // 
+            // btnAgregarCategoriaRedirigir
+            // 
+            this.btnAgregarCategoriaRedirigir.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarCategoriaRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarCategoriaRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarCategoriaRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAgregarCategoriaRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregarCategoriaRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarCategoriaRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnAgregarCategoriaRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAgregarCategoriaRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAgregarCategoriaRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCategoriaRedirigir.Location = new System.Drawing.Point(0, 54);
+            this.btnAgregarCategoriaRedirigir.Name = "btnAgregarCategoriaRedirigir";
+            this.btnAgregarCategoriaRedirigir.Size = new System.Drawing.Size(226, 27);
+            this.btnAgregarCategoriaRedirigir.TabIndex = 2;
+            this.btnAgregarCategoriaRedirigir.Text = "Agregar Categoria";
+            this.btnAgregarCategoriaRedirigir.Click += new System.EventHandler(this.btnAgregarCategoriaRedirigir_Click);
+            // 
+            // btnAgregarArticuloRedirigir
+            // 
+            this.btnAgregarArticuloRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarArticuloRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarArticuloRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAgregarArticuloRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregarArticuloRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarArticuloRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnAgregarArticuloRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAgregarArticuloRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAgregarArticuloRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarArticuloRedirigir.Location = new System.Drawing.Point(0, 27);
+            this.btnAgregarArticuloRedirigir.Name = "btnAgregarArticuloRedirigir";
+            this.btnAgregarArticuloRedirigir.Size = new System.Drawing.Size(226, 27);
+            this.btnAgregarArticuloRedirigir.TabIndex = 1;
+            this.btnAgregarArticuloRedirigir.Text = "Agregar Artículo";
+            this.btnAgregarArticuloRedirigir.Click += new System.EventHandler(this.btnAgregarArticuloRedirigir_Click);
+            // 
+            // btnAgregarUsuarioRedirigir
+            // 
+            this.btnAgregarUsuarioRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarUsuarioRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarUsuarioRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAgregarUsuarioRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregarUsuarioRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarUsuarioRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnAgregarUsuarioRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAgregarUsuarioRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAgregarUsuarioRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarUsuarioRedirigir.Location = new System.Drawing.Point(0, 0);
+            this.btnAgregarUsuarioRedirigir.Name = "btnAgregarUsuarioRedirigir";
+            this.btnAgregarUsuarioRedirigir.Size = new System.Drawing.Size(226, 27);
+            this.btnAgregarUsuarioRedirigir.TabIndex = 0;
+            this.btnAgregarUsuarioRedirigir.Text = "Agregar Usuario";
+            this.btnAgregarUsuarioRedirigir.Click += new System.EventHandler(this.btnAgregarUsuarioRedirigir_Click);
             // 
             // guna2Panel2
             // 
@@ -107,11 +184,10 @@ namespace sublicrea.UI
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel4.Controls.Add(this.label8);
             this.guna2Panel4.Controls.Add(this.btnEmpresasRedirigir);
             this.guna2Panel4.Controls.Add(this.btnCategoriasRedirigir);
-            this.guna2Panel4.Controls.Add(this.btnUsuarioRedirigir);
+            this.guna2Panel4.Controls.Add(this.btnUsuariosRedirigir);
             this.guna2Panel4.Controls.Add(this.guna2Button4);
             this.guna2Panel4.Controls.Add(this.guna2Button3);
             this.guna2Panel4.Controls.Add(this.btnMantenimientos);
@@ -120,21 +196,6 @@ namespace sublicrea.UI
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(226, 292);
             this.guna2Panel4.TabIndex = 23;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(0, 294);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(226, 0);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox4.TabIndex = 44;
-            this.guna2PictureBox4.TabStop = false;
-            this.guna2PictureBox4.UseTransparentBackground = true;
-            this.guna2PictureBox4.Click += new System.EventHandler(this.guna2PictureBox4_Click);
             // 
             // label8
             // 
@@ -185,24 +246,24 @@ namespace sublicrea.UI
             this.btnCategoriasRedirigir.Text = "Categorias";
             this.btnCategoriasRedirigir.Click += new System.EventHandler(this.btnCategoriasRedirigir_Click);
             // 
-            // btnUsuarioRedirigir
+            // btnUsuariosRedirigir
             // 
-            this.btnUsuarioRedirigir.BackColor = System.Drawing.Color.Transparent;
-            this.btnUsuarioRedirigir.BorderColor = System.Drawing.Color.Transparent;
-            this.btnUsuarioRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUsuarioRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUsuarioRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUsuarioRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUsuarioRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuarioRedirigir.FillColor = System.Drawing.Color.Transparent;
-            this.btnUsuarioRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUsuarioRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnUsuarioRedirigir.Location = new System.Drawing.Point(0, 168);
-            this.btnUsuarioRedirigir.Name = "btnUsuarioRedirigir";
-            this.btnUsuarioRedirigir.Size = new System.Drawing.Size(226, 42);
-            this.btnUsuarioRedirigir.TabIndex = 5;
-            this.btnUsuarioRedirigir.Text = "Usuarios";
-            this.btnUsuarioRedirigir.Click += new System.EventHandler(this.btnUsuarioRedirigir_Click);
+            this.btnUsuariosRedirigir.BackColor = System.Drawing.Color.Transparent;
+            this.btnUsuariosRedirigir.BorderColor = System.Drawing.Color.Transparent;
+            this.btnUsuariosRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsuariosRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsuariosRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUsuariosRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUsuariosRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuariosRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnUsuariosRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUsuariosRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnUsuariosRedirigir.Location = new System.Drawing.Point(0, 168);
+            this.btnUsuariosRedirigir.Name = "btnUsuariosRedirigir";
+            this.btnUsuariosRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnUsuariosRedirigir.TabIndex = 5;
+            this.btnUsuariosRedirigir.Text = "Usuarios";
+            this.btnUsuariosRedirigir.Click += new System.EventHandler(this.btnUsuariosRedirigir_Click);
             // 
             // guna2Button4
             // 
@@ -340,11 +401,11 @@ namespace sublicrea.UI
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 6.8F);
             this.lbEmail.ForeColor = System.Drawing.SystemColors.Desktop;
             this.lbEmail.Location = new System.Drawing.Point(10, 89);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(165, 23);
+            this.lbEmail.Size = new System.Drawing.Size(102, 17);
             this.lbEmail.TabIndex = 8;
             this.lbEmail.Text = "Nombre Usuario";
             // 
@@ -353,12 +414,12 @@ namespace sublicrea.UI
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Controls.Add(this.btnCerrarSesion);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
+            this.guna2Panel1.Controls.Add(this.pbLogo);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.FillColor = System.Drawing.Color.Gainsboro;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1199, 62);
+            this.guna2Panel1.Size = new System.Drawing.Size(1034, 62);
             this.guna2Panel1.TabIndex = 38;
             // 
             // btnCerrarSesion
@@ -374,7 +435,7 @@ namespace sublicrea.UI
             this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(227)))));
             this.btnCerrarSesion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(227)))));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(1056, 21);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(868, 21);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(125, 30);
             this.btnCerrarSesion.TabIndex = 2;
@@ -385,7 +446,7 @@ namespace sublicrea.UI
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(985, 18);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(797, 18);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(31, 30);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -393,222 +454,65 @@ namespace sublicrea.UI
             this.guna2PictureBox3.TabStop = false;
             this.guna2PictureBox3.UseTransparentBackground = true;
             // 
-            // guna2PictureBox2
+            // pbLogo
             // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(3, -2);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(69, 64);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 2;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.ImageRotate = 0F;
+            this.pbLogo.Location = new System.Drawing.Point(3, -2);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(69, 64);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
+            this.pbLogo.UseTransparentBackground = true;
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.AutoScroll = true;
-            this.guna2Panel3.Controls.Add(this.dtgCategorias);
-            this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.Location = new System.Drawing.Point(232, 62);
+            this.guna2Panel3.Location = new System.Drawing.Point(230, 62);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(964, 478);
+            this.guna2Panel3.Size = new System.Drawing.Size(804, 478);
             this.guna2Panel3.TabIndex = 42;
             // 
-            // dtgCategorias
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dtgCategorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgCategorias.BackgroundColor = System.Drawing.Color.White;
-            this.dtgCategorias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgCategorias.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgCategorias.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgCategorias.EnableHeadersVisualStyles = false;
-            this.dtgCategorias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgCategorias.Location = new System.Drawing.Point(3, 89);
-            this.dtgCategorias.Name = "dtgCategorias";
-            this.dtgCategorias.RowHeadersVisible = false;
-            this.dtgCategorias.RowHeadersWidth = 51;
-            this.dtgCategorias.RowTemplate.Height = 24;
-            this.dtgCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCategorias.Size = new System.Drawing.Size(939, 377);
-            this.dtgCategorias.TabIndex = 15;
-            this.dtgCategorias.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtgCategorias.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dtgCategorias.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dtgCategorias.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dtgCategorias.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dtgCategorias.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dtgCategorias.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgCategorias.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtgCategorias.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dtgCategorias.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dtgCategorias.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dtgCategorias.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtgCategorias.ThemeStyle.HeaderStyle.Height = 20;
-            this.dtgCategorias.ThemeStyle.ReadOnly = false;
-            this.dtgCategorias.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtgCategorias.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgCategorias.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dtgCategorias.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dtgCategorias.ThemeStyle.RowsStyle.Height = 24;
-            this.dtgCategorias.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgCategorias.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dtgCategorias.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dtgCategorias_MouseDoubleClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 17.8F);
-            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(63, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(296, 37);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Lista de Categorías";
-            // 
-            // pSubMenu
-            // 
-            this.pSubMenu.BackColor = System.Drawing.Color.Gainsboro;
-            this.pSubMenu.Controls.Add(this.btnAgregarEmpresaRedirigir);
-            this.pSubMenu.Controls.Add(this.btnAgregarCategoriaRedirigir);
-            this.pSubMenu.Controls.Add(this.btnAgregarArticuloRedirigir);
-            this.pSubMenu.Controls.Add(this.btnAgregarUsuarioRedirigir);
-            this.pSubMenu.Location = new System.Drawing.Point(232, 283);
-            this.pSubMenu.Name = "pSubMenu";
-            this.pSubMenu.Size = new System.Drawing.Size(226, 116);
-            this.pSubMenu.TabIndex = 43;
-            this.pSubMenu.Visible = false;
-            // 
-            // btnAgregarEmpresaRedirigir
-            // 
-            this.btnAgregarEmpresaRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarEmpresaRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarEmpresaRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAgregarEmpresaRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarEmpresaRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarEmpresaRedirigir.FillColor = System.Drawing.Color.Transparent;
-            this.btnAgregarEmpresaRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAgregarEmpresaRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnAgregarEmpresaRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarEmpresaRedirigir.Location = new System.Drawing.Point(0, 81);
-            this.btnAgregarEmpresaRedirigir.Name = "btnAgregarEmpresaRedirigir";
-            this.btnAgregarEmpresaRedirigir.Size = new System.Drawing.Size(226, 27);
-            this.btnAgregarEmpresaRedirigir.TabIndex = 3;
-            this.btnAgregarEmpresaRedirigir.Text = "Agregar Empresa";
-            this.btnAgregarEmpresaRedirigir.Click += new System.EventHandler(this.btnAgregarEmpresaRedirigir_Click);
-            // 
-            // btnAgregarCategoriaRedirigir
-            // 
-            this.btnAgregarCategoriaRedirigir.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarCategoriaRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarCategoriaRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarCategoriaRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAgregarCategoriaRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarCategoriaRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarCategoriaRedirigir.FillColor = System.Drawing.Color.Transparent;
-            this.btnAgregarCategoriaRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAgregarCategoriaRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnAgregarCategoriaRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCategoriaRedirigir.Location = new System.Drawing.Point(0, 54);
-            this.btnAgregarCategoriaRedirigir.Name = "btnAgregarCategoriaRedirigir";
-            this.btnAgregarCategoriaRedirigir.Size = new System.Drawing.Size(226, 27);
-            this.btnAgregarCategoriaRedirigir.TabIndex = 2;
-            this.btnAgregarCategoriaRedirigir.Text = "Agregar Categoria";
-            // 
-            // btnAgregarArticuloRedirigir
-            // 
-            this.btnAgregarArticuloRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarArticuloRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarArticuloRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAgregarArticuloRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarArticuloRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarArticuloRedirigir.FillColor = System.Drawing.Color.Transparent;
-            this.btnAgregarArticuloRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAgregarArticuloRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnAgregarArticuloRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarArticuloRedirigir.Location = new System.Drawing.Point(0, 27);
-            this.btnAgregarArticuloRedirigir.Name = "btnAgregarArticuloRedirigir";
-            this.btnAgregarArticuloRedirigir.Size = new System.Drawing.Size(226, 27);
-            this.btnAgregarArticuloRedirigir.TabIndex = 1;
-            this.btnAgregarArticuloRedirigir.Text = "Agregar Artículo";
-            this.btnAgregarArticuloRedirigir.Click += new System.EventHandler(this.btnAgregarArticuloRedirigir_Click);
-            // 
-            // btnAgregarUsuarioRedirigir
-            // 
-            this.btnAgregarUsuarioRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarUsuarioRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarUsuarioRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAgregarUsuarioRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarUsuarioRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarUsuarioRedirigir.FillColor = System.Drawing.Color.Transparent;
-            this.btnAgregarUsuarioRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAgregarUsuarioRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnAgregarUsuarioRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarUsuarioRedirigir.Location = new System.Drawing.Point(0, 0);
-            this.btnAgregarUsuarioRedirigir.Name = "btnAgregarUsuarioRedirigir";
-            this.btnAgregarUsuarioRedirigir.Size = new System.Drawing.Size(226, 27);
-            this.btnAgregarUsuarioRedirigir.TabIndex = 0;
-            this.btnAgregarUsuarioRedirigir.Text = "Agregar Usuario";
-            this.btnAgregarUsuarioRedirigir.Click += new System.EventHandler(this.btnAgregarUsuarioRedirigir_Click);
-            // 
-            // MostrarCategorias
+            // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 540);
+            this.ClientSize = new System.Drawing.Size(1034, 540);
             this.Controls.Add(this.pSubMenu);
-            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "MostrarCategorias";
-            this.Text = "MostrarCategorias";
-            this.Load += new System.EventHandler(this.MostrarCategorias_Load);
-            this.Click += new System.EventHandler(this.MostrarCategorias_Click);
+            this.Controls.Add(this.guna2Panel3);
+            this.Name = "Catalogo";
+            this.Text = "Catalogo";
+            this.Load += new System.EventHandler(this.Catalogo_Load);
+            this.Click += new System.EventHandler(this.Catalogo_Click);
+            this.pSubMenu.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCategorias)).EndInit();
-            this.pSubMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2Panel pSubMenu;
+        private Guna.UI2.WinForms.Guna2Button btnAgregarEmpresaRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnAgregarCategoriaRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnAgregarArticuloRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnAgregarUsuarioRedirigir;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Button btnEmpresasRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnCategoriasRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnUsuarioRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnUsuariosRedirigir;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button btnMantenimientos;
@@ -622,15 +526,7 @@ namespace sublicrea.UI
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnCerrarSesion;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox pbLogo;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2DataGridView dtgCategorias;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Panel pSubMenu;
-        private Guna.UI2.WinForms.Guna2Button btnAgregarEmpresaRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnAgregarCategoriaRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnAgregarArticuloRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnAgregarUsuarioRedirigir;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sublicreacr.Negocio
 {
-    class Articulo
+    public class Articulo
     {
         private string nombre;
         private float precioVenta;
@@ -17,6 +17,10 @@ namespace sublicreacr.Negocio
         private int fkCedulaJuridica;
         private int fkIdCategoria;
 
+        public Articulo()
+        {
+
+        }
         public Articulo(string _nombre,float _precioVenta,int _cantidadDisponible,byte[] _imagen
             ,bool _estado,DateTime _fechaActualizacion,int _fkCedulaJuridica,int _fkIdCategoria)
         {

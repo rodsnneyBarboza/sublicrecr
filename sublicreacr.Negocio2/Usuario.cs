@@ -16,7 +16,9 @@ namespace sublicreacr.Negocio
         private int telefono;
         private byte[] fotoPerfil;
         private bool estado;
+        private string estadoLeyenda;
         private int fkTipoUsuario;
+        private string tipoUsuario;
         private int fkEmpresa;
 
         public Usuario()
@@ -26,7 +28,7 @@ namespace sublicreacr.Negocio
 
         public Usuario(string _email, string _contrasena, string _verificarContrasena, string _nombre
             , string _apellidos, int _telefono, byte[] _fotoPerfil, bool _estado, int _fkTipoUsuario
-            , int _fkEmpresa)
+            , int _fkEmpresa, string _tipoUsuario,string _estadoLeyenda)
         {
             this.email = _email;
             this.contrasena = _contrasena;
@@ -38,6 +40,8 @@ namespace sublicreacr.Negocio
             this.estado = _estado;
             this.fkTipoUsuario = _fkTipoUsuario;
             this.fkEmpresa = _fkEmpresa;
+            this.tipoUsuario = _tipoUsuario;
+            this.estadoLeyenda = _estadoLeyenda;
         }
 
         public string Email { get => email; set => email=value; }
@@ -49,7 +53,11 @@ namespace sublicreacr.Negocio
         public byte[] FotoPerfil { get => fotoPerfil; set => fotoPerfil = value; }
         public bool Estado { get => estado; set => estado = value; }
         public int FkTipoUsuario { get => fkTipoUsuario; set => fkTipoUsuario = value; }
-        public int FkEmpresa { get => FkEmpresa; set => fkEmpresa = value; }
+        public int FkEmpresa { get => fkEmpresa; set => fkEmpresa = value; }
+        public string TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
+        public string EstadoLeyenda { get => estadoLeyenda; set => estadoLeyenda = value; }
+
+
 
 
 

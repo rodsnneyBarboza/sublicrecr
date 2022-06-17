@@ -11,35 +11,26 @@ using System.Windows.Forms;
 
 namespace sublicrea.UI
 {
-    public partial class MostrarArticulos : Form
+    public partial class Catalogo : Form
     {
         private Usuario usuSesion = new Usuario();
         private Validaciones val = new Validaciones();
-
-        public MostrarArticulos(Usuario _usu)
+        public Catalogo(Usuario _usu)
         {
             InitializeComponent();
 
             this.usuSesion = _usu;
-
         }
 
-        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        public Catalogo()
         {
-
+            InitializeComponent();
         }
 
         private void btnMantenimientos_Click(object sender, EventArgs e)
         {
             pSubMenu.Visible = !pSubMenu.Visible;
 
-        }
-
-        private void btnCatalogo_Click(object sender, EventArgs e)
-        {
-            Catalogo ventana = new Catalogo(usuSesion);
-            this.Hide();
-            ventana.Show();
         }
 
         private void btnAgregarUsuarioRedirigir_Click(object sender, EventArgs e)
@@ -49,7 +40,7 @@ namespace sublicrea.UI
             ventana.Show();
         }
 
-        private void MostrarArticulos_Click(object sender, EventArgs e)
+        private void btnAgregarArticuloRedirigir_Click(object sender, EventArgs e)
         {
             Form arti = new AgregarActualizarArticulos(usuSesion);
 
@@ -65,6 +56,15 @@ namespace sublicrea.UI
             this.Hide();
         }
 
+        private void Catalogo_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        
         private void btnAgregarEmpresaRedirigir_Click(object sender, EventArgs e)
         {
             Form emp = new AgregarActualizarEmpresa(usuSesion);
@@ -73,36 +73,55 @@ namespace sublicrea.UI
             this.Hide();
         }
 
-        private void btnUsuarioRedirigir_Click(object sender, EventArgs e)
+        private void btnCatalogo_Click(object sender, EventArgs e)
         {
-            Form usu = new MostrarUsuarios(usuSesion);
+            Catalogo ventana = new Catalogo(usuSesion);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void Catalogo_Load(object sender, EventArgs e)
+        {
+            //if (usuSesion.Email == null)
+            //{
+
+            //    LogIn ventana = new LogIn();                
+            //    ventana.Show();
+            //    this.Hide();
+            //}
+
+            lbEmail.Text = usuSesion.Email;
+            Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
+            picPerfil.Image = img;
+            lbRol.Text = usuSesion.TipoUsuario;
+            
+        }
+
+        private void btnUsuariosRedirigir_Click(object sender, EventArgs e)
+        {
+            MostrarUsuarios usu = new MostrarUsuarios(usuSesion);
 
             usu.Show();
+
             this.Hide();
         }
 
         private void btnCategoriasRedirigir_Click(object sender, EventArgs e)
         {
-            Form cat = new MostrarCategorias(usuSesion);
+            MostrarCategorias cat = new MostrarCategorias(usuSesion);
 
             cat.Show();
+
             this.Hide();
         }
 
         private void btnEmpresasRedirigir_Click(object sender, EventArgs e)
         {
-            Form emp = new MostrarEmpresas(usuSesion);
+            MostrarEmpresas emp = new MostrarEmpresas(usuSesion);
 
             emp.Show();
-            this.Hide();
-        }
 
-        private void MostrarArticulos_Load(object sender, EventArgs e)
-        {
-            lbEmail.Text = usuSesion.Email;
-            Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
-            picPerfil.Image = img;
-            lbRol.Text = usuSesion.TipoUsuario;
+            this.Hide();
         }
     }
 }

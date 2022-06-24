@@ -16,6 +16,7 @@ namespace sublicrea.UI
         private Usuario usu = new Usuario();
         private Validaciones val = new Validaciones();
         private Gestor ges = new Gestor();
+        private Bitacora bit = new Bitacora();
         public LogIn()
         {
             InitializeComponent();
@@ -46,9 +47,16 @@ namespace sublicrea.UI
                             usu.FkTipoUsuario = (int)datos.Tables[0].Rows[0]["fk_tipo_usuario"];
                             usu.Apellidos = datos.Tables[0].Rows[0]["apellidos"].ToString();
                             usu.TipoUsuario = datos.Tables[0].Rows[0]["nombre_tipo_usuario"].ToString();
-
+                            usu.FkEmpresa = (long)datos.Tables[0].Rows[0]["fk_empresa"];
                             Catalogo cat = new Catalogo(usu);
 
+                            bit.FkEmail = usu.Email;
+                            bit.TipoMovimiento = "login";
+                            bit.DetalleMovimiento = "login usuario " + bit.FkEmail;
+                            bit.FechaInicio = DateTime.Now;
+                            bit.FechaFin = DateTime.Now;
+
+                            ges.agregarBitacora(bit);
                             cat.Show();
                             this.Hide();
                         }
@@ -82,6 +90,11 @@ namespace sublicrea.UI
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

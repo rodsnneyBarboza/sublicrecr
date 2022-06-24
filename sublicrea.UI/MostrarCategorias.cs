@@ -16,6 +16,7 @@ namespace sublicrea.UI
         private Usuario usuSesion = new Usuario();
         private Validaciones val = new Validaciones();
         private Gestor ges = new Gestor();
+        private Bitacora bit = new Bitacora();
 
         public MostrarCategorias(Usuario _usu)
         {
@@ -109,7 +110,15 @@ namespace sublicrea.UI
 
             this.dtgCategorias.DataSource = ges.mostrarCategoria();
 
-           
+            bit.FkEmail = this.usuSesion.Email;
+            bit.TipoMovimiento = "consultar";
+            bit.DetalleMovimiento = "consultar categorías";
+            bit.FechaInicio = DateTime.Now;
+            bit.FechaFin = DateTime.Now;
+
+            ges.agregarBitacora(bit);
+
+
         }
 
         private void dtgCategorias_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -119,6 +128,22 @@ namespace sublicrea.UI
             AgregarActualizarCategoria cat = new AgregarActualizarCategoria(usuSesion, idCategoria);
 
             cat.Show();
+            this.Hide();
+        }
+
+        private void btnArticulosRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MostrarArticulos(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MenuReportes(usuSesion);
+
+            art.Show();
             this.Hide();
         }
     }

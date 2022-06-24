@@ -11,20 +11,25 @@ using System.Windows.Forms;
 
 namespace sublicrea.UI
 {
-    public partial class Catalogo : Form
+    public partial class MenuReportes : Form
     {
+
         private Usuario usuSesion = new Usuario();
         private Validaciones val = new Validaciones();
-        public Catalogo(Usuario _usu)
+
+        public MenuReportes(Usuario _usu)
         {
             InitializeComponent();
 
             this.usuSesion = _usu;
+
         }
 
-        public Catalogo()
+        private void btnCatalogo_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            Catalogo ventana = new Catalogo(usuSesion);
+            this.Hide();
+            ventana.Show();
         }
 
         private void btnMantenimientos_Click(object sender, EventArgs e)
@@ -50,21 +55,12 @@ namespace sublicrea.UI
 
         private void btnAgregarCategoriaRedirigir_Click(object sender, EventArgs e)
         {
-            Form cat = new AgregarActualizarCategoria(usuSesion);
+            Form arti = new AgregarActualizarCategoria(usuSesion);
 
-            cat.Show();
+            arti.Show();
             this.Hide();
         }
 
-        private void Catalogo_Click(object sender, EventArgs e)
-        {
-            Form cat = new Catalogo(usuSesion);
-
-            cat.Show();
-            this.Hide();
-        }
-
-        
         private void btnAgregarEmpresaRedirigir_Click(object sender, EventArgs e)
         {
             Form emp = new AgregarActualizarEmpresa(usuSesion);
@@ -73,54 +69,29 @@ namespace sublicrea.UI
             this.Hide();
         }
 
-        private void btnCatalogo_Click(object sender, EventArgs e)
+     
+
+        private void btnUsuarioRedirigir_Click(object sender, EventArgs e)
         {
-            Catalogo ventana = new Catalogo(usuSesion);
-            this.Hide();
-            ventana.Show();
-        }
-
-        private void Catalogo_Load(object sender, EventArgs e)
-        {
-            //if (usuSesion.Email == null)
-            //{
-
-            //    LogIn ventana = new LogIn();                
-            //    ventana.Show();
-            //    this.Hide();
-            //}
-
-            lbEmail.Text = usuSesion.Email;
-            Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
-            picPerfil.Image = img;
-            lbRol.Text = usuSesion.TipoUsuario;
-            
-        }
-
-        private void btnUsuariosRedirigir_Click(object sender, EventArgs e)
-        {
-            MostrarUsuarios usu = new MostrarUsuarios(usuSesion);
+            Form usu = new MostrarUsuarios(usuSesion);
 
             usu.Show();
-
             this.Hide();
         }
 
         private void btnCategoriasRedirigir_Click(object sender, EventArgs e)
         {
-            MostrarCategorias cat = new MostrarCategorias(usuSesion);
+            Form cat = new MostrarCategorias(usuSesion);
 
             cat.Show();
-
             this.Hide();
         }
 
         private void btnEmpresasRedirigir_Click(object sender, EventArgs e)
         {
-            MostrarEmpresas emp = new MostrarEmpresas(usuSesion);
+            Form emp = new MostrarEmpresas(usuSesion);
 
             emp.Show();
-
             this.Hide();
         }
 
@@ -132,9 +103,33 @@ namespace sublicrea.UI
             this.Hide();
         }
 
+        private void MenuReportes_Load(object sender, EventArgs e)
+        {
+            lbEmail.Text = usuSesion.Email;
+            Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
+            picPerfil.Image = img;
+            lbRol.Text = usuSesion.TipoUsuario;
+        }
+
         private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
         {
             Form art = new MenuReportes(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void btnReporteEntradaYSalidaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new ReportesBitacoras(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Form art = new ReportesBitacoras(usuSesion);
 
             art.Show();
             this.Hide();

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sublicreacr.Negocio;
@@ -16,16 +18,17 @@ namespace sublicrea.UI
     {
         private Validaciones val = new Validaciones();
         private Usuario usuSesion = new Usuario();
+        private Empresa emp = new Empresa();
+        private long cedulaJuridica;
+        private Gestor ges = new Gestor();
+        private Bitacora bit = new Bitacora();
 
-        public AgregarActualizarEmpresa(Usuario _usu, int _cedulaJuridica=-1)
+        public AgregarActualizarEmpresa(Usuario _usu, long _cedulaJuridica = -1)
         {
             InitializeComponent();
             this.usuSesion = _usu;
 
-            if(_cedulaJuridica!= -1)
-            {
-                txtCedulaJuridica.Enabled = false;
-            }
+            this.cedulaJuridica = _cedulaJuridica;
 
         }
 
@@ -50,28 +53,13 @@ namespace sublicrea.UI
                     picLogo.ImageLocation = img;
                 }
 
-            }catch(Exception)
+            }
+            catch (Exception)
             {
                 MessageBox.Show("error");
             }
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCedulaJuridica_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = val.validarSoloNumerosOLetras(e, "n");
-
-        }
-
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = val.validarSoloNumerosOLetras(e, "n");
-
-        }
 
         private void btnMantenimientos_Click(object sender, EventArgs e)
         {
@@ -148,6 +136,131 @@ namespace sublicrea.UI
             Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
             picPerfil.Image = img;
             lbRol.Text = usuSesion.TipoUsuario;
+
+            List<Empresa> empresa = ges.mostrarEmpresa(this.cedulaJuridica);
+
+            if (this.cedulaJuridica != -1)
+            {
+                txtCedulaJuridica.Enabled = false;
+                txtCedulaJuridica.Text= empresa[0].CedulaJuridica.ToString();
+                txtNombreEmpresa.Text = empresa[0].NombreEmpresa.ToString();
+                txtTelefono.Text = empresa[0].Telefono.ToString();
+
+                if (empresa[0].Logo != null)
+                {
+                    emp.Logo = empresa[0].Logo;
+                    picLogo.Image = val.convertirBytesAImagenes(empresa[0].Logo);
+
+                }
+                else
+                {
+
+                    
+                    emp.Logo = val.convertirImagenesABytes(Environment.CurrentDirectory+"/images/imagen-defecto.png");
+                    picLogo.Image = val.convertirBytesAImagenes(emp.Logo);
+                }
+
+                lbTitulo.Text = "Actualizar Artículo";
+                btnAgregarActualizarEmpresa.Text = "Actualizar";
+            }
+            else
+            {
+                lbTitulo.Text = "Agregar Artículo";
+                btnAgregarActualizarEmpresa.Text = "Agregar";
+            }
+
+        }
+
+        private void btnAgregarActualizarEmpresa_Click(object sender, EventArgs e)
+        {
+            Empresa empresa = new Empresa();
+
+            if (!string.IsNullOrEmpty(txtCedulaJuridica.Text) &&
+                !string.IsNullOrEmpty(txtNombreEmpresa.Text) &&
+                !string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                if (!string.IsNullOrEmpty(picLogo.ImageLocation))
+                {
+                    empresa.Logo = val.convertirImagenesABytes(picLogo.ImageLocation);
+                }
+                else
+                {
+                    empresa.Logo = val.convertirImagenesABytes(Environment.CurrentDirectory + "/images/imagen-defecto.png");
+                }
+                
+
+                if (Regex.IsMatch(txtCedulaJuridica.Text, "^[0-9]+$") &&
+                    Regex.IsMatch(txtTelefono.Text, "^[0-9]+$"))
+                {
+                    if (txtCedulaJuridica.Text.Length >= 10)
+                    {
+                        if (txtTelefono.Text.Length == 8)
+                        {
+                            empresa.CedulaJuridica = Int64.Parse(txtCedulaJuridica.Text);
+                            empresa.Estado = true;
+                            empresa.NombreEmpresa = txtNombreEmpresa.Text;
+                            empresa.Telefono = Int32.Parse(txtTelefono.Text);
+
+                            bit.FkEmail = usuSesion.Email;
+
+                            bit.FechaInicio = DateTime.Now;
+                            bit.FechaFin = DateTime.Now;
+
+                            if (this.cedulaJuridica == -1)
+                            {
+                                bit.TipoMovimiento = "agregar";
+                                bit.DetalleMovimiento = "agregar empresa " + empresa.CedulaJuridica;
+                                ges.agregarBitacora(bit);
+                                ges.agregarEmpresa(empresa);
+                            }
+                            else
+                            {
+                                bit.TipoMovimiento = "actualizar";
+                                bit.DetalleMovimiento = "actualizar empresa " + empresa.CedulaJuridica;
+                                ges.agregarBitacora(bit);
+                                ges.actualizarEmpresa(empresa);
+
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("El teléfono debe contener 8 dígitos");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La cédula jurídica debe contener al menos 10 dígitos");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La cédula jurídica y el teléfono solo debe contener números");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar los campos obligatorios");
+
+            }
+        }
+
+        private void btnArticulosRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MostrarArticulos(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MenuReportes(usuSesion);
+
+            art.Show();
+            this.Hide();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace sublicrea.UI
         private Usuario usuSesion = new Usuario();
         private Validaciones val = new Validaciones();
         private Gestor ges = new Gestor();
+        private Bitacora bit = new Bitacora();
 
 
         public MostrarEmpresas(Usuario _usu)
@@ -100,21 +101,45 @@ namespace sublicrea.UI
             picPerfil.Image = img;
             lbRol.Text = usuSesion.TipoUsuario;
 
-            this.dtgEmpresas.DataSource = ges.mostrarEmpresas();
+            this.dtgEmpresas.DataSource = ges.mostrarEmpresa();
 
             this.dtgEmpresas.Columns["Logo"].Visible = false;
             this.dtgEmpresas.Columns["Estado"].Visible = false;
             this.dtgEmpresas.Columns["EstadoLeyenda"].HeaderText = "Estado";
+
+            bit.FkEmail = this.usuSesion.Email;
+            bit.TipoMovimiento = "consultar";
+            bit.DetalleMovimiento = "consultar empresas";
+            bit.FechaInicio = DateTime.Now;
+            bit.FechaFin = DateTime.Now;
+
+            ges.agregarBitacora(bit);
         }
 
         private void dtgEmpresas_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            int cedulJuridica =(int) this.dtgEmpresas.Rows[dtgEmpresas.CurrentRow.Index].Cells[0].Value;
+            long cedulJuridica =(long) this.dtgEmpresas.Rows[dtgEmpresas.CurrentRow.Index].Cells[0].Value;
 
             AgregarActualizarEmpresa usu = new AgregarActualizarEmpresa(usuSesion, cedulJuridica);
 
             usu.Show();
+            this.Hide();
+        }
+
+        private void btnArticulosRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MostrarArticulos(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MenuReportes(usuSesion);
+
+            art.Show();
             this.Hide();
         }
     }

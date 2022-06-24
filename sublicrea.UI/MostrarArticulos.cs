@@ -15,6 +15,8 @@ namespace sublicrea.UI
     {
         private Usuario usuSesion = new Usuario();
         private Validaciones val = new Validaciones();
+        private Gestor ges = new Gestor();
+        private Bitacora bit = new Bitacora();
 
         public MostrarArticulos(Usuario _usu)
         {
@@ -103,6 +105,48 @@ namespace sublicrea.UI
             Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
             picPerfil.Image = img;
             lbRol.Text = usuSesion.TipoUsuario;
+
+            this.dtgArticulos.DataSource = ges.mostrarArticulo();
+
+            this.dtgArticulos.Columns["Imagen"].Visible = false;
+            this.dtgArticulos.Columns["Estado"].Visible = false;
+            this.dtgArticulos.Columns["FkIdCategoria"].Visible = false;
+            this.dtgArticulos.Columns["FkCedulaJuridica"].HeaderText = "Céd Jurídica";
+            this.dtgArticulos.Columns["EstadoLeyenda"].HeaderText = "Estado";
+
+            bit.FkEmail = this.usuSesion.Email;
+            bit.TipoMovimiento = "consultar";
+            bit.DetalleMovimiento = "consultar artículos";
+            bit.FechaInicio = DateTime.Now;
+            bit.FechaFin = DateTime.Now;
+
+            ges.agregarBitacora(bit);
+        }
+
+        private void btnArticulosRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MostrarArticulos(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void dtgArticulos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int idArticulo = (int)this.dtgArticulos.Rows[dtgArticulos.CurrentRow.Index].Cells[0].Value;
+
+            AgregarActualizarArticulos art = new AgregarActualizarArticulos(usuSesion, idArticulo);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MenuReportes(usuSesion);
+
+            art.Show();
+            this.Hide();
         }
     }
 }

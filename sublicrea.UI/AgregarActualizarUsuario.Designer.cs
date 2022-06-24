@@ -35,9 +35,9 @@ namespace sublicrea.UI
             this.lbEmpresa = new System.Windows.Forms.Label();
             this.cbTipoUsuario = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbConfirmarContrasena = new System.Windows.Forms.Label();
             this.txtConfirmarContrasena = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbContrasena = new System.Windows.Forms.Label();
             this.txtContrasena = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNombreUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,19 +57,18 @@ namespace sublicrea.UI
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnArticulosRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEmpresasRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategoriasRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReportesMenuRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
             this.btnCatalogo = new Guna.UI2.WinForms.Guna2Button();
             this.picPerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.lbDesarrolladoPor = new System.Windows.Forms.Label();
             this.lbLinea = new System.Windows.Forms.Label();
             this.lbRol = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -96,9 +95,9 @@ namespace sublicrea.UI
             this.guna2Panel3.Controls.Add(this.lbEmpresa);
             this.guna2Panel3.Controls.Add(this.cbTipoUsuario);
             this.guna2Panel3.Controls.Add(this.label10);
-            this.guna2Panel3.Controls.Add(this.label9);
+            this.guna2Panel3.Controls.Add(this.lbConfirmarContrasena);
             this.guna2Panel3.Controls.Add(this.txtConfirmarContrasena);
-            this.guna2Panel3.Controls.Add(this.label8);
+            this.guna2Panel3.Controls.Add(this.lbContrasena);
             this.guna2Panel3.Controls.Add(this.txtContrasena);
             this.guna2Panel3.Controls.Add(this.txtNombreUsuario);
             this.guna2Panel3.Controls.Add(this.label7);
@@ -172,17 +171,17 @@ namespace sublicrea.UI
             this.label10.TabIndex = 33;
             this.label10.Text = "Tipo de usuario";
             // 
-            // label9
+            // lbConfirmarContrasena
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label9.Location = new System.Drawing.Point(527, 161);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(225, 23);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Confirmar Contraseña";
+            this.lbConfirmarContrasena.AutoSize = true;
+            this.lbConfirmarContrasena.BackColor = System.Drawing.Color.Transparent;
+            this.lbConfirmarContrasena.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbConfirmarContrasena.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbConfirmarContrasena.Location = new System.Drawing.Point(527, 161);
+            this.lbConfirmarContrasena.Name = "lbConfirmarContrasena";
+            this.lbConfirmarContrasena.Size = new System.Drawing.Size(225, 23);
+            this.lbConfirmarContrasena.TabIndex = 31;
+            this.lbConfirmarContrasena.Text = "Confirmar Contraseña";
             // 
             // txtConfirmarContrasena
             // 
@@ -205,17 +204,17 @@ namespace sublicrea.UI
             this.txtConfirmarContrasena.TabIndex = 30;
             this.txtConfirmarContrasena.UseSystemPasswordChar = true;
             // 
-            // label8
+            // lbContrasena
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label8.Location = new System.Drawing.Point(278, 161);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 23);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Contraseña";
+            this.lbContrasena.AutoSize = true;
+            this.lbContrasena.BackColor = System.Drawing.Color.Transparent;
+            this.lbContrasena.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbContrasena.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbContrasena.Location = new System.Drawing.Point(278, 161);
+            this.lbContrasena.Name = "lbContrasena";
+            this.lbContrasena.Size = new System.Drawing.Size(123, 23);
+            this.lbContrasena.TabIndex = 29;
+            this.lbContrasena.Text = "Contraseña";
             // 
             // txtContrasena
             // 
@@ -256,7 +255,6 @@ namespace sublicrea.UI
             this.txtNombreUsuario.SelectedText = "";
             this.txtNombreUsuario.Size = new System.Drawing.Size(230, 38);
             this.txtNombreUsuario.TabIndex = 26;
-            this.txtNombreUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreUsuario_KeyPress);
             // 
             // label7
             // 
@@ -341,7 +339,6 @@ namespace sublicrea.UI
             this.txtTelefono.SelectedText = "";
             this.txtTelefono.Size = new System.Drawing.Size(230, 38);
             this.txtTelefono.TabIndex = 20;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label5
             // 
@@ -373,7 +370,6 @@ namespace sublicrea.UI
             this.txtApellidosUsuario.SelectedText = "";
             this.txtApellidosUsuario.Size = new System.Drawing.Size(230, 38);
             this.txtApellidosUsuario.TabIndex = 18;
-            this.txtApellidosUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidosUsuario_KeyPress);
             // 
             // label4
             // 
@@ -492,11 +488,9 @@ namespace sublicrea.UI
             // guna2Panel2
             // 
             this.guna2Panel2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Controls.Add(this.guna2Panel4);
             this.guna2Panel2.Controls.Add(this.picPerfil);
             this.guna2Panel2.Controls.Add(this.label11);
-            this.guna2Panel2.Controls.Add(this.lbDesarrolladoPor);
             this.guna2Panel2.Controls.Add(this.lbLinea);
             this.guna2Panel2.Controls.Add(this.lbRol);
             this.guna2Panel2.Controls.Add(this.lbEmail);
@@ -507,32 +501,41 @@ namespace sublicrea.UI
             this.guna2Panel2.Size = new System.Drawing.Size(229, 478);
             this.guna2Panel2.TabIndex = 10;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(7, 442);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 2);
-            this.label1.TabIndex = 11;
-            // 
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.Controls.Add(this.btnArticulosRedirigir);
             this.guna2Panel4.Controls.Add(this.label2);
             this.guna2Panel4.Controls.Add(this.btnEmpresasRedirigir);
             this.guna2Panel4.Controls.Add(this.btnCategoriasRedirigir);
             this.guna2Panel4.Controls.Add(this.btnUsuarioRedirigir);
-            this.guna2Panel4.Controls.Add(this.guna2Button4);
+            this.guna2Panel4.Controls.Add(this.btnReportesMenuRedirigir);
             this.guna2Panel4.Controls.Add(this.guna2Button3);
             this.guna2Panel4.Controls.Add(this.btnMantenimientos);
             this.guna2Panel4.Controls.Add(this.btnCatalogo);
             this.guna2Panel4.Location = new System.Drawing.Point(0, 144);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(226, 292);
+            this.guna2Panel4.Size = new System.Drawing.Size(226, 334);
             this.guna2Panel4.TabIndex = 23;
+            // 
+            // btnArticulosRedirigir
+            // 
+            this.btnArticulosRedirigir.BackColor = System.Drawing.Color.Transparent;
+            this.btnArticulosRedirigir.BorderColor = System.Drawing.Color.Transparent;
+            this.btnArticulosRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnArticulosRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnArticulosRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnArticulosRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnArticulosRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnArticulosRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnArticulosRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnArticulosRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnArticulosRedirigir.Location = new System.Drawing.Point(0, 294);
+            this.btnArticulosRedirigir.Name = "btnArticulosRedirigir";
+            this.btnArticulosRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnArticulosRedirigir.TabIndex = 13;
+            this.btnArticulosRedirigir.Text = "Artículos";
+            this.btnArticulosRedirigir.Click += new System.EventHandler(this.btnArticulosRedirigir_Click);
             // 
             // label2
             // 
@@ -602,23 +605,24 @@ namespace sublicrea.UI
             this.btnUsuarioRedirigir.Text = "Usuarios";
             this.btnUsuarioRedirigir.Click += new System.EventHandler(this.btnUsuarioRedirigir_Click);
             // 
-            // guna2Button4
+            // btnReportesMenuRedirigir
             // 
-            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.guna2Button4.Location = new System.Drawing.Point(0, 126);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(226, 42);
-            this.guna2Button4.TabIndex = 3;
-            this.guna2Button4.Text = "Historial de transacciones";
+            this.btnReportesMenuRedirigir.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportesMenuRedirigir.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReportesMenuRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesMenuRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesMenuRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReportesMenuRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReportesMenuRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportesMenuRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnReportesMenuRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReportesMenuRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnReportesMenuRedirigir.Location = new System.Drawing.Point(0, 126);
+            this.btnReportesMenuRedirigir.Name = "btnReportesMenuRedirigir";
+            this.btnReportesMenuRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnReportesMenuRedirigir.TabIndex = 3;
+            this.btnReportesMenuRedirigir.Text = "Reportes de Bitácora";
+            this.btnReportesMenuRedirigir.Click += new System.EventHandler(this.btnReportesMenuRedirigir_Click);
             // 
             // guna2Button3
             // 
@@ -698,18 +702,6 @@ namespace sublicrea.UI
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(214, 2);
             this.label11.TabIndex = 13;
-            // 
-            // lbDesarrolladoPor
-            // 
-            this.lbDesarrolladoPor.AutoSize = true;
-            this.lbDesarrolladoPor.BackColor = System.Drawing.Color.Transparent;
-            this.lbDesarrolladoPor.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDesarrolladoPor.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lbDesarrolladoPor.Location = new System.Drawing.Point(3, 452);
-            this.lbDesarrolladoPor.Name = "lbDesarrolladoPor";
-            this.lbDesarrolladoPor.Size = new System.Drawing.Size(193, 17);
-            this.lbDesarrolladoPor.TabIndex = 12;
-            this.lbDesarrolladoPor.Text = "Desarrollado por Derek Garribo";
             // 
             // lbLinea
             // 
@@ -881,24 +873,22 @@ namespace sublicrea.UI
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2ComboBox cbTipoUsuario;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbConfirmarContrasena;
         private Guna.UI2.WinForms.Guna2TextBox txtConfirmarContrasena;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbContrasena;
         private Guna.UI2.WinForms.Guna2TextBox txtContrasena;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnEmpresasRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnCategoriasRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnUsuarioRedirigir;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnReportesMenuRedirigir;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button btnMantenimientos;
         private Guna.UI2.WinForms.Guna2Button btnCatalogo;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picPerfil;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lbDesarrolladoPor;
         private System.Windows.Forms.Label lbLinea;
         private System.Windows.Forms.Label lbRol;
         private System.Windows.Forms.Label lbEmail;
@@ -909,5 +899,6 @@ namespace sublicrea.UI
         private Guna.UI2.WinForms.Guna2Button btnAgregarUsuarioRedirigir;
         private Guna.UI2.WinForms.Guna2ComboBox cbEmpresa;
         private System.Windows.Forms.Label lbEmpresa;
+        private Guna.UI2.WinForms.Guna2Button btnArticulosRedirigir;
     }
 }

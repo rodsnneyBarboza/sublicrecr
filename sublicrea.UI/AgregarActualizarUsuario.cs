@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sublicreacr.Negocio;
@@ -16,19 +17,16 @@ namespace sublicrea.UI
         private Validaciones val = new Validaciones();
         private Gestor ges = new Gestor();
         private Usuario usuSesion = new Usuario();
+        private Usuario usu = new Usuario();
+        private string correo;
+        private Bitacora bit = new Bitacora();
 
-        public AgregarActualizarUsuario(Usuario _usu,string _email = null)
+        public AgregarActualizarUsuario(Usuario _usu,string _email = "n/a")
         {
             InitializeComponent();
 
             usuSesion = _usu;
-
-            if(!string.IsNullOrEmpty(_email))
-            {
-                MessageBox.Show(_email);
-
-                txtEmail.Enabled = false;
-            }
+            this.correo = _email;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -50,6 +48,8 @@ namespace sublicrea.UI
                 {
                     img = archivo.FileName;
                     picFoto.ImageLocation = img;
+
+                    usu.FotoPerfil = val.convertirImagenesABytes(picFoto.ImageLocation);
                 }
 
             }
@@ -59,46 +59,106 @@ namespace sublicrea.UI
             }
         }
 
-        private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = val.validarSoloNumerosOLetras(e, "l");
+       
 
-        }
-
-        private void txtApellidosUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = val.validarSoloNumerosOLetras(e, "l");
-
-        }
-
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = val.validarSoloNumerosOLetras(e, "n");
-
-        }
+        
 
         private void btnAgregarActualizarEmpresa_Click(object sender, EventArgs e)
         {
-            Usuario usu = new Usuario();
+            Usuario usuario = new Usuario();
 
-            usu.Email = "Rodsnney21@gmail.com";
-            usu.Nombre = "Rodsnney";
-            usu.Contrasena = "Trew201971!";
-            usu.Apellidos = "Barboza Araya";
-            usu.Estado = true;
-            usu.FkEmpresa = 111111111;
-            usu.FkTipoUsuario = 1;
-            usu.Telefono = 83094186;
-            usu.FotoPerfil = val.convertirImagenesABytes("C:/Users/rodsn/OneDrive/Desktop/angie_foto.JPG");
+            if (!string.IsNullOrEmpty(txtEmail.Text) &&
+                !string.IsNullOrEmpty(txtNombreUsuario.Text) &&
+                !string.IsNullOrEmpty(txtApellidosUsuario.Text) &&
+                !string.IsNullOrEmpty(txtTelefono.Text)
+                )
+            {
+                if(txtEmail.Text.Contains(".") && txtEmail.Text.Contains("@"))
+                {
+                    if (txtNombreUsuario.Text.IndexOfAny("0123456789".ToCharArray()) == -1 && 
+                        txtApellidosUsuario.Text.IndexOfAny("0123456789".ToCharArray())==-1)
+                    {
+                        if(Regex.IsMatch(txtTelefono.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+                        {
+                            if (!cbEmpresa.Text.Equals("Seleccione") 
+                                    && !cbTipoUsuario.Text.Equals("Seleccione"))
+                                {
+                                    usu.Email = txtEmail.Text;
+                                    usu.Nombre = txtNombreUsuario.Text;
+                                    usu.Contrasena = txtContrasena.Text;
+                                    usu.Apellidos = txtApellidosUsuario.Text;
+                                    usu.Estado = true;
+                                    usu.FkEmpresa = long.Parse(cbEmpresa.Text.Split(' ')[0]);
+                                    usu.FkTipoUsuario = Int32.Parse(cbTipoUsuario.Text.Substring(0, 1)); ;
+                                    usu.Telefono = Int32.Parse(txtTelefono.Text);
 
+                                bit.FkEmail = usuSesion.Email;
 
-            ges.agregarUsuario(usu);
+                                bit.FechaInicio = DateTime.Now;
+                                bit.FechaFin = DateTime.Now;
 
+                                if (this.correo.Equals("n/a"))
+                                    {
+                                        if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text) && !string.IsNullOrEmpty(txtContrasena.Text) &&
+                                            !string.IsNullOrEmpty(txtConfirmarContrasena.Text))
+                                        {
+                                        bit.TipoMovimiento = "agregar";
+                                        bit.DetalleMovimiento = "agregar usuario " + usu.Email;
+                                        ges.agregarBitacora(bit);
+
+                                        ges.agregarUsuario(usu);
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("El campo contraseña y verificar contraseña deben de ser iguales");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        usu.Contrasena = "n/a";
+                                    bit.TipoMovimiento = "actualizar";
+                                    bit.DetalleMovimiento = "actualizar usuario " + usu.Email;
+                                    ges.agregarBitacora(bit);
+                                    ges.actualizarUsuario(usu);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("seleccione una empresa y un tipo de usuario ");
+
+                                }
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("El número de teléfono debe contener solo números");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre del usuario y sus apellidos no debe contener números");
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El correo debe contener el formato correcto");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar los campos obligatorios");
+            }
         }
-
         private void AgregarActualizarUsuario_Load(object sender, EventArgs e)
         {
             Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
+            List<Usuario> usuario = ges.mostrarUsuarios(this.correo);
+            
+
             picPerfil.Image = img;
             lbRol.Text = usuSesion.TipoUsuario;
             lbEmail.Text = usuSesion.Email;
@@ -123,6 +183,43 @@ namespace sublicrea.UI
             {
                 cbEmpresa.Items.Add(emp[i].CedulaJuridica.ToString() + " - " + emp[i].NombreEmpresa.ToString());
             }
+
+            if (!this.correo.Equals("n/a"))
+            {
+                List<Empresa> empresa = ges.mostrarEmpresa(usuario[0].FkEmpresa);
+                List<TipoUsuario> tipoUsuario = ges.mostrarTipoUsuario(usuario[0].FkTipoUsuario);
+
+                txtEmail.Enabled = false;
+                txtEmail.Text = usuario[0].Email.ToString();
+                txtNombreUsuario.Text = usuario[0].Nombre.ToString();
+                txtApellidosUsuario.Text = usuario[0].Apellidos.ToString();
+                txtTelefono.Text = usuario[0].Telefono.ToString();
+
+                if (usuario[0].FotoPerfil != null)
+                {
+
+                    picFoto.Image = val.convertirBytesAImagenes(usuario[0].FotoPerfil);
+                    usu.FotoPerfil = usuario[0].FotoPerfil;
+                }
+                else
+                {                    
+                    picFoto.Image = val.convertirBytesAImagenes(val.convertirImagenesABytes(Environment.CurrentDirectory + "/images/imagen-defecto.png"));
+                    usu.FotoPerfil = val.convertirImagenesABytes(Environment.CurrentDirectory + "/images/imagen-defecto.png");
+                }
+
+                string tipoUsuarioSeleccionado = tipoUsuario[0].IdTipoUsuario.ToString() + " - " + tipoUsuario[0].NombreTipoUsuario.ToString();
+                string empresaSeleccionada = empresa[0].CedulaJuridica.ToString() + " - " + empresa[0].NombreEmpresa.ToString();
+
+                cbTipoUsuario.Text = tipoUsuarioSeleccionado;
+                cbEmpresa.Text = empresaSeleccionada;
+
+                txtContrasena.Visible = false;
+                txtConfirmarContrasena.Visible = false;
+                lbContrasena.Visible = false;
+                lbConfirmarContrasena.Visible = false;
+
+            }
+           
         }
 
         private void btnMantenimientos_Click(object sender, EventArgs e)
@@ -192,6 +289,22 @@ namespace sublicrea.UI
             Form emp = new MostrarEmpresas(usuSesion);
 
             emp.Show();
+            this.Hide();
+        }
+
+        private void btnArticulosRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MostrarArticulos(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MenuReportes(usuSesion);
+
+            art.Show();
             this.Hide();
         }
     }

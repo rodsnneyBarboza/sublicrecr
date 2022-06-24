@@ -17,6 +17,7 @@ namespace sublicrea.UI
         private Usuario usuSesion = new Usuario();
         private Validaciones val = new Validaciones();
         private Gestor ges = new Gestor();
+        private Bitacora bit = new Bitacora();
 
         public MostrarUsuarios(Usuario _usu)
         {
@@ -113,6 +114,14 @@ namespace sublicrea.UI
                 this.dtgUsuarios.Columns["Estado"].Visible = false;
                 this.dtgUsuarios.Columns["EstadoLeyenda"].HeaderText = "Estado";
 
+                bit.FkEmail = this.usuSesion.Email;
+                bit.TipoMovimiento = "consultar";
+                bit.DetalleMovimiento = "consultar usuarios";
+                bit.FechaInicio = DateTime.Now;
+                bit.FechaFin = DateTime.Now;
+
+                ges.agregarBitacora(bit);
+
             }
             catch (Exception ex)
             {
@@ -130,6 +139,33 @@ namespace sublicrea.UI
             this.Hide();
         }
 
-        
+        private void btnArticulosRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MostrarArticulos(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarCategoriaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form arti = new AgregarActualizarCategoria(usuSesion);
+
+            arti.Show();
+            this.Hide();
+        }
+
+        private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MenuReportes(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
     }
 }

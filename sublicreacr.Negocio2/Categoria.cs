@@ -11,7 +11,10 @@ namespace sublicreacr.Negocio
         private int idCategoria;
         private string nombreCategoria;
 
+        public Categoria()
+        {
 
+        }
         public Categoria(int _idCategoria,string _nombreCategoria)
         {
             this.nombreCategoria = _nombreCategoria;

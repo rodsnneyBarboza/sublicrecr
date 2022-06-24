@@ -1,4 +1,3 @@
-C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Form1.resources
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Properties.Resources.resources
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicreacr.UI.csproj.GenerateResource.cache
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicreacr.UI.csproj.CoreCompileInputs.cache
@@ -24,3 +23,5 @@ C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Most
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MostrarEmpresas.resources
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MostrarUsuarios.resources
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Catalogo.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MenuReportes.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.ReportesBitacoras.resources

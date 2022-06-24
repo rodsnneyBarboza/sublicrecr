@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,21 +18,17 @@ namespace sublicrea.UI
         private Gestor ges = new Gestor();
         private Usuario usuSesion = new Usuario();
         private Articulo art = new Articulo();
+        private int idArticulo;
+        private Bitacora bit = new Bitacora();
 
-        public AgregarActualizarArticulos(Usuario _usu)
+        public AgregarActualizarArticulos(Usuario _usu, int _idArticulo=-1)
         {
             InitializeComponent();
             this.usuSesion = _usu;
 
-        }
+            this.idArticulo = _idArticulo;
 
-        private void guna2ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
 
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
         }
 
@@ -107,19 +104,73 @@ namespace sublicrea.UI
                 else
                 {
 
-                    art.Imagen = null;
+                    art.Imagen = val.convertirImagenesABytes(Environment.CurrentDirectory + "/images/imagen-defecto.png");
+                    picArticulo.Image = val.convertirBytesAImagenes(art.Imagen);
                 }
 
-                if (!cbCategoria.Text.Equals("Seleccione"))
-                {
-                    MessageBox.Show(cbCategoria.Text.Substring(0, 1));
+                    if(Regex.IsMatch(txtNombreArticulo.Text, @"^[a-zA-Z]+$"))
+                    {
+                        if (Regex.IsMatch(txtCantidadDisponible.Text, "^[0-9]+$")
+                            && Regex.IsMatch(txtPrecioVenta.Text, "^[0-9]+$"))
+                        {
+                        if (Int64.Parse(txtCantidadDisponible.Text) > 0 && Decimal.Parse(txtPrecioVenta.Text) > 0)
+                        {
+                            if (!cbCategoria.Text.Equals("Seleccione"))
+                            {
+                                art.Nombre = txtNombreArticulo.Text;
+                                art.CantidadDisponible = Int32.Parse(txtCantidadDisponible.Text);
+                                art.PrecioVenta = float.Parse(txtPrecioVenta.Text);
+                                art.FechaActualizacion = DateTime.Now;
+                                art.FkCedulaJuridica = usuSesion.FkEmpresa;
+                                art.FkIdCategoria = Int32.Parse(cbCategoria.Text.Substring(0, 1));
+                                art.Estado = true;
 
-                }
-                else
-                {
-                    MessageBox.Show("seleccione una categoria");
+                                bit.FkEmail = this.usuSesion.Email;
+                                bit.FechaInicio = DateTime.Now;
+                                bit.FechaFin = DateTime.Now;
 
-                }
+
+                                if (this.idArticulo == -1)
+                                {
+                                    bit.TipoMovimiento = "agregar";
+                                    bit.DetalleMovimiento = "agregar articulo "+art.Nombre;
+                                    ges.agregarArticulo(art);
+                                    ges.agregarBitacora(bit);
+
+                                }
+                                else
+                                {
+                                    bit.TipoMovimiento = "actualizar";
+                                    bit.DetalleMovimiento = "actualizar articulo " + art.Nombre;
+                                    art.IdArticulo = Int32.Parse(txtIddArticulo.Text);
+
+                                   ges.actualizarArticulo(art);
+                                    ges.agregarBitacora(bit);
+
+
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("seleccione una categoria");
+
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La cantidad del artículo y el precio de venta deben de ser mayor a 0");
+                        }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La cantidad del articulo y el precio solo debe contener números");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre del artículo no debe contener números");
+                    }
+                
             }
             else
             {
@@ -127,23 +178,14 @@ namespace sublicrea.UI
             }
         }
 
-        private void txtCantidadDisponible_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = val.validarSoloNumerosOLetras(e, "n");
-
-        }
-
-        private void txtNombreArticulo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = val.validarSoloNumerosOLetras(e, "l");
-
-
-        }
+     
 
 
         private void AgregarActualizarArticulos_Load(object sender, EventArgs e)
         {
             List<Categoria> cat = ges.mostrarCategoria();
+            List<Articulo> articulo = ges.mostrarArticulo(this.idArticulo);
+
 
             cbCategoria.Items.Add("Seleccione");
             cbCategoria.SelectedItem = "Seleccione";
@@ -157,6 +199,32 @@ namespace sublicrea.UI
             Image img = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
             picPerfil.Image = img;
             lbRol.Text = usuSesion.TipoUsuario;
+
+            if (this.idArticulo != -1)
+            {
+                List<Categoria> categoriaSeleccionada = ges.mostrarCategoria(articulo[0].FkIdCategoria);
+
+                txtIddArticulo.Visible = true;
+                txtIddArticulo.Enabled = false;
+                lbIdArticulo.Visible = true;
+                txtIddArticulo.Text = articulo[0].IdArticulo.ToString();
+                txtNombreArticulo.Text = articulo[0].Nombre.ToString();
+                txtCantidadDisponible.Text = articulo[0].CantidadDisponible.ToString();
+                txtPrecioVenta.Text = articulo[0].PrecioVenta.ToString();
+                picArticulo.Image = val.convertirBytesAImagenes(articulo[0].Imagen);
+                string cbCategoria2 = categoriaSeleccionada[0].IdCategoria.ToString() + " - " + categoriaSeleccionada[0].NombreCategoria.ToString();
+
+                cbCategoria.Text = cbCategoria2;
+
+                art.Imagen = articulo[0].Imagen;
+                lbTitulo.Text = "Actualizar Artículo";
+                btnAgregarActualizarArticulo.Text = "Actualizar";
+            }
+            else
+            {
+                lbTitulo.Text = "Agregar Artículo";
+                btnAgregarActualizarArticulo.Text = "Agregar";
+            }
         }
 
         private void btnMantenimientos_MouseHover(object sender, EventArgs e)
@@ -202,6 +270,20 @@ namespace sublicrea.UI
             this.Hide();
         }
 
-        
+        private void btnArticulosRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MostrarArticulos(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
+
+        private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
+        {
+            Form art = new MenuReportes(usuSesion);
+
+            art.Show();
+            this.Hide();
+        }
     }
 }

@@ -13,13 +13,13 @@ namespace sublicreacr.Negocio
         private string verificarContrasena;
         private string nombre;
         private string apellidos;
-        private int telefono;
+        private long telefono;
         private byte[] fotoPerfil;
         private bool estado;
         private string estadoLeyenda;
         private int fkTipoUsuario;
         private string tipoUsuario;
-        private int fkEmpresa;
+        private long fkEmpresa;
 
         public Usuario()
         {
@@ -27,8 +27,8 @@ namespace sublicreacr.Negocio
         }
 
         public Usuario(string _email, string _contrasena, string _verificarContrasena, string _nombre
-            , string _apellidos, int _telefono, byte[] _fotoPerfil, bool _estado, int _fkTipoUsuario
-            , int _fkEmpresa, string _tipoUsuario,string _estadoLeyenda)
+            , string _apellidos, long _telefono, byte[] _fotoPerfil, bool _estado, int _fkTipoUsuario
+            , long _fkEmpresa, string _tipoUsuario,string _estadoLeyenda)
         {
             this.email = _email;
             this.contrasena = _contrasena;
@@ -49,11 +49,11 @@ namespace sublicreacr.Negocio
         public string VerificacionContrasena { get => verificarContrasena; set => verificarContrasena = value; }
         public string Nombre { get=>nombre; set=>nombre=value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
-        public int Telefono { get => telefono; set => telefono = value; }
+        public long Telefono { get => telefono; set => telefono = value; }
         public byte[] FotoPerfil { get => fotoPerfil; set => fotoPerfil = value; }
         public bool Estado { get => estado; set => estado = value; }
         public int FkTipoUsuario { get => fkTipoUsuario; set => fkTipoUsuario = value; }
-        public int FkEmpresa { get => fkEmpresa; set => fkEmpresa = value; }
+        public long FkEmpresa { get => fkEmpresa; set => fkEmpresa = value; }
         public string TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
         public string EstadoLeyenda { get => estadoLeyenda; set => estadoLeyenda = value; }
 

@@ -199,6 +199,35 @@ namespace sublicreacr.Negocio
             }
         }
 
+        public List<Bitacora> mostrarBitacora(Bitacora _bit=null)
+        {
+            try
+            {
+                List<Bitacora> bit = new List<Bitacora>();
+                DataRowCollection datos = ges.mostrarBitacora(_bit).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Bitacora b = new Bitacora();
+
+                    b.FkEmail = datos[i]["fk_email"].ToString();
+                    b.FechaInicio = (DateTime)datos[i]["fecha_inicio"];
+                    b.FechaFin = (DateTime)datos[i]["fecha_fin"];
+                    b.TipoMovimiento = datos[i]["tipo_movimiento"].ToString();
+                    b.DetalleMovimiento = datos[i]["detalle_movmiento"].ToString();
+                    
+                    bit.Add(b);
+                }
+                return bit;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
         #endregion
 
         #region agregar

@@ -29,16 +29,29 @@ namespace sublicrea.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesBitacoras));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pSubMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAgregarEmpresaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarCategoriaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarArticuloRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnMovimientoSistemaRedirigir = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnExportarExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExportarPDF = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConsultar = new Guna.UI2.WinForms.Guna2Button();
+            this.lbTipoMovimiento = new System.Windows.Forms.Label();
+            this.cbTipoMovimiento = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbFechaFin = new System.Windows.Forms.Label();
+            this.lbFechaInicio = new System.Windows.Forms.Label();
+            this.dtpFechaFin = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpFechaInicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.lbEmailReporte = new System.Windows.Forms.Label();
+            this.cbEmailReporte = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtgReportesBitacora = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lbTituloReportes = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnArticulosRedirigir = new Guna.UI2.WinForms.Guna2Button();
@@ -46,10 +59,10 @@ namespace sublicrea.UI
             this.btnEmpresasRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategoriasRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReportesMenuRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReportesBitacoraRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReportesRedirigr = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCatalogo = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCatalogoRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.picPerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbLinea = new System.Windows.Forms.Label();
@@ -57,30 +70,17 @@ namespace sublicrea.UI
             this.lbEmail = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCerrarSesion = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbTituloReportes = new System.Windows.Forms.Label();
-            this.dtgReportesBitacora = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cbEmailReporte = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbEmailReporte = new System.Windows.Forms.Label();
-            this.dtpFechaInicio = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpFechaFin = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.lbFechaInicio = new System.Windows.Forms.Label();
-            this.lbFechaFin = new System.Windows.Forms.Label();
-            this.lbTipoMovimiento = new System.Windows.Forms.Label();
-            this.cbTipoMovimiento = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnConsultar = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.picCampana = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pSubMenu.SuspendLayout();
             this.btnMovimientoSistemaRedirigir.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReportesBitacora)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgReportesBitacora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCampana)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pSubMenu
@@ -112,6 +112,8 @@ namespace sublicrea.UI
             this.btnAgregarEmpresaRedirigir.Size = new System.Drawing.Size(226, 27);
             this.btnAgregarEmpresaRedirigir.TabIndex = 3;
             this.btnAgregarEmpresaRedirigir.Text = "Agregar Empresa";
+            this.btnAgregarEmpresaRedirigir.Visible = false;
+            this.btnAgregarEmpresaRedirigir.Click += new System.EventHandler(this.btnAgregarEmpresaRedirigir_Click);
             // 
             // btnAgregarCategoriaRedirigir
             // 
@@ -130,6 +132,8 @@ namespace sublicrea.UI
             this.btnAgregarCategoriaRedirigir.Size = new System.Drawing.Size(226, 27);
             this.btnAgregarCategoriaRedirigir.TabIndex = 2;
             this.btnAgregarCategoriaRedirigir.Text = "Agregar Categoria";
+            this.btnAgregarCategoriaRedirigir.Visible = false;
+            this.btnAgregarCategoriaRedirigir.Click += new System.EventHandler(this.btnAgregarCategoriaRedirigir_Click);
             // 
             // btnAgregarArticuloRedirigir
             // 
@@ -147,6 +151,8 @@ namespace sublicrea.UI
             this.btnAgregarArticuloRedirigir.Size = new System.Drawing.Size(226, 27);
             this.btnAgregarArticuloRedirigir.TabIndex = 1;
             this.btnAgregarArticuloRedirigir.Text = "Agregar Artículo";
+            this.btnAgregarArticuloRedirigir.Visible = false;
+            this.btnAgregarArticuloRedirigir.Click += new System.EventHandler(this.btnAgregarArticuloRedirigir_Click);
             // 
             // btnAgregarUsuarioRedirigir
             // 
@@ -164,12 +170,14 @@ namespace sublicrea.UI
             this.btnAgregarUsuarioRedirigir.Size = new System.Drawing.Size(226, 27);
             this.btnAgregarUsuarioRedirigir.TabIndex = 0;
             this.btnAgregarUsuarioRedirigir.Text = "Agregar Usuario";
+            this.btnAgregarUsuarioRedirigir.Visible = false;
+            this.btnAgregarUsuarioRedirigir.Click += new System.EventHandler(this.btnAgregarUsuarioRedirigir_Click);
             // 
             // btnMovimientoSistemaRedirigir
             // 
             this.btnMovimientoSistemaRedirigir.AutoScroll = true;
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.guna2Button2);
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.guna2Button1);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnExportarExcel);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnExportarPDF);
             this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnConsultar);
             this.btnMovimientoSistemaRedirigir.Controls.Add(this.lbTipoMovimiento);
             this.btnMovimientoSistemaRedirigir.Controls.Add(this.cbTipoMovimiento);
@@ -185,6 +193,233 @@ namespace sublicrea.UI
             this.btnMovimientoSistemaRedirigir.Name = "btnMovimientoSistemaRedirigir";
             this.btnMovimientoSistemaRedirigir.Size = new System.Drawing.Size(964, 478);
             this.btnMovimientoSistemaRedirigir.TabIndex = 48;
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportarExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportarExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(124)))), ((int)(((byte)(65)))));
+            this.btnExportarExcel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExportarExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportarExcel.Location = new System.Drawing.Point(258, 146);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(123, 36);
+            this.btnExportarExcel.TabIndex = 45;
+            this.btnExportarExcel.Text = "Exportar Excel";
+            this.btnExportarExcel.Visible = false;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportarPDF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportarPDF.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(62)))), ((int)(((byte)(28)))));
+            this.btnExportarPDF.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExportarPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportarPDF.Location = new System.Drawing.Point(129, 146);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(123, 36);
+            this.btnExportarPDF.TabIndex = 44;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.Visible = false;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConsultar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConsultar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConsultar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(11, 146);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(110, 36);
+            this.btnConsultar.TabIndex = 43;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // lbTipoMovimiento
+            // 
+            this.lbTipoMovimiento.AutoSize = true;
+            this.lbTipoMovimiento.BackColor = System.Drawing.Color.Transparent;
+            this.lbTipoMovimiento.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbTipoMovimiento.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbTipoMovimiento.Location = new System.Drawing.Point(689, 58);
+            this.lbTipoMovimiento.Name = "lbTipoMovimiento";
+            this.lbTipoMovimiento.Size = new System.Drawing.Size(170, 23);
+            this.lbTipoMovimiento.TabIndex = 42;
+            this.lbTipoMovimiento.Text = "Tipo Movimiento";
+            this.lbTipoMovimiento.Visible = false;
+            // 
+            // cbTipoMovimiento
+            // 
+            this.cbTipoMovimiento.BackColor = System.Drawing.Color.Transparent;
+            this.cbTipoMovimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTipoMovimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoMovimiento.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTipoMovimiento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTipoMovimiento.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbTipoMovimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbTipoMovimiento.ItemHeight = 30;
+            this.cbTipoMovimiento.Location = new System.Drawing.Point(693, 92);
+            this.cbTipoMovimiento.Name = "cbTipoMovimiento";
+            this.cbTipoMovimiento.Size = new System.Drawing.Size(206, 36);
+            this.cbTipoMovimiento.TabIndex = 41;
+            this.cbTipoMovimiento.Visible = false;
+            // 
+            // lbFechaFin
+            // 
+            this.lbFechaFin.AutoSize = true;
+            this.lbFechaFin.BackColor = System.Drawing.Color.Transparent;
+            this.lbFechaFin.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbFechaFin.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbFechaFin.Location = new System.Drawing.Point(462, 62);
+            this.lbFechaFin.Name = "lbFechaFin";
+            this.lbFechaFin.Size = new System.Drawing.Size(104, 23);
+            this.lbFechaFin.TabIndex = 40;
+            this.lbFechaFin.Text = "Fecha Fin";
+            // 
+            // lbFechaInicio
+            // 
+            this.lbFechaInicio.AutoSize = true;
+            this.lbFechaInicio.BackColor = System.Drawing.Color.Transparent;
+            this.lbFechaInicio.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbFechaInicio.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbFechaInicio.Location = new System.Drawing.Point(228, 62);
+            this.lbFechaInicio.Name = "lbFechaInicio";
+            this.lbFechaInicio.Size = new System.Drawing.Size(131, 23);
+            this.lbFechaInicio.TabIndex = 39;
+            this.lbFechaInicio.Text = "Fecha Inicio";
+            // 
+            // dtpFechaFin
+            // 
+            this.dtpFechaFin.Checked = true;
+            this.dtpFechaFin.FillColor = System.Drawing.Color.White;
+            this.dtpFechaFin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(466, 96);
+            this.dtpFechaFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(215, 36);
+            this.dtpFechaFin.TabIndex = 38;
+            this.dtpFechaFin.Value = new System.DateTime(2022, 6, 23, 23, 32, 57, 73);
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Checked = true;
+            this.dtpFechaInicio.FillColor = System.Drawing.Color.White;
+            this.dtpFechaInicio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(232, 96);
+            this.dtpFechaInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaInicio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(215, 36);
+            this.dtpFechaInicio.TabIndex = 37;
+            this.dtpFechaInicio.Value = new System.DateTime(2022, 6, 23, 23, 32, 57, 73);
+            // 
+            // lbEmailReporte
+            // 
+            this.lbEmailReporte.AutoSize = true;
+            this.lbEmailReporte.BackColor = System.Drawing.Color.Transparent;
+            this.lbEmailReporte.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbEmailReporte.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbEmailReporte.Location = new System.Drawing.Point(7, 58);
+            this.lbEmailReporte.Name = "lbEmailReporte";
+            this.lbEmailReporte.Size = new System.Drawing.Size(62, 23);
+            this.lbEmailReporte.TabIndex = 36;
+            this.lbEmailReporte.Text = "Email";
+            // 
+            // cbEmailReporte
+            // 
+            this.cbEmailReporte.BackColor = System.Drawing.Color.Transparent;
+            this.cbEmailReporte.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbEmailReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmailReporte.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbEmailReporte.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbEmailReporte.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbEmailReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbEmailReporte.ItemHeight = 30;
+            this.cbEmailReporte.Location = new System.Drawing.Point(11, 92);
+            this.cbEmailReporte.Name = "cbEmailReporte";
+            this.cbEmailReporte.Size = new System.Drawing.Size(206, 36);
+            this.cbEmailReporte.TabIndex = 35;
+            // 
+            // dtgReportesBitacora
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgReportesBitacora.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgReportesBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgReportesBitacora.BackgroundColor = System.Drawing.Color.White;
+            this.dtgReportesBitacora.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgReportesBitacora.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgReportesBitacora.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgReportesBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgReportesBitacora.ColumnHeadersHeight = 20;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgReportesBitacora.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgReportesBitacora.EnableHeadersVisualStyles = false;
+            this.dtgReportesBitacora.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtgReportesBitacora.Location = new System.Drawing.Point(13, 221);
+            this.dtgReportesBitacora.Name = "dtgReportesBitacora";
+            this.dtgReportesBitacora.RowHeadersVisible = false;
+            this.dtgReportesBitacora.RowHeadersWidth = 51;
+            this.dtgReportesBitacora.RowTemplate.Height = 24;
+            this.dtgReportesBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgReportesBitacora.Size = new System.Drawing.Size(939, 251);
+            this.dtgReportesBitacora.TabIndex = 16;
+            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dtgReportesBitacora.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dtgReportesBitacora.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.Height = 20;
+            this.dtgReportesBitacora.ThemeStyle.ReadOnly = false;
+            this.dtgReportesBitacora.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgReportesBitacora.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgReportesBitacora.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dtgReportesBitacora.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtgReportesBitacora.ThemeStyle.RowsStyle.Height = 24;
+            this.dtgReportesBitacora.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtgReportesBitacora.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // lbTituloReportes
+            // 
+            this.lbTituloReportes.AutoSize = true;
+            this.lbTituloReportes.BackColor = System.Drawing.Color.Transparent;
+            this.lbTituloReportes.Font = new System.Drawing.Font("Century Gothic", 17.8F);
+            this.lbTituloReportes.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lbTituloReportes.Location = new System.Drawing.Point(4, 6);
+            this.lbTituloReportes.Name = "lbTituloReportes";
+            this.lbTituloReportes.Size = new System.Drawing.Size(213, 37);
+            this.lbTituloReportes.TabIndex = 15;
+            this.lbTituloReportes.Text = "Título Reporte";
             // 
             // guna2Panel2
             // 
@@ -210,10 +445,10 @@ namespace sublicrea.UI
             this.guna2Panel4.Controls.Add(this.btnEmpresasRedirigir);
             this.guna2Panel4.Controls.Add(this.btnCategoriasRedirigir);
             this.guna2Panel4.Controls.Add(this.btnUsuarioRedirigir);
-            this.guna2Panel4.Controls.Add(this.btnReportesMenuRedirigir);
-            this.guna2Panel4.Controls.Add(this.guna2Button3);
+            this.guna2Panel4.Controls.Add(this.btnReportesBitacoraRedirigir);
+            this.guna2Panel4.Controls.Add(this.btnReportesRedirigr);
             this.guna2Panel4.Controls.Add(this.btnMantenimientos);
-            this.guna2Panel4.Controls.Add(this.btnCatalogo);
+            this.guna2Panel4.Controls.Add(this.btnCatalogoRedirigir);
             this.guna2Panel4.Location = new System.Drawing.Point(0, 144);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(226, 322);
@@ -236,6 +471,8 @@ namespace sublicrea.UI
             this.btnArticulosRedirigir.Size = new System.Drawing.Size(226, 42);
             this.btnArticulosRedirigir.TabIndex = 11;
             this.btnArticulosRedirigir.Text = "Artículos";
+            this.btnArticulosRedirigir.Visible = false;
+            this.btnArticulosRedirigir.Click += new System.EventHandler(this.btnArticulosRedirigir_Click);
             // 
             // label8
             // 
@@ -265,6 +502,8 @@ namespace sublicrea.UI
             this.btnEmpresasRedirigir.Size = new System.Drawing.Size(226, 42);
             this.btnEmpresasRedirigir.TabIndex = 7;
             this.btnEmpresasRedirigir.Text = "Empresas";
+            this.btnEmpresasRedirigir.Visible = false;
+            this.btnEmpresasRedirigir.Click += new System.EventHandler(this.btnEmpresasRedirigir_Click);
             // 
             // btnCategoriasRedirigir
             // 
@@ -283,6 +522,8 @@ namespace sublicrea.UI
             this.btnCategoriasRedirigir.Size = new System.Drawing.Size(226, 42);
             this.btnCategoriasRedirigir.TabIndex = 6;
             this.btnCategoriasRedirigir.Text = "Categorias";
+            this.btnCategoriasRedirigir.Visible = false;
+            this.btnCategoriasRedirigir.Click += new System.EventHandler(this.btnCategoriasRedirigir_Click);
             // 
             // btnUsuarioRedirigir
             // 
@@ -301,42 +542,47 @@ namespace sublicrea.UI
             this.btnUsuarioRedirigir.Size = new System.Drawing.Size(226, 42);
             this.btnUsuarioRedirigir.TabIndex = 5;
             this.btnUsuarioRedirigir.Text = "Usuarios";
+            this.btnUsuarioRedirigir.Visible = false;
+            this.btnUsuarioRedirigir.Click += new System.EventHandler(this.btnUsuarioRedirigir_Click);
             // 
-            // btnReportesMenuRedirigir
+            // btnReportesBitacoraRedirigir
             // 
-            this.btnReportesMenuRedirigir.BackColor = System.Drawing.Color.Transparent;
-            this.btnReportesMenuRedirigir.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReportesMenuRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReportesMenuRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReportesMenuRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReportesMenuRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReportesMenuRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportesMenuRedirigir.FillColor = System.Drawing.Color.Transparent;
-            this.btnReportesMenuRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReportesMenuRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnReportesMenuRedirigir.Location = new System.Drawing.Point(0, 126);
-            this.btnReportesMenuRedirigir.Name = "btnReportesMenuRedirigir";
-            this.btnReportesMenuRedirigir.Size = new System.Drawing.Size(226, 42);
-            this.btnReportesMenuRedirigir.TabIndex = 3;
-            this.btnReportesMenuRedirigir.Text = "Reportes de Bitácora";
+            this.btnReportesBitacoraRedirigir.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportesBitacoraRedirigir.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReportesBitacoraRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesBitacoraRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesBitacoraRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReportesBitacoraRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReportesBitacoraRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportesBitacoraRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnReportesBitacoraRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReportesBitacoraRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnReportesBitacoraRedirigir.Location = new System.Drawing.Point(0, 126);
+            this.btnReportesBitacoraRedirigir.Name = "btnReportesBitacoraRedirigir";
+            this.btnReportesBitacoraRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnReportesBitacoraRedirigir.TabIndex = 3;
+            this.btnReportesBitacoraRedirigir.Text = "Reportes de Bitácora";
+            this.btnReportesBitacoraRedirigir.Visible = false;
+            this.btnReportesBitacoraRedirigir.Click += new System.EventHandler(this.btnReportesMenuRedirigir_Click);
             // 
-            // guna2Button3
+            // btnReportesRedirigr
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.guna2Button3.Location = new System.Drawing.Point(0, 84);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(226, 42);
-            this.guna2Button3.TabIndex = 2;
-            this.guna2Button3.Text = "Reportes";
+            this.btnReportesRedirigr.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportesRedirigr.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReportesRedirigr.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesRedirigr.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesRedirigr.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReportesRedirigr.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReportesRedirigr.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportesRedirigr.FillColor = System.Drawing.Color.Transparent;
+            this.btnReportesRedirigr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReportesRedirigr.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnReportesRedirigr.Location = new System.Drawing.Point(0, 84);
+            this.btnReportesRedirigr.Name = "btnReportesRedirigr";
+            this.btnReportesRedirigr.Size = new System.Drawing.Size(226, 42);
+            this.btnReportesRedirigr.TabIndex = 2;
+            this.btnReportesRedirigr.Text = "Reportes";
+            this.btnReportesRedirigr.Visible = false;
             // 
             // btnMantenimientos
             // 
@@ -355,24 +601,28 @@ namespace sublicrea.UI
             this.btnMantenimientos.Size = new System.Drawing.Size(226, 42);
             this.btnMantenimientos.TabIndex = 1;
             this.btnMantenimientos.Text = "Mantenimientos  >";
+            this.btnMantenimientos.Visible = false;
+            this.btnMantenimientos.Click += new System.EventHandler(this.btnMantenimientos_Click);
             // 
-            // btnCatalogo
+            // btnCatalogoRedirigir
             // 
-            this.btnCatalogo.BackColor = System.Drawing.Color.Transparent;
-            this.btnCatalogo.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCatalogo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCatalogo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCatalogo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCatalogo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCatalogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCatalogo.FillColor = System.Drawing.Color.Transparent;
-            this.btnCatalogo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCatalogo.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnCatalogo.Location = new System.Drawing.Point(0, 0);
-            this.btnCatalogo.Name = "btnCatalogo";
-            this.btnCatalogo.Size = new System.Drawing.Size(226, 42);
-            this.btnCatalogo.TabIndex = 0;
-            this.btnCatalogo.Text = "Catálogo";
+            this.btnCatalogoRedirigir.BackColor = System.Drawing.Color.Transparent;
+            this.btnCatalogoRedirigir.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCatalogoRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCatalogoRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCatalogoRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCatalogoRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCatalogoRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCatalogoRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnCatalogoRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCatalogoRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnCatalogoRedirigir.Location = new System.Drawing.Point(0, 0);
+            this.btnCatalogoRedirigir.Name = "btnCatalogoRedirigir";
+            this.btnCatalogoRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnCatalogoRedirigir.TabIndex = 0;
+            this.btnCatalogoRedirigir.Text = "Catálogo";
+            this.btnCatalogoRedirigir.Visible = false;
+            this.btnCatalogoRedirigir.Click += new System.EventHandler(this.btnCatalogo_Click);
             // 
             // picPerfil
             // 
@@ -436,8 +686,8 @@ namespace sublicrea.UI
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Controls.Add(this.btnCerrarSesion);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
+            this.guna2Panel1.Controls.Add(this.picCampana);
+            this.guna2Panel1.Controls.Add(this.picLogo);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.FillColor = System.Drawing.Color.Gainsboro;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -464,255 +714,32 @@ namespace sublicrea.UI
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             // 
-            // guna2PictureBox3
+            // picCampana
             // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(985, 18);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(31, 30);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 3;
-            this.guna2PictureBox3.TabStop = false;
-            this.guna2PictureBox3.UseTransparentBackground = true;
+            this.picCampana.BackColor = System.Drawing.Color.Transparent;
+            this.picCampana.Image = ((System.Drawing.Image)(resources.GetObject("picCampana.Image")));
+            this.picCampana.ImageRotate = 0F;
+            this.picCampana.Location = new System.Drawing.Point(985, 18);
+            this.picCampana.Name = "picCampana";
+            this.picCampana.Size = new System.Drawing.Size(31, 30);
+            this.picCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCampana.TabIndex = 3;
+            this.picCampana.TabStop = false;
+            this.picCampana.UseTransparentBackground = true;
+            this.picCampana.Visible = false;
             // 
-            // guna2PictureBox2
+            // picLogo
             // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(3, -2);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(69, 64);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 2;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
-            // lbTituloReportes
-            // 
-            this.lbTituloReportes.AutoSize = true;
-            this.lbTituloReportes.BackColor = System.Drawing.Color.Transparent;
-            this.lbTituloReportes.Font = new System.Drawing.Font("Century Gothic", 17.8F);
-            this.lbTituloReportes.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lbTituloReportes.Location = new System.Drawing.Point(4, 6);
-            this.lbTituloReportes.Name = "lbTituloReportes";
-            this.lbTituloReportes.Size = new System.Drawing.Size(213, 37);
-            this.lbTituloReportes.TabIndex = 15;
-            this.lbTituloReportes.Text = "Título Reporte";
-            // 
-            // dtgReportesBitacora
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dtgReportesBitacora.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgReportesBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgReportesBitacora.BackgroundColor = System.Drawing.Color.White;
-            this.dtgReportesBitacora.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgReportesBitacora.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgReportesBitacora.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgReportesBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dtgReportesBitacora.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgReportesBitacora.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dtgReportesBitacora.EnableHeadersVisualStyles = false;
-            this.dtgReportesBitacora.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgReportesBitacora.Location = new System.Drawing.Point(13, 221);
-            this.dtgReportesBitacora.Name = "dtgReportesBitacora";
-            this.dtgReportesBitacora.RowHeadersVisible = false;
-            this.dtgReportesBitacora.RowHeadersWidth = 51;
-            this.dtgReportesBitacora.RowTemplate.Height = 24;
-            this.dtgReportesBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgReportesBitacora.Size = new System.Drawing.Size(939, 251);
-            this.dtgReportesBitacora.TabIndex = 16;
-            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dtgReportesBitacora.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dtgReportesBitacora.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dtgReportesBitacora.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtgReportesBitacora.ThemeStyle.HeaderStyle.Height = 20;
-            this.dtgReportesBitacora.ThemeStyle.ReadOnly = false;
-            this.dtgReportesBitacora.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtgReportesBitacora.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgReportesBitacora.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dtgReportesBitacora.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dtgReportesBitacora.ThemeStyle.RowsStyle.Height = 24;
-            this.dtgReportesBitacora.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgReportesBitacora.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // cbEmailReporte
-            // 
-            this.cbEmailReporte.BackColor = System.Drawing.Color.Transparent;
-            this.cbEmailReporte.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbEmailReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEmailReporte.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbEmailReporte.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbEmailReporte.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbEmailReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbEmailReporte.ItemHeight = 30;
-            this.cbEmailReporte.Location = new System.Drawing.Point(11, 92);
-            this.cbEmailReporte.Name = "cbEmailReporte";
-            this.cbEmailReporte.Size = new System.Drawing.Size(206, 36);
-            this.cbEmailReporte.TabIndex = 35;
-            // 
-            // lbEmailReporte
-            // 
-            this.lbEmailReporte.AutoSize = true;
-            this.lbEmailReporte.BackColor = System.Drawing.Color.Transparent;
-            this.lbEmailReporte.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
-            this.lbEmailReporte.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lbEmailReporte.Location = new System.Drawing.Point(7, 58);
-            this.lbEmailReporte.Name = "lbEmailReporte";
-            this.lbEmailReporte.Size = new System.Drawing.Size(62, 23);
-            this.lbEmailReporte.TabIndex = 36;
-            this.lbEmailReporte.Text = "Email";
-            this.lbEmailReporte.Visible = false;
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Checked = true;
-            this.dtpFechaInicio.FillColor = System.Drawing.Color.White;
-            this.dtpFechaInicio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(232, 96);
-            this.dtpFechaInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaInicio.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(199, 36);
-            this.dtpFechaInicio.TabIndex = 37;
-            this.dtpFechaInicio.Value = new System.DateTime(2022, 6, 23, 23, 32, 57, 73);
-            // 
-            // dtpFechaFin
-            // 
-            this.dtpFechaFin.Checked = true;
-            this.dtpFechaFin.FillColor = System.Drawing.Color.White;
-            this.dtpFechaFin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpFechaFin.Location = new System.Drawing.Point(437, 96);
-            this.dtpFechaFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaFin.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(195, 36);
-            this.dtpFechaFin.TabIndex = 38;
-            this.dtpFechaFin.Value = new System.DateTime(2022, 6, 23, 23, 32, 57, 73);
-            // 
-            // lbFechaInicio
-            // 
-            this.lbFechaInicio.AutoSize = true;
-            this.lbFechaInicio.BackColor = System.Drawing.Color.Transparent;
-            this.lbFechaInicio.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
-            this.lbFechaInicio.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lbFechaInicio.Location = new System.Drawing.Point(228, 62);
-            this.lbFechaInicio.Name = "lbFechaInicio";
-            this.lbFechaInicio.Size = new System.Drawing.Size(131, 23);
-            this.lbFechaInicio.TabIndex = 39;
-            this.lbFechaInicio.Text = "Fecha Inicio";
-            this.lbFechaInicio.Visible = false;
-            // 
-            // lbFechaFin
-            // 
-            this.lbFechaFin.AutoSize = true;
-            this.lbFechaFin.BackColor = System.Drawing.Color.Transparent;
-            this.lbFechaFin.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
-            this.lbFechaFin.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lbFechaFin.Location = new System.Drawing.Point(433, 62);
-            this.lbFechaFin.Name = "lbFechaFin";
-            this.lbFechaFin.Size = new System.Drawing.Size(104, 23);
-            this.lbFechaFin.TabIndex = 40;
-            this.lbFechaFin.Text = "Fecha Fin";
-            this.lbFechaFin.Visible = false;
-            // 
-            // lbTipoMovimiento
-            // 
-            this.lbTipoMovimiento.AutoSize = true;
-            this.lbTipoMovimiento.BackColor = System.Drawing.Color.Transparent;
-            this.lbTipoMovimiento.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
-            this.lbTipoMovimiento.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lbTipoMovimiento.Location = new System.Drawing.Point(634, 58);
-            this.lbTipoMovimiento.Name = "lbTipoMovimiento";
-            this.lbTipoMovimiento.Size = new System.Drawing.Size(170, 23);
-            this.lbTipoMovimiento.TabIndex = 42;
-            this.lbTipoMovimiento.Text = "Tipo Movimiento";
-            this.lbTipoMovimiento.Visible = false;
-            // 
-            // cbTipoMovimiento
-            // 
-            this.cbTipoMovimiento.BackColor = System.Drawing.Color.Transparent;
-            this.cbTipoMovimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTipoMovimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoMovimiento.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTipoMovimiento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTipoMovimiento.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbTipoMovimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbTipoMovimiento.ItemHeight = 30;
-            this.cbTipoMovimiento.Location = new System.Drawing.Point(638, 92);
-            this.cbTipoMovimiento.Name = "cbTipoMovimiento";
-            this.cbTipoMovimiento.Size = new System.Drawing.Size(206, 36);
-            this.cbTipoMovimiento.TabIndex = 41;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConsultar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConsultar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConsultar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(851, 92);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(110, 36);
-            this.btnConsultar.TabIndex = 43;
-            this.btnConsultar.Text = "Consultar";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(62)))), ((int)(((byte)(28)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(11, 146);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(123, 36);
-            this.guna2Button1.TabIndex = 44;
-            this.guna2Button1.Text = "Exportar PDF";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(124)))), ((int)(((byte)(65)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(140, 146);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(123, 36);
-            this.guna2Button2.TabIndex = 45;
-            this.guna2Button2.Text = "Exportar Excel";
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.ImageRotate = 0F;
+            this.picLogo.Location = new System.Drawing.Point(3, -2);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(69, 64);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 2;
+            this.picLogo.TabStop = false;
+            this.picLogo.UseTransparentBackground = true;
             // 
             // ReportesBitacoras
             // 
@@ -729,14 +756,14 @@ namespace sublicrea.UI
             this.pSubMenu.ResumeLayout(false);
             this.btnMovimientoSistemaRedirigir.ResumeLayout(false);
             this.btnMovimientoSistemaRedirigir.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReportesBitacora)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgReportesBitacora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCampana)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,10 +783,10 @@ namespace sublicrea.UI
         private Guna.UI2.WinForms.Guna2Button btnEmpresasRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnCategoriasRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnUsuarioRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnReportesMenuRedirigir;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnReportesBitacoraRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnReportesRedirigr;
         private Guna.UI2.WinForms.Guna2Button btnMantenimientos;
-        private Guna.UI2.WinForms.Guna2Button btnCatalogo;
+        private Guna.UI2.WinForms.Guna2Button btnCatalogoRedirigir;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picPerfil;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbLinea;
@@ -767,14 +794,14 @@ namespace sublicrea.UI
         private System.Windows.Forms.Label lbEmail;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnCerrarSesion;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox picCampana;
+        private Guna.UI2.WinForms.Guna2PictureBox picLogo;
         private System.Windows.Forms.Label lbTituloReportes;
         private Guna.UI2.WinForms.Guna2DataGridView dtgReportesBitacora;
         private Guna.UI2.WinForms.Guna2ComboBox cbEmailReporte;
         private System.Windows.Forms.Label lbEmailReporte;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnExportarExcel;
+        private Guna.UI2.WinForms.Guna2Button btnExportarPDF;
         private Guna.UI2.WinForms.Guna2Button btnConsultar;
         private System.Windows.Forms.Label lbTipoMovimiento;
         private Guna.UI2.WinForms.Guna2ComboBox cbTipoMovimiento;

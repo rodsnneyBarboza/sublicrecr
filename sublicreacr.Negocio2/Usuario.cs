@@ -15,6 +15,7 @@ namespace sublicreacr.Negocio
         private string apellidos;
         private long telefono;
         private byte[] fotoPerfil;
+        private byte[] logo;
         private bool estado;
         private string estadoLeyenda;
         private int fkTipoUsuario;
@@ -28,7 +29,7 @@ namespace sublicreacr.Negocio
 
         public Usuario(string _email, string _contrasena, string _verificarContrasena, string _nombre
             , string _apellidos, long _telefono, byte[] _fotoPerfil, bool _estado, int _fkTipoUsuario
-            , long _fkEmpresa, string _tipoUsuario,string _estadoLeyenda)
+            , long _fkEmpresa, string _tipoUsuario,string _estadoLeyenda, byte[] _logo)
         {
             this.email = _email;
             this.contrasena = _contrasena;
@@ -42,6 +43,7 @@ namespace sublicreacr.Negocio
             this.fkEmpresa = _fkEmpresa;
             this.tipoUsuario = _tipoUsuario;
             this.estadoLeyenda = _estadoLeyenda;
+            this.logo = _logo;
         }
 
         public string Email { get => email; set => email=value; }
@@ -56,12 +58,7 @@ namespace sublicreacr.Negocio
         public long FkEmpresa { get => fkEmpresa; set => fkEmpresa = value; }
         public string TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
         public string EstadoLeyenda { get => estadoLeyenda; set => estadoLeyenda = value; }
-
-
-
-
-
-
+        public byte[] Logo { get => logo; set => logo = value; }
 
     }
 }

@@ -41,8 +41,7 @@ namespace sublicreacr.Negocio
                 throw new InvalidOperationException("Error al consultar login", e);
             }
         }
-
-        public DataSet mostrarArticulo(int _idArticulo = -1)
+        public DataSet mostrarArticulo(int _idArticulo=-1)
         {
             try
             {
@@ -67,8 +66,6 @@ namespace sublicreacr.Negocio
                 throw new InvalidOperationException("Error al consultar login", e);
             }
         }
-
-
         public DataSet mostrarUsuarios(string _email="n/a")
         {
             try
@@ -92,7 +89,6 @@ namespace sublicreacr.Negocio
                 throw ex;
             }
         }
-
         public DataSet mostrarTipoUsuario(int _tipoUusario=-1)
         {
             try
@@ -117,7 +113,7 @@ namespace sublicreacr.Negocio
                 throw new InvalidOperationException("Error al consultar tipos de usuario", e);
             }
         }
-        public DataSet mostrarEmpresa(long _cedulaJuridica)
+        public DataSet mostrarEmpresa(long _cedulaJuridica=-1)
         {
             try
             {
@@ -140,6 +136,70 @@ namespace sublicreacr.Negocio
             catch (SqlException e)
             {
                 throw new InvalidOperationException("Error al consultar las empresas", e);
+            }
+        }
+        public DataSet mostrarBitacora(Bitacora bit=null)
+        {
+            try
+            {
+                DataSet datos;
+                 
+                string sentencia = "select * from TB_BITACORA";
+                string filtros = " WHERE 1=1";
+
+
+                if (bit!=null)
+                {
+                    if (!bit.TipoMovimiento.Equals("login"))
+                    {
+                        filtros += " AND fecha_inicio BETWEEN TRY_CONVERT(DATETIME, @FechaInicio) AND TRY_CONVERT(DATETIME,@FechaFin)";
+                    }
+                    else
+                    {
+                        filtros += " AND (fecha_inicio BETWEEN TRY_CONVERT(DATETIME,@FechaInicio) AND " +
+                            "TRY_CONVERT(DATETIME,@FechaFin)) AND(fecha_fin BETWEEN TRY_CONVERT(DATETIME, @FechaInicio) " +
+                            "AND TRY_CONVERT(DATETIME, @FechaFin))";
+
+                    }
+
+                    filtros +=" AND tipo_movimiento=@tipoMovimiento";
+
+                    if (!bit.FkEmail.Equals("n/a"))
+                    {
+                        filtros += " AND fk_email=@usuario";
+                    }
+                }
+                else
+                {
+                    Bitacora bit2 = new Bitacora();
+                    bit2.FechaInicio = DateTime.Now;
+                    bit2.FechaFin = DateTime.Now;
+                    bit2.DetalleMovimiento = "n/a";
+                    bit2.FkEmail = "n/a";
+                    bit2.TipoMovimiento = "n/a";
+
+                    bit = bit2;
+                }
+
+                
+
+
+
+                Parameter[] parametros = { new Parameter("@FechaInicio", bit.FechaInicio)
+                ,new Parameter("@FechaFin", bit.FechaFin)
+                ,new Parameter("@usuario", bit.FkEmail)
+                ,new Parameter("@tipoMovimiento", bit.TipoMovimiento)};
+
+                sentencia += filtros;
+
+                datos = Database.executeDataset(sentencia, parametros);
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException(e.Message, e);
             }
         }
 
@@ -434,7 +494,8 @@ namespace sublicreacr.Negocio
                 usu.Contrasena = contrasena;
                 string sentencia = "select * from TB_USUARIO as u" +
                     " INNER JOIN TB_TIPO_USUARIO as tu ON u.fk_tipo_usuario = tu.id_tipo_usuario" +
-                    " where email=@email and contrasena=@contrasena";
+                    " INNER JOIN TB_EMPRESA as e ON e.cedula_juridica=u.fk_empresa" +
+                    " where (email=@email and contrasena=@contrasena) AND e.estado=1 AND u.estado=1";
                 Parameter[] parametros = { new Parameter("@email", usu.Email), new Parameter("@contrasena", usu.Contrasena) };
                 DataSet datos = Database.executeDataset(sentencia, parametros);
                 //string record = datos.Tables[0].Rows[0]["nombre"].ToString();

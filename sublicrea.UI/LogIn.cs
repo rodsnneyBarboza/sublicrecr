@@ -48,7 +48,11 @@ namespace sublicrea.UI
                             usu.Apellidos = datos.Tables[0].Rows[0]["apellidos"].ToString();
                             usu.TipoUsuario = datos.Tables[0].Rows[0]["nombre_tipo_usuario"].ToString();
                             usu.FkEmpresa = (long)datos.Tables[0].Rows[0]["fk_empresa"];
+                            usu.Logo = (byte[])datos.Tables[0].Rows[0]["logo"];
                             Catalogo cat = new Catalogo(usu);
+
+                            cat.Left = 500;
+                            cat.Top = 500;
 
                             bit.FkEmail = usu.Email;
                             bit.TipoMovimiento = "login";
@@ -92,9 +96,6 @@ namespace sublicrea.UI
             this.Close();
         }
 
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -7,3 +7,4 @@ C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\bin\Debug\sublicrea
 C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio.csproj.CopyComplete
 C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio2.dll
 C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio2.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicreacr.Negocio2\obj\Debug\sublicreacr.Negocio.csproj.ResolveComReference.cache

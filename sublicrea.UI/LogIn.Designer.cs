@@ -193,8 +193,8 @@ namespace sublicrea.UI
             this.Controls.Add(this.lbContrasena);
             this.Controls.Add(this.lbCorreo);
             this.Name = "LogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogIn";
-            this.Load += new System.EventHandler(this.LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -25,3 +25,14 @@ C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Most
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Catalogo.resources
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.MenuReportes.resources
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.ReportesBitacoras.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\itextsharp.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\itextsharp.xml
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ClosedXML.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ExcelNumberFormat.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\System.IO.Packaging.dll
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ClosedXML.pdb
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ClosedXML.xml
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ExcelNumberFormat.xml

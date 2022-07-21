@@ -146,10 +146,9 @@ namespace sublicrea.UI
                 btnArticulosRedirigir.Visible = true;
                 btnAgregarUsuarioRedirigir.Visible = true;
                 btnAgregarArticuloRedirigir.Visible = true;
+                btnAgregarEmpresaRedirigir.Visible = true;
                 btnAgregarCategoriaRedirigir.Visible = true;
                 btnMantenimientos.Visible = true;
-
-                btnAgregarEmpresaRedirigir.Visible = false;
             }
             else if (usuSesion.FkTipoUsuario == 2)
             {
@@ -224,12 +223,12 @@ namespace sublicrea.UI
                     picLogo.Image = val.convertirBytesAImagenes(emp.Logo);
                 }
 
-                lbTitulo.Text = "Actualizar Artículo";
+                lbTitulo.Text = "Actualizar Empresa";
                 btnAgregarActualizarEmpresa.Text = "Actualizar";
             }
             else
             {
-                lbTitulo.Text = "Agregar Artículo";
+                lbTitulo.Text = "Agregar Empresa";
                 btnAgregarActualizarEmpresa.Text = "Agregar";
             }
 
@@ -274,15 +273,33 @@ namespace sublicrea.UI
                             {
                                 bit.TipoMovimiento = "agregar";
                                 bit.DetalleMovimiento = "agregar empresa " + empresa.CedulaJuridica;
+
+                                if (ges.agregarEmpresa(empresa))
+                                {
+                                    MessageBox.Show("Empresa Agregada con Éxito");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al Agregar la Empresa");
+
+                                }
                                 ges.agregarBitacora(bit);
-                                ges.agregarEmpresa(empresa);
                             }
                             else
                             {
                                 bit.TipoMovimiento = "actualizar";
                                 bit.DetalleMovimiento = "actualizar empresa " + empresa.CedulaJuridica;
+
+                                if (ges.actualizarEmpresa(empresa))
+                                {
+                                    MessageBox.Show("Empresa Actualizada con Éxito");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al Actualizar la Empresa");
+
+                                }
                                 ges.agregarBitacora(bit);
-                                ges.actualizarEmpresa(empresa);
 
                             }
 
@@ -324,6 +341,46 @@ namespace sublicrea.UI
             Form art = new MenuReportes(usuSesion);
 
             art.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ventana = new LogIn();
+
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void btnAcercaDeRedirigir_Click(object sender, EventArgs e)
+        {
+            Form acerca = new AcercaDe(usuSesion);
+
+            acerca.Show();
+            this.Hide();
+        }
+
+        private void btnAyudaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form ayuda = new Ayuda(usuSesion);
+
+            ayuda.Show();
+            this.Hide();
+        }
+
+        private void picCarrito_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void picCampana_Click(object sender, EventArgs e)
+        {
+            Form ped = new PedidosPendientes(usuSesion);
+
+            ped.Show();
             this.Hide();
         }
     }

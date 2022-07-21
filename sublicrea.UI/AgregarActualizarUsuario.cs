@@ -59,100 +59,6 @@ namespace sublicrea.UI
             }
         }
 
-       
-
-        
-
-        private void btnAgregarActualizarEmpresa_Click(object sender, EventArgs e)
-        {
-            Usuario usuario = new Usuario();
-
-            if (!string.IsNullOrEmpty(txtEmail.Text) &&
-                !string.IsNullOrEmpty(txtNombreUsuario.Text) &&
-                !string.IsNullOrEmpty(txtApellidosUsuario.Text) &&
-                !string.IsNullOrEmpty(txtTelefono.Text)
-                )
-            {
-                if(txtEmail.Text.Contains(".") && txtEmail.Text.Contains("@"))
-                {
-                    if (txtNombreUsuario.Text.IndexOfAny("0123456789".ToCharArray()) == -1 && 
-                        txtApellidosUsuario.Text.IndexOfAny("0123456789".ToCharArray())==-1)
-                    {
-                        if(Regex.IsMatch(txtTelefono.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
-                        {
-                            if (!cbEmpresa.Text.Equals("Seleccione") 
-                                    && !cbTipoUsuario.Text.Equals("Seleccione"))
-                                {
-                                    usu.Email = txtEmail.Text;
-                                    usu.Nombre = txtNombreUsuario.Text;
-                                    usu.Contrasena = txtContrasena.Text;
-                                    usu.Apellidos = txtApellidosUsuario.Text;
-                                    usu.Estado = true;
-                                    usu.FkEmpresa = long.Parse(cbEmpresa.Text.Split(' ')[0]);
-                                    usu.FkTipoUsuario = Int32.Parse(cbTipoUsuario.Text.Substring(0, 1)); ;
-                                    usu.Telefono = Int32.Parse(txtTelefono.Text);
-
-                                bit.FkEmail = usuSesion.Email;
-
-                                bit.FechaInicio = DateTime.Now;
-                                bit.FechaFin = DateTime.Now;
-
-                                if (this.correo.Equals("n/a"))
-                                    {
-                                        if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text) && !string.IsNullOrEmpty(txtContrasena.Text) &&
-                                            !string.IsNullOrEmpty(txtConfirmarContrasena.Text))
-                                        {
-                                        bit.TipoMovimiento = "agregar";
-                                        bit.DetalleMovimiento = "agregar usuario " + usu.Email;
-                                        ges.agregarBitacora(bit);
-
-                                        ges.agregarUsuario(usu);
-
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("El campo contraseña y verificar contraseña deben de ser iguales");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        usu.Contrasena = "n/a";
-                                    bit.TipoMovimiento = "actualizar";
-                                    bit.DetalleMovimiento = "actualizar usuario " + usu.Email;
-                                    ges.agregarBitacora(bit);
-                                    ges.actualizarUsuario(usu);
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("seleccione una empresa y un tipo de usuario ");
-
-                                }
-                            
-                        }
-                        else
-                        {
-                            MessageBox.Show("El número de teléfono debe contener solo números");
-
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("El nombre del usuario y sus apellidos no debe contener números");
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El correo debe contener el formato correcto");
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe completar los campos obligatorios");
-            }
-        }
         private void AgregarActualizarUsuario_Load(object sender, EventArgs e)
         {
             List<Usuario> usuario = ges.mostrarUsuarios(this.correo);
@@ -173,9 +79,10 @@ namespace sublicrea.UI
                 btnAgregarUsuarioRedirigir.Visible = true;
                 btnAgregarArticuloRedirigir.Visible = true;
                 btnAgregarCategoriaRedirigir.Visible = true;
+                btnAgregarEmpresaRedirigir.Visible = true;
+
                 btnMantenimientos.Visible = true;
 
-                btnAgregarEmpresaRedirigir.Visible = false;
             }
             else if (usuSesion.FkTipoUsuario == 2)
             {
@@ -282,6 +189,14 @@ namespace sublicrea.UI
                 lbContrasena.Visible = false;
                 lbConfirmarContrasena.Visible = false;
 
+                lbTitulo.Text = "Actualizar Usuario";
+                btnAgregarActualizarUsuario.Text = "Actualizar";
+
+            }
+            else
+            {
+                lbTitulo.Text = "Agregar Usuario";
+                btnAgregarActualizarUsuario.Text = "Agregar";
             }
            
         }
@@ -369,6 +284,158 @@ namespace sublicrea.UI
             Form art = new MenuReportes(usuSesion);
 
             art.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ventana = new LogIn();
+
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void btnAgregarActualizarUsuario_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+
+            if (!string.IsNullOrEmpty(txtEmail.Text) &&
+                !string.IsNullOrEmpty(txtNombreUsuario.Text) &&
+                !string.IsNullOrEmpty(txtApellidosUsuario.Text) &&
+                !string.IsNullOrEmpty(txtTelefono.Text)
+                )
+            {
+                if (txtEmail.Text.Contains(".") && txtEmail.Text.Contains("@"))
+                {
+                    if (txtNombreUsuario.Text.IndexOfAny("0123456789".ToCharArray()) == -1 &&
+                        txtApellidosUsuario.Text.IndexOfAny("0123456789".ToCharArray()) == -1)
+                    {
+                        if (Regex.IsMatch(txtTelefono.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+                        {
+                            if (!cbEmpresa.Text.Equals("Seleccione")
+                                    && !cbTipoUsuario.Text.Equals("Seleccione"))
+                            {
+                                usu.Email = txtEmail.Text;
+                                usu.Nombre = txtNombreUsuario.Text;
+                                usu.Contrasena = txtContrasena.Text;
+                                usu.Apellidos = txtApellidosUsuario.Text;
+                                usu.Estado = true;
+                                usu.FkEmpresa = long.Parse(cbEmpresa.Text.Split(' ')[0]);
+                                usu.FkTipoUsuario = Int32.Parse(cbTipoUsuario.Text.Substring(0, 1)); ;
+                                usu.Telefono = Int32.Parse(txtTelefono.Text);
+
+                                bit.FkEmail = usuSesion.Email;
+
+                                bit.FechaInicio = DateTime.Now;
+                                bit.FechaFin = DateTime.Now;
+
+                                if (this.correo.Equals("n/a"))
+                                {
+                                    if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text) && !string.IsNullOrEmpty(txtContrasena.Text) &&
+                                        !string.IsNullOrEmpty(txtConfirmarContrasena.Text))
+                                    {
+                                        bit.TipoMovimiento = "agregar";
+                                        bit.DetalleMovimiento = "agregar usuario " + usu.Email;
+
+                                        if (ges.agregarUsuario(usu))
+                                        {
+                                            MessageBox.Show("Usuario Agregado con Éxito");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Error al Agregar el Usuario");
+
+                                        }
+
+                                        ges.agregarBitacora(bit);
+
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("El campo contraseña y verificar contraseña deben de ser iguales");
+                                    }
+                                }
+                                else
+                                {
+                                    usu.Contrasena = "n/a";
+                                    bit.TipoMovimiento = "actualizar";
+                                    bit.DetalleMovimiento = "actualizar usuario " + usu.Email;
+
+                                    if (ges.actualizarUsuario(usu))
+                                    {
+                                        MessageBox.Show("Usuario Actualizado con Éxito");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error al Actualizar el Usuario");
+
+                                    }
+
+                                    ges.agregarBitacora(bit);
+
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("seleccione una empresa y un tipo de usuario ");
+
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("El número de teléfono debe contener solo números");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre del usuario y sus apellidos no debe contener números");
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El correo debe contener el formato correcto");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar los campos obligatorios");
+            }
+        }
+
+        private void btnAcercaDeRedirigir_Click(object sender, EventArgs e)
+        {
+            Form acerca = new AcercaDe(usuSesion);
+
+            acerca.Show();
+            this.Hide();
+        }
+
+        private void btnAyudaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form ayuda = new Ayuda(usuSesion);
+
+            ayuda.Show();
+            this.Hide();
+        }
+
+        private void picCarrito_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void picCampana_Click(object sender, EventArgs e)
+        {
+            Form ped = new PedidosPendientes(usuSesion);
+
+            ped.Show();
             this.Hide();
         }
     }

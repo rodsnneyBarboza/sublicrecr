@@ -41,6 +41,168 @@ namespace sublicreacr.Negocio
                 throw new InvalidOperationException("Error al consultar login", e);
             }
         }
+
+        public DataSet mostrarProveedores()
+        {
+            try
+            {
+                Parameter[] parametros = { };
+                string sentencia = "SELECT DISTINCT e.* FROM TB_ARTICULO as a " +
+                    "INNER JOIN TB_EMPRESA as e ON a.fk_cedula_juridica = e.cedula_juridica";
+
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al consultar login", e);
+            }
+        }
+        public DataSet mostrarArticuloProveedor(long _cedulJuridica = -1)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@CedulaJuridica", _cedulJuridica) };
+                string sentencia = "select id_articulo,nombre, precio_venta,cantidad_disponible from TB_ARTICULO WHERE estado=1 ";
+
+                if (_cedulJuridica != -1)
+                {
+                    sentencia += " AND fk_cedula_juridica=@CedulaJuridica";
+
+                }
+
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al consultar login", e);
+            }
+        }
+        public DataSet mostrarVentas(int _id_venta = -1)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@idVenta", _id_venta) };
+                string sentencia = "SELECT * FROM TB_VENTA WHERE 1=1";
+
+                if (_id_venta != -1)
+                {
+                    sentencia += " AND id_venta=@idVenta";
+
+                }
+
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al consultar login", e);
+            }
+        }
+
+        public DataSet mostrarArticulosPedidosPendientes(long _cedula_juridica = -1)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@cedJuridica", _cedula_juridica) };
+                string sentencia = "SELECT d.id_detalle_venta,d.fk_id_articulo,e.nombre_empresa,a.nombre,v.fecha_venta,d.cantidad,d.precio FROM TB_VENTA as v" +
+                    " INNER JOIN TB_DETALLE_VENTA as d ON v.id_venta = d.fk_id_venta INNER JOIN TB_ARTICULO as a" +
+                    " ON a.id_articulo = d.fk_id_articulo INNER JOIN TB_USUARIO as u ON u.email = v.fk_email_comprador " +
+                    "INNER JOIN TB_EMPRESA as e ON e.cedula_juridica = u.fk_empresa WHERE v.estado=0 AND d.estado=0";
+
+                if (_cedula_juridica != -1)
+                {
+                    sentencia += " AND e.cedula_juridica=@cedJuridica";
+
+                }
+
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al consultar login", e);
+            }
+        }
+        public DataSet mostrarEmpresaPedidosActivo(long _cedula_juridica = -1)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@cedJuridica", _cedula_juridica) };
+                string sentencia = "SELECT DISTINCT e.cedula_juridica,e.nombre_empresa FROM TB_VENTA" +
+                    " as v INNER JOIN TB_USUARIO as u ON u.email = v.fk_email_comprador INNER JOIN TB_EMPRESA as e" +
+                    " ON u.fk_empresa = e.cedula_juridica WHERE v.estado = 0";
+
+                if (_cedula_juridica != -1)
+                {
+                    sentencia += " AND v.fk_cedula_juridica_vendedor =@cedJuridica ";
+
+                }
+
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al consultar login", e);
+            }
+        }
+        public DataSet mostrarArticulosPedidos(int _idVenta = -1)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@idVenta", _idVenta) };
+                string sentencia = "select d.id_detalle_venta,a.nombre,cantidad,precio from TB_DETALLE_VENTA as d" +
+                    " INNER JOIN TB_ARTICULO as a ON d.fk_id_articulo = a.id_articulo WHERE d.fk_id_venta=@idVenta";
+
+      
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al consultar login", e);
+            }
+        }
+        public DataSet mostrarVentaActual()
+        {
+            try
+            {
+                Parameter[] parametros = {  };
+                string sentencia = "SELECT MAX(id_venta) as max_venta FROM TB_VENTA WHERE Estado=0";
+             
+
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+                return datos;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al consultar login", e);
+            }
+        }
         public DataSet mostrarArticulo(int _idArticulo=-1)
         {
             try
@@ -204,8 +366,70 @@ namespace sublicreacr.Negocio
         }
 
         #endregion
-
         #region agregar
+        public bool agregarDetalleVenta(DetalleVenta det)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "INSERT INTO TB_DETALLE_VENTA(cantidad,precio,descuento,fk_id_articulo,fk_id_venta,estado)" +
+                    " values(@cantidad,@precio,@descuento,@idArticulo,@idVenta,@estado)";
+
+                Parameter[] parametros =
+                {
+                    new Parameter("@cantidad",det.Cantidad),
+                    new Parameter("@precio",det.Precio),
+                    new Parameter("@descuento",det.Descuento),
+                    new Parameter("@idArticulo",det.FkIdArticulo),
+                    new Parameter("@idVenta",det.FkIdVenta),
+                    new Parameter("@estado",det.Estado)
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en agregar categoria", e);
+            }
+        }
+
+        public bool agregarVenta(Venta ven)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "INSERT INTO TB_VENTA(impuesto,fecha_venta,total,estado,archivo_factura" +
+                    ",fecha_entrega,fk_email_comprador,fk_cedula_juridica_vendedor)values(@impuesto,@fechaVenta,@total," +
+                    "@estado,NULL,@fechaEntrega,@emailComprador,@cedulJuridica)";
+                Parameter[] parametros =
+                {
+                    new Parameter("@impuesto",ven.Impuesto),
+                    new Parameter("@fechaVenta",ven.FechaVenta),
+                    new Parameter("@total",ven.Total),
+                    new Parameter("@estado",ven.Estado),
+                    new Parameter("@fechaEntrega",ven.FechaEntrega),
+                    new Parameter("@emailComprador",ven.FkEmailComprador),
+                    new Parameter("@cedulJuridica",ven.FkCedulaJuridicaVendedor)
+
+
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en agregar categoria", e);
+            }
+
+        }
         public bool agregarCategoria(Categoria cat)
         {
             try
@@ -351,7 +575,55 @@ namespace sublicreacr.Negocio
 
         }
         #endregion
+        #region eliminar
+        public bool eliminarVentasErroneas()
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "DELETE FROM TB_VENTA WHERE id_venta NOT IN (SELECT DISTINCT fk_id_venta FROM TB_DETALLE_VENTA)";
+                Parameter[] parametros =
+                {
+                };
 
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en agregar categoria", e);
+            }
+
+        }
+
+        public bool eliminarDetalleVenta(int _idDetalleVenta)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "DELETE FROM TB_DETALLE_VENTA WHERE id_detalle_venta =@idDetalle";
+                Parameter[] parametros =
+                {
+                    new Parameter("@idDetalle",_idDetalleVenta)
+
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en agregar categoria", e);
+            }
+
+        }
+        #endregion
         #region actualizar
         public bool actualizarCategoria(Categoria cat)
         {
@@ -379,6 +651,83 @@ namespace sublicreacr.Negocio
 
         }
 
+        public bool actualizarTotalFinal(Venta ven)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE TB_VENTA SET total=@total" +
+                    " WHERE id_venta=@idVenta";
+                Parameter[] parametros =
+                {
+                    new Parameter("@total",ven.Total),
+                    new Parameter("@idVenta",ven.IdVenta)
+
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en actualizar categoria", e);
+            }
+
+        }
+
+        public bool actualizarDetalleVentaEstado(DetalleVenta det)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE TB_DETALLE_VENTA SET estado=@estado" +
+                    " WHERE id_detalle_venta=@idDetalle";
+                Parameter[] parametros =
+                {
+                    new Parameter("@estado",det.Estado),
+                    new Parameter("@idDetalle",det.IdDetalleVenta)
+
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en actualizar categoria", e);
+            }
+
+        }
+
+        public bool actualizarInventario(DetalleVenta det)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE TB_ARTICULO SET cantidad_disponible=cantidad_disponible-@cantidad" +
+                    " WHERE id_articulo=@idArticulo";
+                Parameter[] parametros =
+                {
+                    new Parameter("@cantidad",det.Cantidad),
+                    new Parameter("@idArticulo",det.FkIdArticulo)
+
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en actualizar categoria", e);
+            }
+
+        }
         public bool actualizarArticulo(Articulo art)
         {
             try
@@ -484,6 +833,82 @@ namespace sublicreacr.Negocio
                 throw new InvalidOperationException("Error al actualizar usuario", e);
 
             }
+        }
+
+        public bool estadoArticulo(Articulo art)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE TB_ARTICULO SET estado=@estado WHERE id_articulo=@id_articulo";
+
+                Parameter[] parametros =
+                {
+                    new Parameter("@estado",art.Estado),
+                    new Parameter("@id_articulo",art.IdArticulo)
+
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error en cambiar el estado del artículo", e);
+            }
+
+        }
+
+        public bool estadoUsuario(Usuario usu)
+        {
+            try
+            {
+                string sentencia;
+
+                sentencia = "UPDATE TB_USUARIO SET estado=@estado WHERE email=@email";
+
+                Parameter[] parametros = {
+                                         new Parameter("@estado",usu.Estado),
+                                         new Parameter("@email",usu.Email)
+
+                                      };
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException("Error al cambiar estado del usuario", e);
+
+            }
+        }
+
+        public bool estadoEmpresa(Empresa emp)
+        {
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE TB_EMPRESA SET estado=@estado WHERE cedula_juridica=@cedula_juridica";
+                Parameter[] parametros =
+                {
+                    new Parameter("@estado",emp.Estado),
+                    new Parameter("@cedula_juridica",emp.CedulaJuridica)
+
+                };
+
+                Database.exectuteNonQuery(sentencia, parametros);
+
+                return true;
+
+            }
+            catch (SqlException e)
+            {
+                throw new InvalidOperationException("Error al cambiar estado de la empresa", e);
+            }
+
         }
         #endregion
         public DataSet informacionLogin(Usuario usu)

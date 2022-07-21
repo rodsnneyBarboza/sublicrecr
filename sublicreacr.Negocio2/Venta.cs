@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace sublicreacr.Negocio
 {
-    class Venta
+    public class Venta
     {
+        private int idVenta;
         private float impuesto;
         private DateTime fechaVenta;
         private float total;
@@ -15,11 +16,16 @@ namespace sublicreacr.Negocio
         private byte[] archivoFactura;
         private DateTime fechaEntrega;
         private string fkEmailComprador;
-        private int fkCedulaJuridicaVendedor;
+        private long fkCedulaJuridicaVendedor;
 
-        public Venta(float _impuesto,DateTime _fechaVenta,float _total,bool _estado,byte[] _archivoFactura
-                    ,DateTime _fechaEntrega,string _fkEmailComprador,int _fkCedulaJuridicaVendedor)
+        public Venta()
         {
+
+        }
+        public Venta(int _idVenta,float _impuesto,DateTime _fechaVenta,float _total,bool _estado,byte[] _archivoFactura
+                    ,DateTime _fechaEntrega,string _fkEmailComprador,long _fkCedulaJuridicaVendedor)
+        {
+            this.idVenta = _idVenta;
             this.impuesto = _impuesto;
             this.fechaVenta = _fechaVenta;
             this.total = _total;
@@ -29,6 +35,8 @@ namespace sublicreacr.Negocio
             this.fkEmailComprador = _fkEmailComprador;
             this.fkCedulaJuridicaVendedor = _fkCedulaJuridicaVendedor;
         }
+
+        public int IdVenta { get => idVenta; set => idVenta = value; }
         public float Impuesto { get=>impuesto; set=>impuesto=value; }
         public DateTime FechaVenta { get => fechaVenta; set => fechaVenta = value; }
         public float Total { get => total; set => total = value; }
@@ -36,7 +44,7 @@ namespace sublicreacr.Negocio
         public byte[] ArchivoFactura { get => archivoFactura; set => archivoFactura = value; }
         public DateTime FechaEntrega { get => fechaEntrega; set => fechaEntrega = value; }
         public string FkEmailComprador { get => fkEmailComprador; set => fkEmailComprador = value; }
-        public int FkCedulaJuridicaVendedor { get => fkCedulaJuridicaVendedor; set => fkCedulaJuridicaVendedor = value; }
+        public long FkCedulaJuridicaVendedor { get => fkCedulaJuridicaVendedor; set => fkCedulaJuridicaVendedor = value; }
 
 
 

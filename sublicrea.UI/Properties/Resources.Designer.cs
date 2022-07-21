@@ -63,9 +63,9 @@ namespace sublicrea.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap campana_notificacion {
+        internal static System.Drawing.Bitmap campana_sin_notificacion {
             get {
-                object obj = ResourceManager.GetObject("campana_notificacion", resourceCulture);
+                object obj = ResourceManager.GetObject("campana_sin_notificacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace sublicrea.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap campana_sin_notificacion {
+        internal static System.Drawing.Bitmap carrito {
             get {
-                object obj = ResourceManager.GetObject("campana_sin_notificacion", resourceCulture);
+                object obj = ResourceManager.GetObject("carrito", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

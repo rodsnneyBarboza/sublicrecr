@@ -51,8 +51,7 @@ namespace sublicrea.UI
                             usu.Logo = (byte[])datos.Tables[0].Rows[0]["logo"];
                             Catalogo cat = new Catalogo(usu);
 
-                            cat.Left = 500;
-                            cat.Top = 500;
+                            
 
                             bit.FkEmail = usu.Email;
                             bit.TipoMovimiento = "login";
@@ -96,6 +95,9 @@ namespace sublicrea.UI
             this.Close();
         }
 
-       
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

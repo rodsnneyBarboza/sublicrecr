@@ -15,6 +15,117 @@ namespace sublicreacr.Negocio
         private GestorBase ges = new GestorBase();
         private Validaciones val = new Validaciones();
         #region mostrar
+
+        public List<DetalleVenta> mostrarArticulosPedidos(int _idVenta = -1)
+        {
+            try
+            {
+                List<DetalleVenta> det = new List<DetalleVenta>();
+                DataRowCollection datos = ges.mostrarArticulosPedidos(_idVenta).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    DetalleVenta detalle = new DetalleVenta();
+                    detalle.Cantidad = Int32.Parse(datos[i]["cantidad"].ToString());
+                    detalle.IdDetalleVenta = Int32.Parse(datos[i]["id_detalle_venta"].ToString());
+                    detalle.Nombre = datos[i]["nombre"].ToString();
+                    detalle.Precio = float.Parse(datos[i]["precio"].ToString());
+
+                    det.Add(detalle);
+
+                }
+                return det;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public List<Empresa> mostrarEmpresaPedidosActivo(long _cedula_juridica = -1)
+        {
+            try
+            {
+                List<Empresa> emp = new List<Empresa>();
+                DataRowCollection datos = ges.mostrarEmpresaPedidosActivo(_cedula_juridica).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Empresa empresa = new Empresa();
+                    empresa.CedulaJuridica = Int32.Parse(datos[i]["cedula_juridica"].ToString());
+                    empresa.NombreEmpresa = datos[i]["nombre_empresa"].ToString();
+                
+
+                    emp.Add(empresa);
+
+                }
+                return emp;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public List<DetalleVenta> mostrarArticulosPedidosPendientes(long _cedula_juridica = -1)
+        {
+            try
+            {
+                List<DetalleVenta> det = new List<DetalleVenta>();
+                DataRowCollection datos = ges.mostrarArticulosPedidosPendientes(_cedula_juridica).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    DetalleVenta detalle = new DetalleVenta();
+                    detalle.Nombre = datos[i]["nombre"].ToString();
+                    detalle.Cantidad = Int16.Parse(datos[i]["cantidad"].ToString());
+                    detalle.Precio = float.Parse(datos[i]["precio"].ToString());
+                    detalle.IdDetalleVenta = Int16.Parse(datos[i]["id_detalle_venta"].ToString());
+                    detalle.FkIdArticulo = Int16.Parse(datos[i]["fk_id_articulo"].ToString());
+
+                    det.Add(detalle);
+
+                }
+                return det;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public List<Venta> mostrarVentas(int _id_venta = -1)
+        {
+            try
+            {
+                List<Venta> ven = new List<Venta>();
+                DataRowCollection datos = ges.mostrarVentas(_id_venta).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Venta venta = new Venta();
+                    venta.IdVenta = Int32.Parse(datos[i]["id_venta"].ToString());
+                    venta.Impuesto = float.Parse(datos[i]["impuesto"].ToString());
+                    venta.FechaVenta = DateTime.Parse(datos[i]["fecha_venta"].ToString());
+                    venta.Total = float.Parse(datos[i]["total"].ToString());
+                    venta.Estado =bool.Parse(datos[i]["estado"].ToString());
+                    venta.FechaEntrega = DateTime.Parse(datos[i]["fecha_entrega"].ToString()); ;
+                    venta.FkEmailComprador = datos[i]["fk_email_comprador"].ToString();
+                    venta.FkCedulaJuridicaVendedor = long.Parse(datos[i]["fk_cedula_juridica_vendedor"].ToString()); ;
+
+                    ven.Add(venta);
+
+                }
+                return ven;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
         public List<Categoria> mostrarCategoria(int _idCategoria=-1)
         {
             try
@@ -28,6 +139,32 @@ namespace sublicreacr.Negocio
                         , datos[i]["nombre_categoria"].ToString()));
                 }
                 return cat;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public List<Empresa> mostrarProveedores()
+        {
+            try
+            {
+                List<Empresa> prov = new List<Empresa>();
+                DataRowCollection datos = ges.mostrarProveedores().Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Empresa emp = new Empresa();
+
+                    emp.CedulaJuridica = Int32.Parse(datos[i]["cedula_juridica"].ToString());
+                    emp.NombreEmpresa = datos[i]["nombre_empresa"].ToString();
+
+                    prov.Add(emp);
+                }
+
+                return prov;
 
             }
             catch (Exception e)
@@ -81,7 +218,57 @@ namespace sublicreacr.Negocio
                 throw e;
             }
         }
-        
+
+        public List<Articulo> mostrarArticuloProveedor(long _cedulJuridica = -1)
+        {
+            try
+            {
+                List<Articulo> art = new List<Articulo>();
+                DataRowCollection datos = ges.mostrarArticuloProveedor(_cedulJuridica).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Articulo articulo = new Articulo();
+                    articulo.IdArticulo = Int16.Parse(datos[i]["id_articulo"].ToString());
+                    articulo.Nombre = datos[i]["nombre"].ToString();
+                    articulo.PrecioVenta = float.Parse(datos[i]["precio_venta"].ToString());
+                    articulo.CantidadDisponible = Int32.Parse(datos[i]["cantidad_disponible"].ToString());
+
+                    art.Add(articulo);
+
+                }
+                return art;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public List<Venta> mostrarVentaActual()
+        {
+            try
+            {
+                List<Venta> ven = new List<Venta>();
+                DataRowCollection datos = ges.mostrarVentaActual().Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Venta venta = new Venta();
+                    venta.IdVenta=Int16.Parse(datos[i]["max_venta"].ToString());
+
+                    ven.Add(venta);
+
+                }
+                return ven;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         public List<TipoUsuario> mostrarTipoUsuario(int _tipoUusario=-1)
         {
@@ -243,6 +430,29 @@ namespace sublicreacr.Negocio
             }
         }
 
+        public bool agregarDetalleVenta(DetalleVenta det)
+        {
+            try
+            {
+                return ges.agregarDetalleVenta(det);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool agregarVenta(Venta ven)
+        {
+            try
+            {
+                return ges.agregarVenta(ven);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool agregarArticulo(Articulo art)
         {
             try
@@ -295,7 +505,33 @@ namespace sublicreacr.Negocio
         }
 
         #endregion
+        #region eliminar
+        public bool eliminarVentasErroneas()
+        {
+            try
+            {
+                return ges.eliminarVentasErroneas();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
+        }
+
+        public bool eliminarDetalleVenta(int _idDetalleVenta)
+        {
+            try
+            {
+                return ges.eliminarDetalleVenta(_idDetalleVenta);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        #endregion
         #region actualizar
         public bool actualizarCategoria(Categoria cat)
         {
@@ -309,6 +545,42 @@ namespace sublicreacr.Negocio
             }
         }
 
+        public bool actualizarInventario(DetalleVenta det)
+        {
+            try
+            {
+                return ges.actualizarInventario(det);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool actualizarDetalleVentaEstado(DetalleVenta det)
+        {
+            try
+            {
+                return ges.actualizarDetalleVentaEstado(det);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public bool actualizarTotalFinal(Venta ven)
+        {
+            try
+            {
+                return ges.actualizarTotalFinal(ven);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public bool actualizarArticulo(Articulo art)
         {
             try
@@ -345,6 +617,49 @@ namespace sublicreacr.Negocio
                 throw e;
 
             }
+        }
+
+        public bool estadoArticulo(Articulo art)
+        {
+            try
+            {
+                return ges.estadoArticulo(art);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+
+            }
+        }
+
+        public bool estadoUsuario(Usuario usu)
+        {
+            try
+            {
+                return ges.estadoUsuario(usu);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+
+            }
+        }
+
+        public bool estadoEmpresa(Empresa emp)
+        {
+            try
+            {
+                return ges.estadoEmpresa(emp);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+
+            }
+
         }
 
         #endregion

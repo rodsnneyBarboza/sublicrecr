@@ -119,9 +119,10 @@ namespace sublicrea.UI
                 btnAgregarUsuarioRedirigir.Visible = true;
                 btnAgregarArticuloRedirigir.Visible = true;
                 btnAgregarCategoriaRedirigir.Visible = true;
+                btnAgregarEmpresaRedirigir.Visible = true;
+
                 btnMantenimientos.Visible = true;
 
-                btnAgregarEmpresaRedirigir.Visible = false;
             }
             else if (usuSesion.FkTipoUsuario == 2)
             {
@@ -197,6 +198,46 @@ namespace sublicrea.UI
             Form art = new ReportesBitacoras(usuSesion, tipoReporte);
 
             art.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ventana = new LogIn();
+
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void btnAcercaDeRedirigir_Click(object sender, EventArgs e)
+        {
+            Form acerca = new AcercaDe(usuSesion);
+
+            acerca.Show();
+            this.Hide();
+        }
+
+        private void btnAyudaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form ayuda = new Ayuda(usuSesion);
+
+            ayuda.Show();
+            this.Hide();
+        }
+
+        private void picCarrito_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void picCampana_Click(object sender, EventArgs e)
+        {
+            Form ped = new PedidosPendientes(usuSesion);
+
+            ped.Show();
             this.Hide();
         }
     }

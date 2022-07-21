@@ -134,7 +134,15 @@ namespace sublicrea.UI
                                 {
                                     bit.TipoMovimiento = "agregar";
                                     bit.DetalleMovimiento = "agregar articulo "+art.Nombre;
-                                    ges.agregarArticulo(art);
+                                    if (ges.agregarArticulo(art))
+                                    {
+                                        MessageBox.Show("Artículo Agregado con Éxito");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error al Agregar el Artículo");
+
+                                    }
                                     ges.agregarBitacora(bit);
 
                                 }
@@ -144,7 +152,15 @@ namespace sublicrea.UI
                                     bit.DetalleMovimiento = "actualizar articulo " + art.Nombre;
                                     art.IdArticulo = Int32.Parse(txtIddArticulo.Text);
 
-                                   ges.actualizarArticulo(art);
+                                    if (ges.actualizarArticulo(art))
+                                    {
+                                        MessageBox.Show("Artículo Actualizado con Éxito");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error al Actualizar el Artículo");
+
+                                    }
                                     ges.agregarBitacora(bit);
 
 
@@ -201,9 +217,10 @@ namespace sublicrea.UI
                 btnAgregarUsuarioRedirigir.Visible = true;
                 btnAgregarArticuloRedirigir.Visible = true;
                 btnAgregarCategoriaRedirigir.Visible = true;
+                btnAgregarEmpresaRedirigir.Visible = true;
                 btnMantenimientos.Visible = true;
 
-                btnAgregarEmpresaRedirigir.Visible = false;
+
             }
             else if (usuSesion.FkTipoUsuario == 2)
             {
@@ -292,10 +309,6 @@ namespace sublicrea.UI
             }
         }
 
-        private void btnMantenimientos_MouseHover(object sender, EventArgs e)
-        {
-        }
-
         private void btnMantenimientos_Click(object sender, EventArgs e)
         {
             pSubMenu.Visible = !pSubMenu.Visible;
@@ -356,6 +369,51 @@ namespace sublicrea.UI
         private void btnReportesRedirigr_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ventana = new LogIn();
+
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void btnSistema_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAcercaDeRedirigir_Click(object sender, EventArgs e)
+        {
+            Form acerca = new AcercaDe(usuSesion);
+
+            acerca.Show();
+            this.Hide();
+        }
+
+        private void btnAyudaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form ayuda = new Ayuda(usuSesion);
+
+            ayuda.Show();
+            this.Hide();
+        }
+
+        private void picCarrito_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void picCampana_Click(object sender, EventArgs e)
+        {
+            Form ped = new PedidosPendientes(usuSesion);
+
+            ped.Show();
+            this.Hide();
         }
     }
 }

@@ -36,3 +36,6 @@ C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ClosedXML.pdb
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ClosedXML.xml
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\bin\Debug\ExcelNumberFormat.xml
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.AcercaDe.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.Ayuda.resources
+C:\Users\rodsn\source\repos\sublicreacr\sublicrea.UI\obj\Debug\sublicrea.UI.PedidosPendientes.resources

@@ -32,17 +32,22 @@ namespace sublicrea.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarActualizarCategoria));
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtIdCategoria = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAyudaRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAcercaDeRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.lbIdCategoria = new System.Windows.Forms.Label();
             this.btnAgregarActualizarCategoria = new Guna.UI2.WinForms.Guna2Button();
             this.txtNombreCategoria = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.picCarrito = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnCerrarSesion = new Guna.UI2.WinForms.Guna2Button();
             this.picCampana = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnSistema = new Guna.UI2.WinForms.Guna2Button();
             this.btnArticulosRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEmpresasRedirigir = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +68,9 @@ namespace sublicrea.UI
             this.btnAgregarArticuloRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCampana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -76,6 +83,7 @@ namespace sublicrea.UI
             // 
             this.guna2Panel3.AutoScroll = true;
             this.guna2Panel3.Controls.Add(this.txtIdCategoria);
+            this.guna2Panel3.Controls.Add(this.guna2Panel5);
             this.guna2Panel3.Controls.Add(this.lbIdCategoria);
             this.guna2Panel3.Controls.Add(this.btnAgregarActualizarCategoria);
             this.guna2Panel3.Controls.Add(this.txtNombreCategoria);
@@ -85,6 +93,7 @@ namespace sublicrea.UI
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(799, 478);
             this.guna2Panel3.TabIndex = 7;
+            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
             // txtIdCategoria
             // 
@@ -106,6 +115,54 @@ namespace sublicrea.UI
             this.txtIdCategoria.Size = new System.Drawing.Size(230, 38);
             this.txtIdCategoria.TabIndex = 26;
             this.txtIdCategoria.Visible = false;
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.guna2Panel5.Controls.Add(this.btnAyudaRedirigir);
+            this.guna2Panel5.Controls.Add(this.btnAcercaDeRedirigir);
+            this.guna2Panel5.Location = new System.Drawing.Point(-3, 424);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(226, 54);
+            this.guna2Panel5.TabIndex = 40;
+            this.guna2Panel5.Visible = false;
+            // 
+            // btnAyudaRedirigir
+            // 
+            this.btnAyudaRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAyudaRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAyudaRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAyudaRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAyudaRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAyudaRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnAyudaRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAyudaRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAyudaRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAyudaRedirigir.Location = new System.Drawing.Point(0, 23);
+            this.btnAyudaRedirigir.Name = "btnAyudaRedirigir";
+            this.btnAyudaRedirigir.Size = new System.Drawing.Size(226, 24);
+            this.btnAyudaRedirigir.TabIndex = 3;
+            this.btnAyudaRedirigir.Text = "Ayuda";
+            this.btnAyudaRedirigir.Click += new System.EventHandler(this.btnAyudaRedirigir_Click);
+            // 
+            // btnAcercaDeRedirigir
+            // 
+            this.btnAcercaDeRedirigir.BackColor = System.Drawing.Color.Transparent;
+            this.btnAcercaDeRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAcercaDeRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAcercaDeRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAcercaDeRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAcercaDeRedirigir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAcercaDeRedirigir.FillColor = System.Drawing.Color.Transparent;
+            this.btnAcercaDeRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAcercaDeRedirigir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAcercaDeRedirigir.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAcercaDeRedirigir.Location = new System.Drawing.Point(0, 0);
+            this.btnAcercaDeRedirigir.Name = "btnAcercaDeRedirigir";
+            this.btnAcercaDeRedirigir.Size = new System.Drawing.Size(226, 23);
+            this.btnAcercaDeRedirigir.TabIndex = 2;
+            this.btnAcercaDeRedirigir.Text = "Acerca De";
+            this.btnAcercaDeRedirigir.Click += new System.EventHandler(this.btnAcercaDeRedirigir_Click);
             // 
             // lbIdCategoria
             // 
@@ -181,6 +238,7 @@ namespace sublicrea.UI
             // guna2Panel1
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Controls.Add(this.picCarrito);
             this.guna2Panel1.Controls.Add(this.btnCerrarSesion);
             this.guna2Panel1.Controls.Add(this.picCampana);
             this.guna2Panel1.Controls.Add(this.picLogo);
@@ -190,6 +248,21 @@ namespace sublicrea.UI
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1034, 62);
             this.guna2Panel1.TabIndex = 5;
+            // 
+            // picCarrito
+            // 
+            this.picCarrito.BackColor = System.Drawing.Color.Transparent;
+            this.picCarrito.Image = ((System.Drawing.Image)(resources.GetObject("picCarrito.Image")));
+            this.picCarrito.ImageRotate = 0F;
+            this.picCarrito.Location = new System.Drawing.Point(729, 14);
+            this.picCarrito.Name = "picCarrito";
+            this.picCarrito.Size = new System.Drawing.Size(39, 36);
+            this.picCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCarrito.TabIndex = 39;
+            this.picCarrito.TabStop = false;
+            this.picCarrito.UseTransparentBackground = true;
+            this.picCarrito.Visible = false;
+            this.picCarrito.Click += new System.EventHandler(this.picCarrito_Click);
             // 
             // btnCerrarSesion
             // 
@@ -209,6 +282,7 @@ namespace sublicrea.UI
             this.btnCerrarSesion.Size = new System.Drawing.Size(125, 30);
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // picCampana
             // 
@@ -223,6 +297,7 @@ namespace sublicrea.UI
             this.picCampana.TabStop = false;
             this.picCampana.UseTransparentBackground = true;
             this.picCampana.Visible = false;
+            this.picCampana.Click += new System.EventHandler(this.picCampana_Click);
             // 
             // picLogo
             // 
@@ -256,6 +331,7 @@ namespace sublicrea.UI
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.Controls.Add(this.btnSistema);
             this.guna2Panel4.Controls.Add(this.btnArticulosRedirigir);
             this.guna2Panel4.Controls.Add(this.label8);
             this.guna2Panel4.Controls.Add(this.btnEmpresasRedirigir);
@@ -270,6 +346,25 @@ namespace sublicrea.UI
             this.guna2Panel4.Size = new System.Drawing.Size(226, 331);
             this.guna2Panel4.TabIndex = 23;
             // 
+            // btnSistema
+            // 
+            this.btnSistema.BackColor = System.Drawing.Color.Transparent;
+            this.btnSistema.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSistema.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSistema.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSistema.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSistema.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSistema.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSistema.FillColor = System.Drawing.Color.Transparent;
+            this.btnSistema.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSistema.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnSistema.Location = new System.Drawing.Point(0, 288);
+            this.btnSistema.Name = "btnSistema";
+            this.btnSistema.Size = new System.Drawing.Size(226, 36);
+            this.btnSistema.TabIndex = 39;
+            this.btnSistema.Text = "Sistema  >";
+            this.btnSistema.Visible = false;
+            // 
             // btnArticulosRedirigir
             // 
             this.btnArticulosRedirigir.BackColor = System.Drawing.Color.Transparent;
@@ -282,9 +377,9 @@ namespace sublicrea.UI
             this.btnArticulosRedirigir.FillColor = System.Drawing.Color.Transparent;
             this.btnArticulosRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnArticulosRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnArticulosRedirigir.Location = new System.Drawing.Point(0, 294);
+            this.btnArticulosRedirigir.Location = new System.Drawing.Point(0, 252);
             this.btnArticulosRedirigir.Name = "btnArticulosRedirigir";
-            this.btnArticulosRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnArticulosRedirigir.Size = new System.Drawing.Size(226, 36);
             this.btnArticulosRedirigir.TabIndex = 13;
             this.btnArticulosRedirigir.Text = "Artículos";
             this.btnArticulosRedirigir.Visible = false;
@@ -313,9 +408,9 @@ namespace sublicrea.UI
             this.btnEmpresasRedirigir.FillColor = System.Drawing.Color.Transparent;
             this.btnEmpresasRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEmpresasRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnEmpresasRedirigir.Location = new System.Drawing.Point(0, 252);
+            this.btnEmpresasRedirigir.Location = new System.Drawing.Point(0, 216);
             this.btnEmpresasRedirigir.Name = "btnEmpresasRedirigir";
-            this.btnEmpresasRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnEmpresasRedirigir.Size = new System.Drawing.Size(226, 36);
             this.btnEmpresasRedirigir.TabIndex = 7;
             this.btnEmpresasRedirigir.Text = "Empresas";
             this.btnEmpresasRedirigir.Visible = false;
@@ -333,9 +428,9 @@ namespace sublicrea.UI
             this.btnCategoriasRedirigir.FillColor = System.Drawing.Color.Transparent;
             this.btnCategoriasRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCategoriasRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnCategoriasRedirigir.Location = new System.Drawing.Point(0, 210);
+            this.btnCategoriasRedirigir.Location = new System.Drawing.Point(0, 180);
             this.btnCategoriasRedirigir.Name = "btnCategoriasRedirigir";
-            this.btnCategoriasRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnCategoriasRedirigir.Size = new System.Drawing.Size(226, 36);
             this.btnCategoriasRedirigir.TabIndex = 6;
             this.btnCategoriasRedirigir.Text = "Categorias";
             this.btnCategoriasRedirigir.Visible = false;
@@ -353,9 +448,9 @@ namespace sublicrea.UI
             this.btnUsuarioRedirigir.FillColor = System.Drawing.Color.Transparent;
             this.btnUsuarioRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUsuarioRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnUsuarioRedirigir.Location = new System.Drawing.Point(0, 168);
+            this.btnUsuarioRedirigir.Location = new System.Drawing.Point(0, 144);
             this.btnUsuarioRedirigir.Name = "btnUsuarioRedirigir";
-            this.btnUsuarioRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnUsuarioRedirigir.Size = new System.Drawing.Size(226, 36);
             this.btnUsuarioRedirigir.TabIndex = 5;
             this.btnUsuarioRedirigir.Text = "Usuarios";
             this.btnUsuarioRedirigir.Visible = false;
@@ -373,9 +468,9 @@ namespace sublicrea.UI
             this.btnReportesBitacoraRedirigir.FillColor = System.Drawing.Color.Transparent;
             this.btnReportesBitacoraRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReportesBitacoraRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnReportesBitacoraRedirigir.Location = new System.Drawing.Point(0, 126);
+            this.btnReportesBitacoraRedirigir.Location = new System.Drawing.Point(0, 108);
             this.btnReportesBitacoraRedirigir.Name = "btnReportesBitacoraRedirigir";
-            this.btnReportesBitacoraRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnReportesBitacoraRedirigir.Size = new System.Drawing.Size(226, 36);
             this.btnReportesBitacoraRedirigir.TabIndex = 3;
             this.btnReportesBitacoraRedirigir.Text = "Reportes de Bitácora";
             this.btnReportesBitacoraRedirigir.Visible = false;
@@ -393,9 +488,9 @@ namespace sublicrea.UI
             this.btnReportesRedirigr.FillColor = System.Drawing.Color.Transparent;
             this.btnReportesRedirigr.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReportesRedirigr.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnReportesRedirigr.Location = new System.Drawing.Point(0, 84);
+            this.btnReportesRedirigr.Location = new System.Drawing.Point(0, 72);
             this.btnReportesRedirigr.Name = "btnReportesRedirigr";
-            this.btnReportesRedirigr.Size = new System.Drawing.Size(226, 42);
+            this.btnReportesRedirigr.Size = new System.Drawing.Size(226, 36);
             this.btnReportesRedirigr.TabIndex = 2;
             this.btnReportesRedirigr.Text = "Reportes";
             this.btnReportesRedirigr.Visible = false;
@@ -412,9 +507,9 @@ namespace sublicrea.UI
             this.btnMantenimientos.FillColor = System.Drawing.Color.Transparent;
             this.btnMantenimientos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMantenimientos.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnMantenimientos.Location = new System.Drawing.Point(0, 42);
+            this.btnMantenimientos.Location = new System.Drawing.Point(0, 36);
             this.btnMantenimientos.Name = "btnMantenimientos";
-            this.btnMantenimientos.Size = new System.Drawing.Size(226, 42);
+            this.btnMantenimientos.Size = new System.Drawing.Size(226, 36);
             this.btnMantenimientos.TabIndex = 1;
             this.btnMantenimientos.Text = "Mantenimientos  >";
             this.btnMantenimientos.Visible = false;
@@ -434,7 +529,7 @@ namespace sublicrea.UI
             this.btnCatalogoRedirigir.ForeColor = System.Drawing.SystemColors.GrayText;
             this.btnCatalogoRedirigir.Location = new System.Drawing.Point(0, 0);
             this.btnCatalogoRedirigir.Name = "btnCatalogoRedirigir";
-            this.btnCatalogoRedirigir.Size = new System.Drawing.Size(226, 42);
+            this.btnCatalogoRedirigir.Size = new System.Drawing.Size(226, 36);
             this.btnCatalogoRedirigir.TabIndex = 0;
             this.btnCatalogoRedirigir.Text = "Catálogo";
             this.btnCatalogoRedirigir.Visible = false;
@@ -598,11 +693,14 @@ namespace sublicrea.UI
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "AgregarActualizarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarActualizarCategoria";
             this.Load += new System.EventHandler(this.AgregarActualizarCategoria_Load);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCampana)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
@@ -648,5 +746,10 @@ namespace sublicrea.UI
         private Guna.UI2.WinForms.Guna2Button btnAgregarArticuloRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnAgregarUsuarioRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnArticulosRedirigir;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Button btnAyudaRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnAcercaDeRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnSistema;
+        private Guna.UI2.WinForms.Guna2PictureBox picCarrito;
     }
 }

@@ -112,9 +112,10 @@ namespace sublicrea.UI
                     btnAgregarUsuarioRedirigir.Visible = true;
                     btnAgregarArticuloRedirigir.Visible = true;
                     btnAgregarCategoriaRedirigir.Visible = true;
+                    btnAgregarEmpresaRedirigir.Visible = true;
+
                     btnMantenimientos.Visible = true;
 
-                    btnAgregarEmpresaRedirigir.Visible = false;
                 }
                 else if (usuSesion.FkTipoUsuario == 2)
                 {
@@ -177,6 +178,8 @@ namespace sublicrea.UI
                 this.dtgUsuarios.Columns["Estado"].Visible = false;
                 this.dtgUsuarios.Columns["EstadoLeyenda"].HeaderText = "Estado";
 
+                this.dtgUsuarios.Columns["btnDeshabilitar"].DisplayIndex = this.dtgUsuarios.Columns.Count - 1;
+
                 bit.FkEmail = this.usuSesion.Email;
                 bit.TipoMovimiento = "consultar";
                 bit.DetalleMovimiento = "consultar usuarios";
@@ -228,6 +231,82 @@ namespace sublicrea.UI
             Form art = new MenuReportes(usuSesion);
 
             art.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ventana = new LogIn();
+
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void dtgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dtgUsuarios.Columns[e.ColumnIndex].Name == "btnDeshabilitar")
+            {
+                Usuario usu = new Usuario();
+
+                usu.Email = this.dtgUsuarios.Rows[this.dtgUsuarios.CurrentRow.Index].Cells[1].Value.ToString();
+
+                string estado = this.dtgUsuarios.CurrentCell.OwningRow.Cells["EstadoLeyenda"].Value.ToString();
+                string mensaje = "El Usuario se ";
+
+
+                if (estado == "Activo")
+                {
+                    usu.Estado = false;
+                    mensaje += "Deshabilitó";
+                }
+                else
+                {
+                    usu.Estado = true;
+                    mensaje += "Habilitó";
+
+
+                }
+
+                if (this.ges.estadoUsuario(usu))
+                {
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Cambiar el Estado del Usuario");
+                }
+            }
+        }
+
+        private void btnAcercaDeRedirigir_Click(object sender, EventArgs e)
+        {
+            Form acerca = new AcercaDe(usuSesion);
+
+            acerca.Show();
+            this.Hide();
+        }
+
+        private void btnAyudaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form ayuda = new Ayuda(usuSesion);
+
+            ayuda.Show();
+            this.Hide();
+        }
+
+        private void picCarrito_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void picCampana_Click(object sender, EventArgs e)
+        {
+            Form ped = new PedidosPendientes(usuSesion);
+
+            ped.Show();
             this.Hide();
         }
     }

@@ -118,6 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picCarrito.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFwAAABXCAYAAACJKCKbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAA3pJREFUeF7tnDGLFEEQRv1txsampsbGxqamxsYmgocIwoGgHAiCIoKwK3u/ZOTt
+        Vjl9Z91ej9tdM958weO47a7Z2jfdNT2z9N7bbDaDyEPCk5HwZCQ8GQlPRsKTkfBkJgl/cr4bHry53P99
+        /unXcPEj7iduZpLwR+92w/3Xl1dAfNRXxEwuKd9+boZXX7bD0w+jfE5E1Ff8zUk1/Pz7dl9ikP7iYhv2
+        EVc5+aJ59nX7Z6RzAqI+YuRk4eDlRfX8dpoIp6YjnNVL1C5GmgjnQopw6nnULkaaCAev41GbGJHwZCQ8
+        GQlPprnwtRO5KZHwxkRuShZTUtYSL+FGVryEG1nxEm5kxUu4kRUv4UZWvIQbWfESbmTFS7iRFS/hRlZ8
+        c+FrJ3JTIuGNidyUqKQYWfESbmTFS7iRFS/hRla8hBtZ8RJuZMVLuJEVL+FGVryEG1nxEm5kxTcXvnYi
+        NyUS3pjITYlKipEVL+FGVryEG1nxEm5kxUu4kRUv4UZWvIQbx+LZNMYeVHbrAZuAn33c7bdLPn6/u7Il
+        PoovWa1wJPLjDC7S4xHpEh++PezM87bbqNnFd+eElxJffh5HI3tIkQhTJAL9ieMYwPE4LsdnJzbvxwmM
+        8rrOfyF8ypSuBYmMYBfpEsElcvJqRdYym/BeU7qUyAlxkbwH7zVlNPagufClT+m5aS68lrmm9Nw0F770
+        KT03i7lorgUJT0bCk5HwZCQ8GQlPpplwloMIZ+0ctYsDzYSz7kY46+2oXRxoJpybG4TzHCRqFweaCefu
+        0cuKfr/wZpoJh/JXOrm95/+o35ppKhx4VuIjfW3UlNPmwoHyQlkhgSixuwoLh8hHSRfhDuKPSWcmLOnJ
+        IblQCqNcoUW+3YSzHvfSwodgFePPuFk6ettSpGfl2004z8FJkGl2U4K+dq+Zir3xX4iuyZe+UXsN3Wo4
+        3+gAoyTqA96PDzHnHWpmvl2EMwVJquaq7aOGKRy1Z5CZbxfhfLlLUpSVqL2E1Qx9iYnaM8jMt+sIr6nN
+        PmLmFJ6Zb7caTlLUu2O1rqyJx2pnbzLz7SIcyqt+1E7yPlpqRlZvsvLtJpwEy3Ut05bXgGcsfoPBiFnC
+        M5cp+Z4yG7sJB6anT8EIPuCcpeQ6Nfn+63LQ6SrcYQnFCOHDAMsvXmP0RP3nxvNFcOt8U4SLEQlPRsJT
+        2Qy/AWyle34+mAyhAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="picCampana.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFIAAABQCAYAAACK5CKQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -284,4 +305,7 @@
         SUVORK5CYII=
 </value>
   </data>
+  <metadata name="btnDeshabilitar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

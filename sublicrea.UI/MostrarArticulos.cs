@@ -101,6 +101,7 @@ namespace sublicrea.UI
 
         private void MostrarArticulos_Load(object sender, EventArgs e)
         {
+
             lbEmail.Text = usuSesion.Email;
             lbRol.Text = usuSesion.TipoUsuario;
 
@@ -116,9 +117,10 @@ namespace sublicrea.UI
                 btnAgregarUsuarioRedirigir.Visible = true;
                 btnAgregarArticuloRedirigir.Visible = true;
                 btnAgregarCategoriaRedirigir.Visible = true;
+                btnAgregarEmpresaRedirigir.Visible = true;
+
                 btnMantenimientos.Visible = true;
 
-                btnAgregarEmpresaRedirigir.Visible = false;
             }
             else if (usuSesion.FkTipoUsuario == 2)
             {
@@ -170,14 +172,16 @@ namespace sublicrea.UI
                 picLogo.Image = val.convertirBytesAImagenes(usuSesion.Logo);
             }
 
-            this.dtgArticulos.DataSource = ges.mostrarArticulo();
+            this.dtgArticulos.DataSource = ges.mostrarArticulo();         
 
             this.dtgArticulos.Columns["Imagen"].Visible = false;
             this.dtgArticulos.Columns["Estado"].Visible = false;
             this.dtgArticulos.Columns["FkIdCategoria"].Visible = false;
             this.dtgArticulos.Columns["FkCedulaJuridica"].HeaderText = "Céd Jurídica";
             this.dtgArticulos.Columns["EstadoLeyenda"].HeaderText = "Estado";
+            this.dtgArticulos.Columns["btnEstado"].DisplayIndex = this.dtgArticulos.Columns.Count - 1;
 
+           
             bit.FkEmail = this.usuSesion.Email;
             bit.TipoMovimiento = "consultar";
             bit.DetalleMovimiento = "consultar artículos";
@@ -197,7 +201,7 @@ namespace sublicrea.UI
 
         private void dtgArticulos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            int idArticulo = (int)this.dtgArticulos.Rows[dtgArticulos.CurrentRow.Index].Cells[0].Value;
+            int idArticulo =Convert.ToInt16(this.dtgArticulos.Rows[dtgArticulos.CurrentRow.Index].Cells["IdArticulo"].Value);
 
             AgregarActualizarArticulos art = new AgregarActualizarArticulos(usuSesion, idArticulo);
 
@@ -210,6 +214,82 @@ namespace sublicrea.UI
             Form art = new MenuReportes(usuSesion);
 
             art.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ventana = new LogIn();
+
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void dtgArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (this.dtgArticulos.Columns[e.ColumnIndex].Name== "btnEstado")
+            {
+
+                string estado = this.dtgArticulos.CurrentCell.OwningRow.Cells["EstadoLeyenda"].Value.ToString();
+                Articulo art = new Articulo();
+
+                art.IdArticulo = (int)this.dtgArticulos.Rows[dtgArticulos.CurrentRow.Index].Cells[1].Value;
+                string mensaje = "El Artículo se ";
+
+                if (estado == "Activo")
+                {
+                    art.Estado = false;
+                    mensaje += "Deshabilitó";
+
+                }
+                else
+                {
+                    art.Estado = true;
+                    mensaje += "Habilitó";
+
+                }
+
+                if (this.ges.estadoArticulo(art))
+                {
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Cambiar el Estado del Artículo");
+                }
+            }
+        }
+
+        private void btnAcercaDeRedirigir_Click(object sender, EventArgs e)
+        {
+            Form acerca = new AcercaDe(usuSesion);
+
+            acerca.Show();
+            this.Hide();
+        }
+
+        private void btnAyudaRedirigir_Click(object sender, EventArgs e)
+        {
+            Form ayuda = new Ayuda(usuSesion);
+
+            ayuda.Show();
+            this.Hide();
+        }
+
+        private void picCarrito_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo(usuSesion);
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void picCampana_Click(object sender, EventArgs e)
+        {
+            Form ped = new PedidosPendientes(usuSesion);
+
+            ped.Show();
             this.Hide();
         }
     }

@@ -28,60 +28,46 @@ namespace sublicrea.UI
         {
             List<Empresa> emp = ges.mostrarEmpresaPedidosActivo(usuSesion.FkEmpresa);
 
-            if (usuSesion.FkTipoUsuario == 1)
+            //valida el tipo de usuario para desplegar las diferentes opciones del menú de navegación
+            if (usuSesion.FkTipoUsuario == 1 || usuSesion.FkTipoUsuario == 2)
             {
-                btnCatalogoRedirigir.Visible = true;
-                btnReportesBitacoraRedirigir.Visible = true;
+                //btnCatalogoRedirigir.Visible = true;
+                btnMantenimientos.Visible = true;
                 btnReportesRedirigr.Visible = true;
+                btnReportesBitacoraRedirigir.Visible = true;
                 btnUsuarioRedirigir.Visible = true;
                 btnCategoriasRedirigir.Visible = true;
                 btnEmpresasRedirigir.Visible = true;
                 btnArticulosRedirigir.Visible = true;
+                btnSistema.Visible = true;
+                btnMantenimientos.Visible = true;
                 btnAgregarUsuarioRedirigir.Visible = true;
                 btnAgregarArticuloRedirigir.Visible = true;
                 btnAgregarCategoriaRedirigir.Visible = true;
                 btnAgregarEmpresaRedirigir.Visible = true;
-
-                btnMantenimientos.Visible = true;
-            }
-            else if (usuSesion.FkTipoUsuario == 2)
-            {
-                btnReportesRedirigr.Visible = true;
-                btnAgregarArticuloRedirigir.Visible = true;
-                btnArticulosRedirigir.Visible = true;
-                btnMantenimientos.Visible = true;
-                pSubMenu.Location = new Point(5, 134);
-
+                submenuSistema.Location = new Point(3, 325);
 
             }
             else if (usuSesion.FkTipoUsuario == 3)
             {
-                btnCatalogoRedirigir.Visible = true;
-                btnReportesRedirigr.Visible = true;
                 picCampana.Visible = true;
-                this.dtgArticulos.Columns["btnRecibido"].Visible = true;
-                dtgArticulos.Visible = true;
-                lbPedidosPendientes.Visible = true;
-                this.dtgArticulos.DataSource = ges.mostrarArticulosPedidosPendientes(this.usuSesion.FkEmpresa);
-                this.dtgArticulos.Columns["IdDetalleVenta"].Visible = false;
-                this.dtgArticulos.Columns["Descuento"].Visible = false;
-                this.dtgArticulos.Columns["FkIdArticulo"].Visible = false;
-                this.dtgArticulos.Columns["FkIdVenta"].Visible = false;
-                this.dtgArticulos.Columns["btnRecibido"].DisplayIndex = this.dtgArticulos.Columns.Count - 1;
+                picCarrito.Visible = true;
+                btnReportesRedirigr.Visible = true;
+                btnSistema.Visible = true;
+                submenuSistema.Location = new Point(3, 155);
 
             }
             else if (usuSesion.FkTipoUsuario == 4)
             {
-                btnAgregarArticuloRedirigir.Visible = true;
-                btnMantenimientos.Visible = true;
-                btnCategoriasRedirigir.Visible = true;
-                btnAgregarCategoriaRedirigir.Visible = true;
                 picCampana.Visible = true;
-                pSubMenu.Location = new Point(5, 134);
-                this.dtgArticulos.Columns["btnAceptar"].Visible = true;
-                this.dtgArticulos.Columns["btnRechazar"].Visible = true;
-                cbPedidosClientes.Visible = true;
-                lbClientesPedidos.Visible = true;
+                btnArticulosRedirigir.Visible = true;
+                btnAgregarArticuloRedirigir.Visible = true;
+                btnAgregarCategoriaRedirigir.Visible = true;
+                btnCatalogoRedirigir.Visible = true;
+                btnReportesRedirigr.Visible = true;
+                btnSistema.Visible = true;
+                btnMantenimientos.Visible = true;
+                submenuSistema.Location = new Point(3, 225);
 
 
             }
@@ -173,6 +159,51 @@ namespace sublicrea.UI
 
             }
 
+        }
+
+        private void btnSistema_Click(object sender, EventArgs e)
+        {
+            submenuSistema.Visible = !submenuSistema.Visible;
+        }
+
+        private void picCarrito_Click(object sender, EventArgs e)
+        {
+            Form cat = new Catalogo();
+
+            cat.Show();
+            this.Hide();
+        }
+
+        private void picCampana_Click(object sender, EventArgs e)
+        {
+            Form ped = new PedidosPendientes(usuSesion);
+
+            ped.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ventana = new LogIn();
+
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void btnReportesRedirigr_Click(object sender, EventArgs e)
+        {
+            Form men = new MenuReportes(usuSesion, "norm");
+
+            men.Show();
+            this.Hide();
+        }
+
+        private void btnReportesBitacoraRedirigir_Click(object sender, EventArgs e)
+        {
+            Form bit = new MenuReportes(usuSesion, "bit");
+
+            bit.Show();
+            this.Hide();
         }
     }
 }

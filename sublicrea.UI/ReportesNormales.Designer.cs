@@ -1,7 +1,7 @@
 ﻿
 namespace sublicrea.UI
 {
-    partial class MenuReportes
+    partial class ReportesNormales
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,28 @@ namespace sublicrea.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuReportes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesNormales));
             this.pSubMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAgregarEmpresaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarCategoriaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarArticuloRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMovimientoSistemaRedirigir = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnReporteStockMinMaxRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReportePedidosPorProveedorRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReporteMovientoSistemaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.submenuSistema = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAyudaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAcercaDeRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReporteEntradaYSalidaRedirigir = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMovimientoSistemaRedirigir = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnExportarExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExportarPDF = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConsultar = new Guna.UI2.WinForms.Guna2Button();
+            this.lbTipoStock = new System.Windows.Forms.Label();
+            this.cbTipoStocks = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lbProvvedorReporte = new System.Windows.Forms.Label();
+            this.cbProveedorReporte = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtgReportesNormales = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lbTituloReportes = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSistema = new Guna.UI2.WinForms.Guna2Button();
@@ -65,10 +73,10 @@ namespace sublicrea.UI
             this.btnCerrarSesion = new Guna.UI2.WinForms.Guna2Button();
             this.picCampana = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnReporteComportamientoArticulosTiempo = new Guna.UI2.WinForms.Guna2Button();
             this.pSubMenu.SuspendLayout();
-            this.btnMovimientoSistemaRedirigir.SuspendLayout();
             this.submenuSistema.SuspendLayout();
+            this.btnMovimientoSistemaRedirigir.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReportesNormales)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
@@ -88,7 +96,7 @@ namespace sublicrea.UI
             this.pSubMenu.Location = new System.Drawing.Point(232, 283);
             this.pSubMenu.Name = "pSubMenu";
             this.pSubMenu.Size = new System.Drawing.Size(226, 116);
-            this.pSubMenu.TabIndex = 45;
+            this.pSubMenu.TabIndex = 54;
             this.pSubMenu.Visible = false;
             // 
             // btnAgregarEmpresaRedirigir
@@ -108,7 +116,6 @@ namespace sublicrea.UI
             this.btnAgregarEmpresaRedirigir.TabIndex = 3;
             this.btnAgregarEmpresaRedirigir.Text = "Agregar Empresa";
             this.btnAgregarEmpresaRedirigir.Visible = false;
-            this.btnAgregarEmpresaRedirigir.Click += new System.EventHandler(this.btnAgregarEmpresaRedirigir_Click);
             // 
             // btnAgregarCategoriaRedirigir
             // 
@@ -128,7 +135,6 @@ namespace sublicrea.UI
             this.btnAgregarCategoriaRedirigir.TabIndex = 2;
             this.btnAgregarCategoriaRedirigir.Text = "Agregar Categoria";
             this.btnAgregarCategoriaRedirigir.Visible = false;
-            this.btnAgregarCategoriaRedirigir.Click += new System.EventHandler(this.btnAgregarCategoriaRedirigir_Click);
             // 
             // btnAgregarArticuloRedirigir
             // 
@@ -147,7 +153,6 @@ namespace sublicrea.UI
             this.btnAgregarArticuloRedirigir.TabIndex = 1;
             this.btnAgregarArticuloRedirigir.Text = "Agregar Artículo";
             this.btnAgregarArticuloRedirigir.Visible = false;
-            this.btnAgregarArticuloRedirigir.Click += new System.EventHandler(this.btnAgregarArticuloRedirigir_Click);
             // 
             // btnAgregarUsuarioRedirigir
             // 
@@ -166,78 +171,16 @@ namespace sublicrea.UI
             this.btnAgregarUsuarioRedirigir.TabIndex = 0;
             this.btnAgregarUsuarioRedirigir.Text = "Agregar Usuario";
             this.btnAgregarUsuarioRedirigir.Visible = false;
-            this.btnAgregarUsuarioRedirigir.Click += new System.EventHandler(this.btnAgregarUsuarioRedirigir_Click);
-            // 
-            // btnMovimientoSistemaRedirigir
-            // 
-            this.btnMovimientoSistemaRedirigir.AutoScroll = true;
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnReporteComportamientoArticulosTiempo);
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnReporteStockMinMaxRedirigir);
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnReportePedidosPorProveedorRedirigir);
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnReporteMovientoSistemaRedirigir);
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.submenuSistema);
-            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnReporteEntradaYSalidaRedirigir);
-            this.btnMovimientoSistemaRedirigir.Location = new System.Drawing.Point(235, 62);
-            this.btnMovimientoSistemaRedirigir.Name = "btnMovimientoSistemaRedirigir";
-            this.btnMovimientoSistemaRedirigir.Size = new System.Drawing.Size(799, 478);
-            this.btnMovimientoSistemaRedirigir.TabIndex = 44;
-            // 
-            // btnReporteStockMinMaxRedirigir
-            // 
-            this.btnReporteStockMinMaxRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteStockMinMaxRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteStockMinMaxRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReporteStockMinMaxRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReporteStockMinMaxRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReporteStockMinMaxRedirigir.ForeColor = System.Drawing.Color.White;
-            this.btnReporteStockMinMaxRedirigir.Location = new System.Drawing.Point(40, 164);
-            this.btnReporteStockMinMaxRedirigir.Name = "btnReporteStockMinMaxRedirigir";
-            this.btnReporteStockMinMaxRedirigir.Size = new System.Drawing.Size(180, 111);
-            this.btnReporteStockMinMaxRedirigir.TabIndex = 42;
-            this.btnReporteStockMinMaxRedirigir.Text = "Reporte de stock mínimo y máximo";
-            this.btnReporteStockMinMaxRedirigir.Visible = false;
-            // 
-            // btnReportePedidosPorProveedorRedirigir
-            // 
-            this.btnReportePedidosPorProveedorRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReportePedidosPorProveedorRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReportePedidosPorProveedorRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReportePedidosPorProveedorRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReportePedidosPorProveedorRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReportePedidosPorProveedorRedirigir.ForeColor = System.Drawing.Color.White;
-            this.btnReportePedidosPorProveedorRedirigir.Location = new System.Drawing.Point(480, 35);
-            this.btnReportePedidosPorProveedorRedirigir.Name = "btnReportePedidosPorProveedorRedirigir";
-            this.btnReportePedidosPorProveedorRedirigir.Size = new System.Drawing.Size(180, 111);
-            this.btnReportePedidosPorProveedorRedirigir.TabIndex = 41;
-            this.btnReportePedidosPorProveedorRedirigir.Text = "Reporte de pedidos por proveedor";
-            this.btnReportePedidosPorProveedorRedirigir.Visible = false;
-            this.btnReportePedidosPorProveedorRedirigir.Click += new System.EventHandler(this.btnReportePedidosPorProveedorRedirigir_Click);
-            // 
-            // btnReporteMovientoSistemaRedirigir
-            // 
-            this.btnReporteMovientoSistemaRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteMovientoSistemaRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteMovientoSistemaRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReporteMovientoSistemaRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReporteMovientoSistemaRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReporteMovientoSistemaRedirigir.ForeColor = System.Drawing.Color.White;
-            this.btnReporteMovientoSistemaRedirigir.Location = new System.Drawing.Point(260, 35);
-            this.btnReporteMovientoSistemaRedirigir.Name = "btnReporteMovientoSistemaRedirigir";
-            this.btnReporteMovientoSistemaRedirigir.Size = new System.Drawing.Size(180, 111);
-            this.btnReporteMovientoSistemaRedirigir.TabIndex = 1;
-            this.btnReporteMovientoSistemaRedirigir.Text = "Reporte Movimientos en el sistema";
-            this.btnReporteMovientoSistemaRedirigir.Visible = false;
-            this.btnReporteMovientoSistemaRedirigir.Click += new System.EventHandler(this.btnReporteMovientoSistemaRedirigir_Click);
             // 
             // submenuSistema
             // 
             this.submenuSistema.BackColor = System.Drawing.Color.Gainsboro;
             this.submenuSistema.Controls.Add(this.btnAyudaRedirigir);
             this.submenuSistema.Controls.Add(this.btnAcercaDeRedirigir);
-            this.submenuSistema.Location = new System.Drawing.Point(-3, 424);
+            this.submenuSistema.Location = new System.Drawing.Point(232, 486);
             this.submenuSistema.Name = "submenuSistema";
             this.submenuSistema.Size = new System.Drawing.Size(226, 54);
-            this.submenuSistema.TabIndex = 40;
+            this.submenuSistema.TabIndex = 50;
             this.submenuSistema.Visible = false;
             // 
             // btnAyudaRedirigir
@@ -256,7 +199,6 @@ namespace sublicrea.UI
             this.btnAyudaRedirigir.Size = new System.Drawing.Size(226, 24);
             this.btnAyudaRedirigir.TabIndex = 3;
             this.btnAyudaRedirigir.Text = "Ayuda";
-            this.btnAyudaRedirigir.Click += new System.EventHandler(this.btnAyudaRedirigir_Click);
             // 
             // btnAcercaDeRedirigir
             // 
@@ -275,23 +217,195 @@ namespace sublicrea.UI
             this.btnAcercaDeRedirigir.Size = new System.Drawing.Size(226, 23);
             this.btnAcercaDeRedirigir.TabIndex = 2;
             this.btnAcercaDeRedirigir.Text = "Acerca De";
-            this.btnAcercaDeRedirigir.Click += new System.EventHandler(this.btnAcercaDeRedirigir_Click);
             // 
-            // btnReporteEntradaYSalidaRedirigir
+            // btnMovimientoSistemaRedirigir
             // 
-            this.btnReporteEntradaYSalidaRedirigir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteEntradaYSalidaRedirigir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteEntradaYSalidaRedirigir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReporteEntradaYSalidaRedirigir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReporteEntradaYSalidaRedirigir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReporteEntradaYSalidaRedirigir.ForeColor = System.Drawing.Color.White;
-            this.btnReporteEntradaYSalidaRedirigir.Location = new System.Drawing.Point(43, 35);
-            this.btnReporteEntradaYSalidaRedirigir.Name = "btnReporteEntradaYSalidaRedirigir";
-            this.btnReporteEntradaYSalidaRedirigir.Size = new System.Drawing.Size(180, 111);
-            this.btnReporteEntradaYSalidaRedirigir.TabIndex = 0;
-            this.btnReporteEntradaYSalidaRedirigir.Text = "Reporte entrada y Salida";
-            this.btnReporteEntradaYSalidaRedirigir.Visible = false;
-            this.btnReporteEntradaYSalidaRedirigir.Click += new System.EventHandler(this.btnReporteEntradaYSalidaRedirigir_Click);
+            this.btnMovimientoSistemaRedirigir.AutoScroll = true;
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnExportarExcel);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnExportarPDF);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.btnConsultar);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.lbTipoStock);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.cbTipoStocks);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.lbProvvedorReporte);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.cbProveedorReporte);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.dtgReportesNormales);
+            this.btnMovimientoSistemaRedirigir.Controls.Add(this.lbTituloReportes);
+            this.btnMovimientoSistemaRedirigir.Location = new System.Drawing.Point(235, 62);
+            this.btnMovimientoSistemaRedirigir.Name = "btnMovimientoSistemaRedirigir";
+            this.btnMovimientoSistemaRedirigir.Size = new System.Drawing.Size(964, 478);
+            this.btnMovimientoSistemaRedirigir.TabIndex = 53;
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportarExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportarExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(124)))), ((int)(((byte)(65)))));
+            this.btnExportarExcel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExportarExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportarExcel.Location = new System.Drawing.Point(258, 146);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(123, 36);
+            this.btnExportarExcel.TabIndex = 45;
+            this.btnExportarExcel.Text = "Excel";
+            this.btnExportarExcel.Visible = false;
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportarPDF.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportarPDF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportarPDF.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(62)))), ((int)(((byte)(28)))));
+            this.btnExportarPDF.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExportarPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportarPDF.Location = new System.Drawing.Point(129, 146);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(123, 36);
+            this.btnExportarPDF.TabIndex = 44;
+            this.btnExportarPDF.Text = "PDF";
+            this.btnExportarPDF.Visible = false;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConsultar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConsultar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConsultar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(11, 146);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(110, 36);
+            this.btnConsultar.TabIndex = 43;
+            this.btnConsultar.Text = "Consultar";
+            // 
+            // lbTipoStock
+            // 
+            this.lbTipoStock.AutoSize = true;
+            this.lbTipoStock.BackColor = System.Drawing.Color.Transparent;
+            this.lbTipoStock.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbTipoStock.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbTipoStock.Location = new System.Drawing.Point(228, 58);
+            this.lbTipoStock.Name = "lbTipoStock";
+            this.lbTipoStock.Size = new System.Drawing.Size(109, 23);
+            this.lbTipoStock.TabIndex = 42;
+            this.lbTipoStock.Text = "Tipo Stock";
+            this.lbTipoStock.Visible = false;
+            // 
+            // cbTipoStocks
+            // 
+            this.cbTipoStocks.BackColor = System.Drawing.Color.Transparent;
+            this.cbTipoStocks.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTipoStocks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoStocks.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTipoStocks.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTipoStocks.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbTipoStocks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbTipoStocks.ItemHeight = 30;
+            this.cbTipoStocks.Location = new System.Drawing.Point(232, 92);
+            this.cbTipoStocks.Name = "cbTipoStocks";
+            this.cbTipoStocks.Size = new System.Drawing.Size(206, 36);
+            this.cbTipoStocks.TabIndex = 41;
+            this.cbTipoStocks.Visible = false;
+            // 
+            // lbProvvedorReporte
+            // 
+            this.lbProvvedorReporte.AutoSize = true;
+            this.lbProvvedorReporte.BackColor = System.Drawing.Color.Transparent;
+            this.lbProvvedorReporte.Font = new System.Drawing.Font("Century Gothic", 11.8F, System.Drawing.FontStyle.Bold);
+            this.lbProvvedorReporte.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbProvvedorReporte.Location = new System.Drawing.Point(7, 58);
+            this.lbProvvedorReporte.Name = "lbProvvedorReporte";
+            this.lbProvvedorReporte.Size = new System.Drawing.Size(62, 23);
+            this.lbProvvedorReporte.TabIndex = 36;
+            this.lbProvvedorReporte.Text = "Email";
+            // 
+            // cbProveedorReporte
+            // 
+            this.cbProveedorReporte.BackColor = System.Drawing.Color.Transparent;
+            this.cbProveedorReporte.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbProveedorReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProveedorReporte.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbProveedorReporte.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbProveedorReporte.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbProveedorReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbProveedorReporte.ItemHeight = 30;
+            this.cbProveedorReporte.Location = new System.Drawing.Point(11, 92);
+            this.cbProveedorReporte.Name = "cbProveedorReporte";
+            this.cbProveedorReporte.Size = new System.Drawing.Size(206, 36);
+            this.cbProveedorReporte.TabIndex = 35;
+            // 
+            // dtgReportesNormales
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgReportesNormales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgReportesNormales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgReportesNormales.BackgroundColor = System.Drawing.Color.White;
+            this.dtgReportesNormales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgReportesNormales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgReportesNormales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgReportesNormales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgReportesNormales.ColumnHeadersHeight = 20;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgReportesNormales.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgReportesNormales.EnableHeadersVisualStyles = false;
+            this.dtgReportesNormales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtgReportesNormales.Location = new System.Drawing.Point(13, 221);
+            this.dtgReportesNormales.Name = "dtgReportesNormales";
+            this.dtgReportesNormales.RowHeadersVisible = false;
+            this.dtgReportesNormales.RowHeadersWidth = 51;
+            this.dtgReportesNormales.RowTemplate.Height = 24;
+            this.dtgReportesNormales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgReportesNormales.Size = new System.Drawing.Size(939, 251);
+            this.dtgReportesNormales.TabIndex = 16;
+            this.dtgReportesNormales.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgReportesNormales.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dtgReportesNormales.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dtgReportesNormales.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dtgReportesNormales.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dtgReportesNormales.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dtgReportesNormales.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtgReportesNormales.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtgReportesNormales.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtgReportesNormales.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dtgReportesNormales.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dtgReportesNormales.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dtgReportesNormales.ThemeStyle.HeaderStyle.Height = 20;
+            this.dtgReportesNormales.ThemeStyle.ReadOnly = false;
+            this.dtgReportesNormales.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgReportesNormales.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgReportesNormales.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dtgReportesNormales.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtgReportesNormales.ThemeStyle.RowsStyle.Height = 24;
+            this.dtgReportesNormales.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtgReportesNormales.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // lbTituloReportes
+            // 
+            this.lbTituloReportes.AutoSize = true;
+            this.lbTituloReportes.BackColor = System.Drawing.Color.Transparent;
+            this.lbTituloReportes.Font = new System.Drawing.Font("Century Gothic", 17.8F);
+            this.lbTituloReportes.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lbTituloReportes.Location = new System.Drawing.Point(4, 6);
+            this.lbTituloReportes.Name = "lbTituloReportes";
+            this.lbTituloReportes.Size = new System.Drawing.Size(213, 37);
+            this.lbTituloReportes.TabIndex = 15;
+            this.lbTituloReportes.Text = "Título Reporte";
             // 
             // guna2Panel2
             // 
@@ -307,7 +421,7 @@ namespace sublicrea.UI
             this.guna2Panel2.Location = new System.Drawing.Point(0, 62);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(229, 478);
-            this.guna2Panel2.TabIndex = 43;
+            this.guna2Panel2.TabIndex = 52;
             // 
             // guna2Panel4
             // 
@@ -345,7 +459,6 @@ namespace sublicrea.UI
             this.btnSistema.TabIndex = 39;
             this.btnSistema.Text = "Sistema  >";
             this.btnSistema.Visible = false;
-            this.btnSistema.Click += new System.EventHandler(this.btnSistema_Click);
             // 
             // btnArticulosRedirigir
             // 
@@ -365,7 +478,6 @@ namespace sublicrea.UI
             this.btnArticulosRedirigir.TabIndex = 11;
             this.btnArticulosRedirigir.Text = "Artículos";
             this.btnArticulosRedirigir.Visible = false;
-            this.btnArticulosRedirigir.Click += new System.EventHandler(this.btnArticulosRedirigir_Click);
             // 
             // label8
             // 
@@ -396,7 +508,6 @@ namespace sublicrea.UI
             this.btnEmpresasRedirigir.TabIndex = 7;
             this.btnEmpresasRedirigir.Text = "Empresas";
             this.btnEmpresasRedirigir.Visible = false;
-            this.btnEmpresasRedirigir.Click += new System.EventHandler(this.btnEmpresasRedirigir_Click);
             // 
             // btnCategoriasRedirigir
             // 
@@ -416,7 +527,6 @@ namespace sublicrea.UI
             this.btnCategoriasRedirigir.TabIndex = 6;
             this.btnCategoriasRedirigir.Text = "Categorias";
             this.btnCategoriasRedirigir.Visible = false;
-            this.btnCategoriasRedirigir.Click += new System.EventHandler(this.btnCategoriasRedirigir_Click);
             // 
             // btnUsuarioRedirigir
             // 
@@ -436,7 +546,6 @@ namespace sublicrea.UI
             this.btnUsuarioRedirigir.TabIndex = 5;
             this.btnUsuarioRedirigir.Text = "Usuarios";
             this.btnUsuarioRedirigir.Visible = false;
-            this.btnUsuarioRedirigir.Click += new System.EventHandler(this.btnUsuarioRedirigir_Click);
             // 
             // btnReportesBitacoraRedirigir
             // 
@@ -456,7 +565,6 @@ namespace sublicrea.UI
             this.btnReportesBitacoraRedirigir.TabIndex = 3;
             this.btnReportesBitacoraRedirigir.Text = "Reportes de Bitácora";
             this.btnReportesBitacoraRedirigir.Visible = false;
-            this.btnReportesBitacoraRedirigir.Click += new System.EventHandler(this.btnReportesMenuRedirigir_Click);
             // 
             // btnReportesRedirigr
             // 
@@ -476,7 +584,6 @@ namespace sublicrea.UI
             this.btnReportesRedirigr.TabIndex = 2;
             this.btnReportesRedirigr.Text = "Reportes";
             this.btnReportesRedirigr.Visible = false;
-            this.btnReportesRedirigr.Click += new System.EventHandler(this.btnReportesRedirigr_Click);
             // 
             // btnMantenimientos
             // 
@@ -496,7 +603,6 @@ namespace sublicrea.UI
             this.btnMantenimientos.TabIndex = 1;
             this.btnMantenimientos.Text = "Mantenimientos  >";
             this.btnMantenimientos.Visible = false;
-            this.btnMantenimientos.Click += new System.EventHandler(this.btnMantenimientos_Click);
             // 
             // btnCatalogoRedirigir
             // 
@@ -516,7 +622,6 @@ namespace sublicrea.UI
             this.btnCatalogoRedirigir.TabIndex = 0;
             this.btnCatalogoRedirigir.Text = "Catálogo";
             this.btnCatalogoRedirigir.Visible = false;
-            this.btnCatalogoRedirigir.Click += new System.EventHandler(this.btnCatalogo_Click);
             // 
             // picPerfil
             // 
@@ -587,15 +692,15 @@ namespace sublicrea.UI
             this.guna2Panel1.FillColor = System.Drawing.Color.Gainsboro;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1034, 62);
-            this.guna2Panel1.TabIndex = 42;
+            this.guna2Panel1.Size = new System.Drawing.Size(1199, 62);
+            this.guna2Panel1.TabIndex = 51;
             // 
             // picCarrito
             // 
             this.picCarrito.BackColor = System.Drawing.Color.Transparent;
             this.picCarrito.Image = ((System.Drawing.Image)(resources.GetObject("picCarrito.Image")));
             this.picCarrito.ImageRotate = 0F;
-            this.picCarrito.Location = new System.Drawing.Point(729, 14);
+            this.picCarrito.Location = new System.Drawing.Point(916, 14);
             this.picCarrito.Name = "picCarrito";
             this.picCarrito.Size = new System.Drawing.Size(39, 36);
             this.picCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -603,7 +708,6 @@ namespace sublicrea.UI
             this.picCarrito.TabStop = false;
             this.picCarrito.UseTransparentBackground = true;
             this.picCarrito.Visible = false;
-            this.picCarrito.Click += new System.EventHandler(this.picCarrito_Click);
             // 
             // btnCerrarSesion
             // 
@@ -618,19 +722,18 @@ namespace sublicrea.UI
             this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(227)))));
             this.btnCerrarSesion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(227)))));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(868, 21);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(1056, 21);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(125, 30);
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // picCampana
             // 
             this.picCampana.BackColor = System.Drawing.Color.Transparent;
             this.picCampana.Image = ((System.Drawing.Image)(resources.GetObject("picCampana.Image")));
             this.picCampana.ImageRotate = 0F;
-            this.picCampana.Location = new System.Drawing.Point(797, 18);
+            this.picCampana.Location = new System.Drawing.Point(985, 18);
             this.picCampana.Name = "picCampana";
             this.picCampana.Size = new System.Drawing.Size(31, 30);
             this.picCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -638,7 +741,6 @@ namespace sublicrea.UI
             this.picCampana.TabStop = false;
             this.picCampana.UseTransparentBackground = true;
             this.picCampana.Visible = false;
-            this.picCampana.Click += new System.EventHandler(this.picCampana_Click);
             // 
             // picLogo
             // 
@@ -653,37 +755,24 @@ namespace sublicrea.UI
             this.picLogo.TabStop = false;
             this.picLogo.UseTransparentBackground = true;
             // 
-            // btnReporteComportamientoArticulosTiempo
-            // 
-            this.btnReporteComportamientoArticulosTiempo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteComportamientoArticulosTiempo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReporteComportamientoArticulosTiempo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReporteComportamientoArticulosTiempo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReporteComportamientoArticulosTiempo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReporteComportamientoArticulosTiempo.ForeColor = System.Drawing.Color.White;
-            this.btnReporteComportamientoArticulosTiempo.Location = new System.Drawing.Point(260, 164);
-            this.btnReporteComportamientoArticulosTiempo.Name = "btnReporteComportamientoArticulosTiempo";
-            this.btnReporteComportamientoArticulosTiempo.Size = new System.Drawing.Size(180, 111);
-            this.btnReporteComportamientoArticulosTiempo.TabIndex = 43;
-            this.btnReporteComportamientoArticulosTiempo.Text = "Reporte Comportamiento de Artículos en el tiempo";
-            this.btnReporteComportamientoArticulosTiempo.Visible = false;
-            // 
-            // MenuReportes
+            // ReportesNormales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 540);
+            this.ClientSize = new System.Drawing.Size(1199, 540);
             this.Controls.Add(this.pSubMenu);
+            this.Controls.Add(this.submenuSistema);
             this.Controls.Add(this.btnMovimientoSistemaRedirigir);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "MenuReportes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MenuReportes";
-            this.Load += new System.EventHandler(this.MenuReportes_Load);
+            this.Name = "ReportesNormales";
+            this.Text = "ReportesNormales";
+            this.Load += new System.EventHandler(this.ReportesNormales_Load);
             this.pSubMenu.ResumeLayout(false);
-            this.btnMovimientoSistemaRedirigir.ResumeLayout(false);
             this.submenuSistema.ResumeLayout(false);
+            this.btnMovimientoSistemaRedirigir.ResumeLayout(false);
+            this.btnMovimientoSistemaRedirigir.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReportesNormales)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
@@ -703,9 +792,22 @@ namespace sublicrea.UI
         private Guna.UI2.WinForms.Guna2Button btnAgregarCategoriaRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnAgregarArticuloRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnAgregarUsuarioRedirigir;
+        private Guna.UI2.WinForms.Guna2Panel submenuSistema;
+        private Guna.UI2.WinForms.Guna2Button btnAyudaRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnAcercaDeRedirigir;
         private Guna.UI2.WinForms.Guna2Panel btnMovimientoSistemaRedirigir;
+        private Guna.UI2.WinForms.Guna2Button btnExportarExcel;
+        private Guna.UI2.WinForms.Guna2Button btnExportarPDF;
+        private Guna.UI2.WinForms.Guna2Button btnConsultar;
+        private System.Windows.Forms.Label lbTipoStock;
+        private Guna.UI2.WinForms.Guna2ComboBox cbTipoStocks;
+        private System.Windows.Forms.Label lbProvvedorReporte;
+        private Guna.UI2.WinForms.Guna2ComboBox cbProveedorReporte;
+        private Guna.UI2.WinForms.Guna2DataGridView dtgReportesNormales;
+        private System.Windows.Forms.Label lbTituloReportes;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Button btnSistema;
         private Guna.UI2.WinForms.Guna2Button btnArticulosRedirigir;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Button btnEmpresasRedirigir;
@@ -721,18 +823,9 @@ namespace sublicrea.UI
         private System.Windows.Forms.Label lbRol;
         private System.Windows.Forms.Label lbEmail;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2PictureBox picCarrito;
         private Guna.UI2.WinForms.Guna2Button btnCerrarSesion;
         private Guna.UI2.WinForms.Guna2PictureBox picCampana;
         private Guna.UI2.WinForms.Guna2PictureBox picLogo;
-        private Guna.UI2.WinForms.Guna2Button btnReporteMovientoSistemaRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnReporteEntradaYSalidaRedirigir;
-        private Guna.UI2.WinForms.Guna2Panel submenuSistema;
-        private Guna.UI2.WinForms.Guna2Button btnAyudaRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnAcercaDeRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnSistema;
-        private Guna.UI2.WinForms.Guna2PictureBox picCarrito;
-        private Guna.UI2.WinForms.Guna2Button btnReporteStockMinMaxRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnReportePedidosPorProveedorRedirigir;
-        private Guna.UI2.WinForms.Guna2Button btnReporteComportamientoArticulosTiempo;
     }
 }

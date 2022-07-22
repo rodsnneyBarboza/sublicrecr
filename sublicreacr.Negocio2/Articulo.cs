@@ -18,13 +18,15 @@ namespace sublicreacr.Negocio
         private DateTime fechaActualizacion;
         private long fkCedulaJuridica;
         private int fkIdCategoria;
+        private int mes;
+        private int annio;
         public Articulo()
         {
 
         }
         public Articulo(int _idArticulo,string _nombre,float _precioVenta,int _cantidadDisponible,byte[] _imagen
             ,bool _estado,DateTime _fechaActualizacion,long _fkCedulaJuridica,int _fkIdCategoria
-            ,string _estadoLeyenda)
+            ,string _estadoLeyenda,int _mes, int _annio)
         {
             this.idArticulo = _idArticulo;
             this.nombre = _nombre;
@@ -36,7 +38,8 @@ namespace sublicreacr.Negocio
             this.fkCedulaJuridica = _fkCedulaJuridica;
             this.fkIdCategoria = _fkIdCategoria;
             this.estadoLeyenda = _estadoLeyenda;
-
+            this.mes = _mes;
+            this.annio = _annio;
         }
 
         public int IdArticulo { get => idArticulo; set => idArticulo = value; }
@@ -51,9 +54,8 @@ namespace sublicreacr.Negocio
         public int FkIdCategoria { get => fkIdCategoria; set => fkIdCategoria = value; }
         public string EstadoLeyenda { get => estadoLeyenda; set => estadoLeyenda = value; }
 
-
-
-
+        public int Mes { get => mes; set => mes = value; }
+        public int Annio { get => annio; set => annio = value; }
 
 
 

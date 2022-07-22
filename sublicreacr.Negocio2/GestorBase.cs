@@ -251,6 +251,80 @@ namespace sublicreacr.Negocio
                 throw ex;
             }
         }
+
+        public DataSet stockMaximoMinimo(Empresa _emp, string _tipo)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@cedJuridica", _emp.CedulaJuridica) };
+
+                string sentencia = "SELECT nombre,cantidad_disponible FROM TB_ARTICULO WHERE 1 = 1 AND fk_cedula_juridica = @cedJuridica";
+
+                if (_tipo.Equals("max"))
+                {
+                    sentencia += " AND cantidad_disponible>50";
+
+                }
+                else
+                {
+                    sentencia += " AND cantidad_disponible<10";
+                }
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+                return datos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataSet comportamientoArticulosTiempo(Empresa _emp)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@cedJuridica", _emp.CedulaJuridica) };
+
+                string sentencia = "SELECT a.nombre,sum(dv.cantidad) as total,MONTH(v.fecha_venta) as mes" +
+                    ",YEAR(v.fecha_venta) as annio FROM TB_VENTA as v INNER JOIN TB_DETALLE_VENTA as dv " +
+                    "ON dv.fk_id_venta = id_venta INNER JOIN TB_ARTICULO as a ON a.id_articulo = dv.fk_id_articulo " +
+                    "WHERE v.fk_cedula_juridica_vendedor = @cedJuridica GROUP BY a.nombre ,YEAR(v.fecha_venta)," +
+                    "MONTH(v.fecha_venta)";
+
+                
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+                return datos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataSet pedidosPorProveedor(Empresa _emp)
+        {
+            try
+            {
+                Parameter[] parametros = { new Parameter("@cedJuridica", _emp.CedulaJuridica) };
+
+                string sentencia = "SELECT a.nombre,sum(dv.cantidad) as total FROM TB_VENTA as v " +
+                    "INNER JOIN TB_DETALLE_VENTA as dv ON dv.fk_id_venta = id_venta INNER JOIN TB_ARTICULO as a" +
+                    " ON a.id_articulo = dv.fk_id_articulo WHERE v.fk_cedula_juridica_vendedor = @cedJuridica " +
+                    "GROUP BY a.nombre";
+
+
+                DataSet datos = Database.executeDataset(sentencia, parametros);
+
+
+                return datos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public DataSet mostrarTipoUsuario(int _tipoUusario=-1)
         {
             try

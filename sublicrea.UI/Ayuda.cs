@@ -44,6 +44,51 @@ namespace sublicrea.UI
             lbEmail.Text = usuSesion.Email;
 
             lbRol.Text = usuSesion.TipoUsuario;
+
+            //valida el tipo de usuario para desplegar las diferentes opciones del menú de navegación
+            if (usuSesion.FkTipoUsuario == 1 || usuSesion.FkTipoUsuario == 2)
+            {
+                //btnCatalogoRedirigir.Visible = true;
+                btnMantenimientos.Visible = true;
+                btnReportesRedirigr.Visible = true;
+                btnReportesBitacoraRedirigir.Visible = true;
+                btnUsuarioRedirigir.Visible = true;
+                btnCategoriasRedirigir.Visible = true;
+                btnEmpresasRedirigir.Visible = true;
+                btnArticulosRedirigir.Visible = true;
+                btnSistema.Visible = true;
+                btnMantenimientos.Visible = true;
+                btnAgregarUsuarioRedirigir.Visible = true;
+                btnAgregarArticuloRedirigir.Visible = true;
+                btnAgregarCategoriaRedirigir.Visible = true;
+                btnAgregarEmpresaRedirigir.Visible = true;
+                submenuSistema.Location = new Point(3, 325);
+
+            }
+            else if (usuSesion.FkTipoUsuario == 3)
+            {
+                picCampana.Visible = true;
+                picCarrito.Visible = true;
+                btnReportesRedirigr.Visible = true;
+                btnSistema.Visible = true;
+                submenuSistema.Location = new Point(3, 155);
+
+            }
+            else if (usuSesion.FkTipoUsuario == 4)
+            {
+                picCampana.Visible = true;
+                btnArticulosRedirigir.Visible = true;
+                btnAgregarArticuloRedirigir.Visible = true;
+                btnAgregarCategoriaRedirigir.Visible = true;
+                btnCatalogoRedirigir.Visible = true;
+                btnReportesRedirigr.Visible = true;
+                btnSistema.Visible = true;
+                btnMantenimientos.Visible = true;
+                submenuSistema.Location = new Point(3, 225);
+
+
+            }
+
             if (usuSesion.FotoPerfil != null)
             {
                 picPerfil.Image = val.convertirBytesAImagenes(usuSesion.FotoPerfil);
@@ -111,7 +156,7 @@ namespace sublicrea.UI
 
         private void btnReportesBitacoraRedirigir_Click(object sender, EventArgs e)
         {
-            Form bit = new MenuReportes(usuSesion);
+            Form bit = new MenuReportes(usuSesion, "bit");
 
             bit.Show();
             this.Hide();
@@ -162,6 +207,27 @@ namespace sublicrea.UI
             Form ped = new PedidosPendientes(usuSesion);
 
             ped.Show();
+            this.Hide();
+        }
+
+        private void btnSistema_Click(object sender, EventArgs e)
+        {
+            submenuSistema.Visible = !submenuSistema.Visible;
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Form ini = new LogIn();
+
+            ini.Show();
+            this.Hide();
+        }
+
+        private void btnReportesRedirigr_Click(object sender, EventArgs e)
+        {
+            Form men = new MenuReportes(usuSesion, "norm");
+
+            men.Show();
             this.Hide();
         }
     }

@@ -100,48 +100,47 @@ namespace sublicrea.UI
             {
                 lbEmail.Text = usuSesion.Email;
                 lbRol.Text = usuSesion.TipoUsuario;
-                if (usuSesion.FkTipoUsuario == 1)
+                //valida el tipo de usuario para desplegar las diferentes opciones del menú de navegación
+                if (usuSesion.FkTipoUsuario == 1 || usuSesion.FkTipoUsuario == 2)
                 {
-                    btnCatalogoRedirigir.Visible = true;
-                    btnReportesBitacoraRedirigir.Visible = true;
+                    //btnCatalogoRedirigir.Visible = true;
+                    btnMantenimientos.Visible = true;
                     btnReportesRedirigr.Visible = true;
+                    btnReportesBitacoraRedirigir.Visible = true;
                     btnUsuarioRedirigir.Visible = true;
                     btnCategoriasRedirigir.Visible = true;
                     btnEmpresasRedirigir.Visible = true;
                     btnArticulosRedirigir.Visible = true;
+                    btnSistema.Visible = true;
+                    btnMantenimientos.Visible = true;
                     btnAgregarUsuarioRedirigir.Visible = true;
                     btnAgregarArticuloRedirigir.Visible = true;
                     btnAgregarCategoriaRedirigir.Visible = true;
                     btnAgregarEmpresaRedirigir.Visible = true;
-
-                    btnMantenimientos.Visible = true;
-
-                }
-                else if (usuSesion.FkTipoUsuario == 2)
-                {
-                    btnReportesRedirigr.Visible = true;
-                    btnAgregarArticuloRedirigir.Visible = true;
-                    btnArticulosRedirigir.Visible = true;
-                    btnMantenimientos.Visible = true;
-                    pSubMenu.Location = new Point(5, 134);
-
+                    submenuSistema.Location = new Point(3, 325);
 
                 }
                 else if (usuSesion.FkTipoUsuario == 3)
                 {
-                    btnCatalogoRedirigir.Visible = true;
-                    btnReportesRedirigr.Visible = true;
                     picCampana.Visible = true;
+                    picCarrito.Visible = true;
+                    btnReportesRedirigr.Visible = true;
+                    btnSistema.Visible = true;
+                    submenuSistema.Location = new Point(3, 155);
 
                 }
                 else if (usuSesion.FkTipoUsuario == 4)
                 {
-                    btnAgregarArticuloRedirigir.Visible = true;
-                    btnMantenimientos.Visible = true;
-                    btnCategoriasRedirigir.Visible = true;
-                    btnAgregarCategoriaRedirigir.Visible = true;
                     picCampana.Visible = true;
-                    pSubMenu.Location = new Point(5, 134);
+                    btnArticulosRedirigir.Visible = true;
+                    btnAgregarArticuloRedirigir.Visible = true;
+                    btnAgregarCategoriaRedirigir.Visible = true;
+                    btnCatalogoRedirigir.Visible = true;
+                    btnReportesRedirigr.Visible = true;
+                    btnSistema.Visible = true;
+                    btnMantenimientos.Visible = true;
+                    submenuSistema.Location = new Point(3, 225);
+
 
                 }
                 if (usuSesion.FotoPerfil != null)
@@ -197,7 +196,7 @@ namespace sublicrea.UI
 
         private void dtgUsuarios_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string emailEmpleado = this.dtgUsuarios.Rows[dtgUsuarios.CurrentRow.Index].Cells[0].Value.ToString();
+            string emailEmpleado = this.dtgUsuarios.Rows[dtgUsuarios.CurrentRow.Index].Cells["Email"].Value.ToString();
 
             AgregarActualizarUsuario usu = new AgregarActualizarUsuario(usuSesion,emailEmpleado);
 
@@ -215,7 +214,10 @@ namespace sublicrea.UI
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            Form men = new MenuReportes(usuSesion, "norm");
 
+            men.Show();
+            this.Hide();
         }
 
         private void btnAgregarCategoriaRedirigir_Click(object sender, EventArgs e)
@@ -228,9 +230,9 @@ namespace sublicrea.UI
 
         private void btnReportesMenuRedirigir_Click(object sender, EventArgs e)
         {
-            Form art = new MenuReportes(usuSesion);
+            Form bit = new MenuReportes(usuSesion, "bit");
 
-            art.Show();
+            bit.Show();
             this.Hide();
         }
 
@@ -308,6 +310,11 @@ namespace sublicrea.UI
 
             ped.Show();
             this.Hide();
+        }
+
+        private void btnSistema_Click(object sender, EventArgs e)
+        {
+            submenuSistema.Visible = !submenuSistema.Visible;
         }
     }
 }

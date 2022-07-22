@@ -64,7 +64,7 @@ namespace sublicrea.UI
             this.btnAgregarCategoriaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarArticuloRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregarUsuarioRedirigir = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.submenuSistema = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAyudaRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.btnAcercaDeRedirigir = new Guna.UI2.WinForms.Guna2Button();
             this.dtgArticulos = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -80,7 +80,7 @@ namespace sublicrea.UI
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             this.pSubMenu.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
+            this.submenuSistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +148,7 @@ namespace sublicrea.UI
             this.btnSistema.TabIndex = 39;
             this.btnSistema.Text = "Sistema  >";
             this.btnSistema.Visible = false;
+            this.btnSistema.Click += new System.EventHandler(this.btnSistema_Click);
             // 
             // btnArticulosRedirigir
             // 
@@ -254,6 +255,7 @@ namespace sublicrea.UI
             this.btnReportesBitacoraRedirigir.TabIndex = 3;
             this.btnReportesBitacoraRedirigir.Text = "Reportes de Bitácora";
             this.btnReportesBitacoraRedirigir.Visible = false;
+            this.btnReportesBitacoraRedirigir.Click += new System.EventHandler(this.btnReportesBitacoraRedirigir_Click);
             // 
             // btnReportesRedirigr
             // 
@@ -273,6 +275,7 @@ namespace sublicrea.UI
             this.btnReportesRedirigr.TabIndex = 2;
             this.btnReportesRedirigr.Text = "Reportes";
             this.btnReportesRedirigr.Visible = false;
+            this.btnReportesRedirigr.Click += new System.EventHandler(this.btnReportesRedirigr_Click);
             // 
             // btnMantenimientos
             // 
@@ -385,6 +388,7 @@ namespace sublicrea.UI
             this.picCarrito.TabStop = false;
             this.picCarrito.UseTransparentBackground = true;
             this.picCarrito.Visible = false;
+            this.picCarrito.Click += new System.EventHandler(this.picCarrito_Click);
             // 
             // btnCerrarSesion
             // 
@@ -404,6 +408,7 @@ namespace sublicrea.UI
             this.btnCerrarSesion.Size = new System.Drawing.Size(125, 30);
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // picCampana
             // 
@@ -418,6 +423,7 @@ namespace sublicrea.UI
             this.picCampana.TabStop = false;
             this.picCampana.UseTransparentBackground = true;
             this.picCampana.Visible = false;
+            this.picCampana.Click += new System.EventHandler(this.picCampana_Click);
             // 
             // picLogo
             // 
@@ -438,7 +444,7 @@ namespace sublicrea.UI
             this.guna2Panel3.Controls.Add(this.lbClientesPedidos);
             this.guna2Panel3.Controls.Add(this.lbPedidosPendientes);
             this.guna2Panel3.Controls.Add(this.pSubMenu);
-            this.guna2Panel3.Controls.Add(this.guna2Panel5);
+            this.guna2Panel3.Controls.Add(this.submenuSistema);
             this.guna2Panel3.Controls.Add(this.dtgArticulos);
             this.guna2Panel3.Location = new System.Drawing.Point(230, 62);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -574,16 +580,16 @@ namespace sublicrea.UI
             this.btnAgregarUsuarioRedirigir.Text = "Agregar Usuario";
             this.btnAgregarUsuarioRedirigir.Visible = false;
             // 
-            // guna2Panel5
+            // submenuSistema
             // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.Gainsboro;
-            this.guna2Panel5.Controls.Add(this.btnAyudaRedirigir);
-            this.guna2Panel5.Controls.Add(this.btnAcercaDeRedirigir);
-            this.guna2Panel5.Location = new System.Drawing.Point(5, 424);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(226, 54);
-            this.guna2Panel5.TabIndex = 40;
-            this.guna2Panel5.Visible = false;
+            this.submenuSistema.BackColor = System.Drawing.Color.Gainsboro;
+            this.submenuSistema.Controls.Add(this.btnAyudaRedirigir);
+            this.submenuSistema.Controls.Add(this.btnAcercaDeRedirigir);
+            this.submenuSistema.Location = new System.Drawing.Point(5, 424);
+            this.submenuSistema.Name = "submenuSistema";
+            this.submenuSistema.Size = new System.Drawing.Size(226, 54);
+            this.submenuSistema.TabIndex = 40;
+            this.submenuSistema.Visible = false;
             // 
             // btnAyudaRedirigir
             // 
@@ -737,7 +743,7 @@ namespace sublicrea.UI
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.pSubMenu.ResumeLayout(false);
-            this.guna2Panel5.ResumeLayout(false);
+            this.submenuSistema.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgArticulos)).EndInit();
             this.ResumeLayout(false);
 
@@ -773,7 +779,7 @@ namespace sublicrea.UI
         private Guna.UI2.WinForms.Guna2Button btnAgregarCategoriaRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnAgregarArticuloRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnAgregarUsuarioRedirigir;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel submenuSistema;
         private Guna.UI2.WinForms.Guna2Button btnAyudaRedirigir;
         private Guna.UI2.WinForms.Guna2Button btnAcercaDeRedirigir;
         private Guna.UI2.WinForms.Guna2DataGridView dtgArticulos;

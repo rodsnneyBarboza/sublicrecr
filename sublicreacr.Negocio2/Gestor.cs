@@ -414,6 +414,80 @@ namespace sublicreacr.Negocio
             }
         }
 
+        public List<Articulo> pedidosPorProveedor(Empresa _emp)
+        {
+            try
+            {
+                List<Articulo> det = new List<Articulo>();
+                DataRowCollection datos = ges.pedidosPorProveedor(_emp).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Articulo a = new Articulo();
+
+                    a.Nombre = datos[i]["nombre"].ToString();
+                    a.CantidadDisponible = Int16.Parse(datos[i]["total"].ToString());
+                    
+                    det.Add(a);
+                }
+                return det;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public List<Articulo> stockMaximoMinimo(Empresa _emp,string _tipo)
+        {
+            try
+            {
+                List<Articulo> det = new List<Articulo>();
+                DataRowCollection datos = ges.stockMaximoMinimo(_emp,_tipo).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Articulo a = new Articulo();
+
+                    a.Nombre = datos[i]["nombre"].ToString();
+                    a.CantidadDisponible = Int16.Parse(datos[i]["cantidad_disponible"].ToString());
+
+                    det.Add(a);
+                }
+                return det;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public List<Articulo> comportamientoArticulosTiempo(Empresa _emp)
+        {
+            try
+            {
+                List<Articulo> det = new List<Articulo>();
+                DataRowCollection datos = ges.comportamientoArticulosTiempo(_emp).Tables[0].Rows;
+
+                for (int i = 0; i < datos.Count; i++)
+                {
+                    Articulo a = new Articulo();
+
+                    a.Nombre = datos[i]["nombre"].ToString();
+                    a.CantidadDisponible = Int16.Parse(datos[i]["total"].ToString());
+                    a.Mes = Int16.Parse(datos[i]["mes"].ToString());
+                    a.Annio = Int16.Parse(datos[i]["annio"].ToString());
+                    det.Add(a);
+                }
+                return det;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         #endregion
 
